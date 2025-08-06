@@ -1,8 +1,9 @@
-import NotFoundError from "@/pages/Error/NotFoundError";
-import Home from "@/pages/home/Home";
 import { createBrowserRouter } from "react-router";
 import ErrorPage from "@/pages/Error/ErrorPage";
+import NotFoundError from "@/pages/Error/NotFoundError";
 import MainLayout from "@/layouts/MainLayout";
+import Home from "@/pages/home/Home";
+import TheHeartWallPage from "@/pages/public/TheHeartWallPage";
 
 export const routes = createBrowserRouter([
   {
@@ -15,12 +16,11 @@ export const routes = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/dummy",
-        element: <div>Dummy</div>,
+        path: "/the-heart-wall",
+        element: <TheHeartWallPage />,
       },
     ],
   },
-
   {
     path: "*",
     element: <NotFoundError />,

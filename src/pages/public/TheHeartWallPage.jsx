@@ -1,0 +1,38 @@
+import Breadcrumb from "@/components/shared/Breadcrumb";
+import Container from "@/components/shared/Container";
+import TabsComponent from "@/components/shared/TabsComponent";
+import FeaturedNeedsPosts from "@/components/theHeartWall/FeaturedNeedsPosts";
+import ReflectionsPosts from "@/components/theHeartWall/ReflectionsPosts";
+import React, { useState } from "react";
+
+const TheHeartWallPage = () => {
+  const [activeTab, setActiveTab] = useState(0);
+  const tabs = ["Reflections", "Featured Needs"];
+
+  const handleTabChange = (index) => {
+    console.log("Active tab:", tabs[index]);
+    setActiveTab(index);
+  };
+
+  return (
+    <Container as="section" className="pt-36">
+      <Breadcrumb
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "The Heart Wall", href: "/help/now" },
+        ]}
+      />
+      <section className="mt-8 space-y-14">
+        <TabsComponent
+          tabs={tabs}
+          defaultTab={0}
+          onTabChange={handleTabChange}
+        />
+        {activeTab === 0 && <ReflectionsPosts />}
+        {activeTab === 1 && <FeaturedNeedsPosts />}
+      </section>
+    </Container>
+  );
+};
+
+export default TheHeartWallPage;

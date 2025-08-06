@@ -7,7 +7,7 @@
 
 @theme inline {
   --color-textPrimary: #3a3733;
-  --color-primaryDescription: #69706D;
+  --color-primaryDescription: #69706d;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -60,7 +60,7 @@
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --accent: #ffffff;
-  --accent-foreground: #4A2827;
+  --accent-foreground: #4a2827;
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
@@ -126,4 +126,3 @@
 .font-inter {
   font-family: "Inter", sans-serif;
 }
-

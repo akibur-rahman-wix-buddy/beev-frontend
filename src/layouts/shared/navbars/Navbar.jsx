@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { Link, NavLink } from "react-router";
 import { useState, useEffect } from "react";
 
-const Navbar = ({ className, istrue = false }) => {
+const Navbar = ({ className, istrue = false, onHomePage = false }) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const Navbar = ({ className, istrue = false }) => {
 
   const pages = [
     { name: "Home", link: "/" },
-    { name: "The Heart Wall", link: "/about" },
+    { name: "The Heart Wall", link: "/the-heart-wall" },
     { name: "One Heart Sanctuary", link: "/services" },
     { name: "Join The Circle", link: "/contact" },
     { name: "Our Mission", link: "/contact" },
@@ -62,14 +62,10 @@ const Navbar = ({ className, istrue = false }) => {
                 <NavLink
                   to={page.link}
                   className={({ isActive }) =>
-                    cn(
-                      "font-medium transition-colors",
-                      isScrolled ? "text-textPrimary" : "text-white",
-                      {
-                        [isScrolled ? "text-primary" : "text-primary"]:
-                          isActive,
-                      }
-                    )
+                    cn("font-medium transition-colors text-textPrimary", {
+                      "text-white": onHomePage && !isScrolled,
+                      "text-primary": isActive,
+                    })
                   }
                 >
                   {page.name}
@@ -79,15 +75,15 @@ const Navbar = ({ className, istrue = false }) => {
           </ul>
         </div>
 
-        {/* Buttons */}
         <div className="flex-1 flex gap-2">
           <Button
             variant="ghost"
             className={cn(
-              "transition-colors py-3.5 px-6",
-              isScrolled
-                ? "text-textPrimary hover:bg-primary hover:text-white"
-                : "text-white hover:bg-primary hover:text-white"
+              "transition-colors py-3.5 px-6 text-textPrimary hover:bg-primary hover:text-white",
+              {
+                "text-white hover:bg-primary hover:text-white":
+                  onHomePage && !isScrolled,
+              }
             )}
             asChild
           >
@@ -95,10 +91,11 @@ const Navbar = ({ className, istrue = false }) => {
           </Button>
           <Button
             className={cn(
-              "transition-colors py-3.5 px-6",
-              isScrolled
-                ? "bg-primary text-white hover:bg-primary"
-                : "bg-white text-accent-foreground hover:bg-primary hover:text-white"
+              "transition-colors py-3.5 px-6 bg-primary text-white hover:bg-primary",
+              {
+                "bg-white text-accent-foreground hover:bg-primary hover:text-white":
+                  onHomePage && !isScrolled,
+              }
             )}
             asChild
           >
