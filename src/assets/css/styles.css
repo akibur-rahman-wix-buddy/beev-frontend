@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+.footer-title {
+  @apply text-[22px] font-semibold;
+}
+
+.footer-links {
+  @apply w-fit hover:underline;
+}
+
+.dummy-text {
+  @apply text-green-400 text-xl font-bold;
+}
+
+@keyframes spinOnce {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
