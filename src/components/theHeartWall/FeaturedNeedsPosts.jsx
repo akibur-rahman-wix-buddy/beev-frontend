@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "../ui/button";
 import { FilterIcon, PlusIcon } from "@/assets/icons/icons";
 import Post from "../cards/Post";
+import Pagination from "../shared/Pagination";
 
 const FeaturedNeedsPosts = () => {
   const posts = [
@@ -10,7 +11,7 @@ const FeaturedNeedsPosts = () => {
       type: "simple",
       author: {
         name: "Admin",
-        avatar: "/placeholder.svg?height=40&width=40",
+        avatar: "https://i.ibb.co.com/rKgQdLhv/profile.png",
       },
       timestamp: "Posted 2 hours ago",
       title: "Unexpected medical expenses",
@@ -23,7 +24,7 @@ const FeaturedNeedsPosts = () => {
       type: "simple",
       author: {
         name: "Admin",
-        avatar: "/placeholder.svg?height=40&width=40",
+        avatar: "https://i.ibb.co.com/rKgQdLhv/profile.png",
       },
       timestamp: "Posted 4 hours ago",
       title: "Job loss and financial stress",
@@ -36,7 +37,7 @@ const FeaturedNeedsPosts = () => {
       type: "simple",
       author: {
         name: "Admin",
-        avatar: "/placeholder.svg?height=40&width=40",
+        avatar: "https://i.ibb.co.com/rKgQdLhv/profile.png",
       },
       timestamp: "Posted 8 hours ago",
       title: "Student loan debt overwhelming",
@@ -49,7 +50,7 @@ const FeaturedNeedsPosts = () => {
       type: "simple",
       author: {
         name: "Admin",
-        avatar: "/placeholder.svg?height=40&width=40",
+        avatar: "https://i.ibb.co.com/rKgQdLhv/profile.png",
       },
       timestamp: "Posted 12 hours ago",
       title: "Mental health support needed",
@@ -62,7 +63,7 @@ const FeaturedNeedsPosts = () => {
       type: "simple",
       author: {
         name: "Admin",
-        avatar: "/placeholder.svg?height=40&width=40",
+        avatar: "https://i.ibb.co.com/rKgQdLhv/profile.png",
       },
       timestamp: "Posted 16 hours ago",
       title: "Car broke down, can't get to work",
@@ -81,10 +82,6 @@ const FeaturedNeedsPosts = () => {
             <FilterIcon className="size-5 shrink-0" />
             Filter
           </Button>
-          {/* <Button className="rounded-full">
-            <PlusIcon className="size-5 shrink-0" />
-            Add Post
-          </Button> */}
         </div>
       </div>
       <div className="flex flex-col gap-6">
@@ -92,6 +89,7 @@ const FeaturedNeedsPosts = () => {
           <Post key={index} post={item} />
         ))}
       </div>
+      <Pagination />
     </div>
   );
 };

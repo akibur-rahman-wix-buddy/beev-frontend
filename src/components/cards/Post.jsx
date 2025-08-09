@@ -1,12 +1,43 @@
 import React, { useState } from "react";
 import { Heart, MessageCircle, Send } from "lucide-react";
 import postPlaceholder from "@/assets/images/post-placeholder.png";
-import profile from "@/assets/images/profile.png";
-import { LoveFillIcon, LoveIcon } from "@/assets/icons/icons";
+import { ForwardMailIcon, LoveFillIcon, LoveIcon } from "@/assets/icons/icons";
+
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+
+import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+
+const formSchema = z.object({
+  comment: z.string().min(2, {
+    message: "Comment must be at least 2 characters.",
+  }),
+});
 
 const Post = ({ post }) => {
-  const [commentText, setCommentText] = useState("");
+  const [isCommentSectionOpen, setIsCommentSectionOpen] = useState(false);
   const [isLoved, setIsLoved] = useState(false);
+
+  const form = useForm({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      comment: "",
+    },
+  });
+
+  function onSubmit(values) {
+    console.log(values);
+    form.reset();
+  }
 
   return (
     <div className="p-8 bg-[#F3EDE5] rounded-xl">
@@ -14,7 +45,7 @@ const Post = ({ post }) => {
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center gap-4">
           <img
-            src={profile || postPlaceholder} //src={post.author.avatar || postPlaceholder}
+            src={post.author.avatar || postPlaceholder} //src={post.author.avatar || postPlaceholder}
             alt={post.author.name}
             className="size-16 rounded-full object-cover"
           />
@@ -23,10 +54,10 @@ const Post = ({ post }) => {
             <p className="text-[#8F8D8D]">{post.timestamp}</p>
           </div>
         </div>
-        {post.tag && (
-          <div className="flex items-center gap-2 text-pink-400">
-            <Heart className="w-4 h-4 fill-current" />
-            <span className="text-sm font-medium">{post.tag}</span>
+        {post.type === "with_comments" && (
+          <div className="flex items-center gap-2 text-xl text-primary">
+            <Heart className="size-5 fill-current" />
+            <span className="font-medium">Heart Wall #{post.id}</span>
           </div>
         )}
       </div>
@@ -54,53 +85,77 @@ const Post = ({ post }) => {
             <span className="text-lg font-medium">{post.likes} Likes</span>
           </div>
           {post.type === "with_comments" && (
-            <div className="flex items-center gap-2">
-              <MessageCircle className="w-5 h-5 text-gray-600" />
-              <span className="text-gray-600">{post.comments} Comments</span>
+            <div
+              className="flex items-center gap-2 cursor-pointer select-none"
+              onClick={() => setIsCommentSectionOpen((prev) => !prev)}
+            >
+              <MessageCircle className="size-6 text-textPrimary" />
+              <span className="text-lg font-medium">
+                {post.comments} Comments
+              </span>
             </div>
           )}
         </div>
 
-        {/* Comments Section - Only for posts with comments */}
-        {post.type === "with_comments" && (
-          <div className="border-t border-gray-200 pt-6">
-            {/* Existing Comments */}
+        {post.type === "with_comments" && isCommentSectionOpen && (
+          <div className="border-gray-200 pt-6">
             {post.commentsList &&
               post.commentsList.map((comment) => (
-                <div key={comment.id} className="flex gap-3 mb-4">
-                  <img
-                    src={comment.author.avatar || "/placeholder.svg"}
-                    alt={comment.author.name}
-                    className="w-8 h-8 rounded-full object-cover flex-shrink-0"
-                  />
-                  <div className="flex-1">
-                    <h4 className="font-medium text-gray-900 text-sm mb-1">
+                <div key={comment.id} className="flex flex-col mb-4">
+                  <div className="flex items-center gap-3">
+                    <figure className="size-12 rounded-full overflow-hidden shrink-0">
+                      <img
+                        src={comment.author.avatar || "/placeholder.svg"}
+                        alt={comment.author.name}
+                        className="size-full object-cover object-center"
+                      />
+                    </figure>
+                    <h4 className="font-medium text-gray-900 text-lg">
                       {comment.author.name}
                     </h4>
-                    <p className="text-gray-700 text-sm">{comment.content}</p>
                   </div>
+                  <p className="text-[#716F6E] pl-[60px]">{comment.content}</p>
                 </div>
               ))}
 
-            {/* Comment Input */}
-            <div className="flex items-center gap-3 mt-6">
-              <div className="flex-1 relative">
-                <input
-                  type="text"
-                  placeholder="Leave a kind comment..."
-                  value={commentText}
-                  onChange={(e) => setCommentText(e.target.value)}
-                  className="w-full px-4 py-3 bg-white rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-200 focus:border-pink-300"
-                />
-                <button className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                  <Send className="w-5 h-5 text-pink-400" />
-                </button>
-              </div>
+            <div className="mt-6">
+              <Form {...form}>
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="space-y-8"
+                >
+                  <FormField
+                    control={form.control}
+                    name="comment"
+                    render={({ field }) => (
+                      <FormItem>
+                        <div className="relative">
+                          <FormControl>
+                            <Input
+                              placeholder="Leave a kind comment..."
+                              className="pl-7 pr-16 py-4.5 h-auto rounded-full bg-[#FBF7F0]"
+                              {...field}
+                            />
+                          </FormControl>
+                          <button
+                            type="submit"
+                            className="absolute right-5 top-1/2 -translate-y-1/2 cursor-pointer"
+                          >
+                            <ForwardMailIcon className="size-7" />
+                          </button>
+                        </div>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </form>
+              </Form>
+
+              <p className="text-sm text-[#8D8888] text-center mt-4">
+                Your comment will be shared after review to keep this space safe
+                and kind.
+              </p>
             </div>
-            <p className="text-xs text-gray-500 mt-2 text-center">
-              Your message will be shared after review to keep this space safe
-              and kind.
-            </p>
           </div>
         )}
       </div>

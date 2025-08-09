@@ -2,28 +2,16 @@ import React from "react";
 import { Button } from "../ui/button";
 import { FilterIcon, PlusIcon } from "@/assets/icons/icons";
 import Post from "../cards/Post";
+import Pagination from "../shared/Pagination";
 
 const ReflectionsPosts = () => {
   const posts = [
     {
-      id: 1,
-      type: "simple",
-      author: {
-        name: "Admin",
-        avatar: "/placeholder.svg?height=40&width=40",
-      },
-      timestamp: "Posted 2 hours ago",
-      title: "Unexpected medical expenses",
-      content:
-        "My daughter was recently diagnosed with a rare condition that requires specialized treatment. Our insurance covers some, but we're facing significant out-of-pocket expenses that we hadn't prepared for. Any support or guidance would mean the world to us.",
-      likes: 10,
-    },
-    {
       id: 2,
       type: "with_comments",
       author: {
-        name: "Anonymous",
-        avatar: "/placeholder.svg?height=40&width=40",
+        name: "Tony Mcious",
+        avatar: "https://i.ibb.co.com/d018P7Sf/image.png",
       },
       timestamp: "Posted 2 hours ago",
       title: "Unexpected medical expenses",
@@ -31,13 +19,13 @@ const ReflectionsPosts = () => {
         "My daughter was recently diagnosed with a rare condition that requires specialized treatment. Our insurance covers some, but we're facing significant out-of-pocket expenses that we hadn't prepared for. Any support or guidance would mean the world to us.",
       likes: 10,
       comments: 10,
-      tag: "Heart Wall #1",
+      tag: "1",
       commentsList: [
         {
           id: 1,
           author: {
             name: "Ciara C",
-            avatar: "/placeholder.svg?height=32&width=32",
+            avatar: "https://i.ibb.co.com/Pr9hpG0/paris2.png",
           },
           content:
             "My daughter was recently diagnosed with a rare condition that requires specialized treatment. Our insurance covers some",
@@ -46,7 +34,7 @@ const ReflectionsPosts = () => {
           id: 2,
           author: {
             name: "Ciara C",
-            avatar: "/placeholder.svg?height=32&width=32",
+            avatar: "https://i.ibb.co.com/Lg0HdnS/doctor-profile.png",
           },
           content:
             "My daughter was recently diagnosed with a rare condition that requires specialized treatment. Our insurance covers some",
@@ -54,24 +42,11 @@ const ReflectionsPosts = () => {
       ],
     },
     {
-      id: 3,
-      type: "simple",
-      author: {
-        name: "Sarah M",
-        avatar: "/placeholder.svg?height=40&width=40",
-      },
-      timestamp: "Posted 4 hours ago",
-      title: "Job loss and financial stress",
-      content:
-        "I was laid off from my job last month and I'm struggling to make ends meet. The job market is tough right now and I'm worried about paying rent next month. Looking for any advice or opportunities.",
-      likes: 15,
-    },
-    {
       id: 4,
       type: "with_comments",
       author: {
         name: "Mike R",
-        avatar: "/placeholder.svg?height=40&width=40",
+        avatar: "https://i.ibb.co.com/fYcPSK0y/profile-2.png",
       },
       timestamp: "Posted 6 hours ago",
       title: "Supporting elderly parents",
@@ -85,7 +60,7 @@ const ReflectionsPosts = () => {
           id: 1,
           author: {
             name: "Lisa K",
-            avatar: "/placeholder.svg?height=32&width=32",
+            avatar: "https://i.ibb.co.com/d018P7Sf/image.png",
           },
           content:
             "I'm going through something similar. Have you looked into local senior care resources?",
@@ -93,24 +68,11 @@ const ReflectionsPosts = () => {
       ],
     },
     {
-      id: 5,
-      type: "simple",
-      author: {
-        name: "Jennifer L",
-        avatar: "/placeholder.svg?height=40&width=40",
-      },
-      timestamp: "Posted 8 hours ago",
-      title: "Student loan debt overwhelming",
-      content:
-        "I graduated two years ago and my student loan payments are crushing me. I can barely afford basic necessities after paying my loans each month. Looking for advice on loan forgiveness programs or budgeting tips.",
-      likes: 22,
-    },
-    {
       id: 6,
       type: "with_comments",
       author: {
         name: "David K",
-        avatar: "/placeholder.svg?height=40&width=40",
+        avatar: "https://i.ibb.co.com/V7XRPhM/image-6-1.png",
       },
       timestamp: "Posted 10 hours ago",
       title: "Small business struggling",
@@ -124,7 +86,7 @@ const ReflectionsPosts = () => {
           id: 1,
           author: {
             name: "Maria S",
-            avatar: "/placeholder.svg?height=32&width=32",
+            avatar: "https://i.ibb.co.com/Pr9hpG0/paris2.png",
           },
           content:
             "Have you applied for any small business relief programs? There might be grants available.",
@@ -133,7 +95,7 @@ const ReflectionsPosts = () => {
           id: 2,
           author: {
             name: "Tom B",
-            avatar: "/placeholder.svg?height=32&width=32",
+            avatar: "https://i.ibb.co.com/V7XRPhM/image-6-1.png",
           },
           content:
             "I know how hard it is. My bakery went through similar struggles. Happy to share what worked for us.",
@@ -141,24 +103,11 @@ const ReflectionsPosts = () => {
       ],
     },
     {
-      id: 7,
-      type: "simple",
-      author: {
-        name: "Rachel P",
-        avatar: "/placeholder.svg?height=40&width=40",
-      },
-      timestamp: "Posted 12 hours ago",
-      title: "Mental health support needed",
-      content:
-        "I've been dealing with anxiety and depression for months now. Therapy is expensive and I can't afford regular sessions. Looking for affordable mental health resources or support groups in the area.",
-      likes: 31,
-    },
-    {
       id: 8,
       type: "with_comments",
       author: {
         name: "Anonymous",
-        avatar: "/placeholder.svg?height=40&width=40",
+        avatar: "",
       },
       timestamp: "Posted 14 hours ago",
       title: "Housing crisis",
@@ -172,7 +121,7 @@ const ReflectionsPosts = () => {
           id: 1,
           author: {
             name: "Alex M",
-            avatar: "/placeholder.svg?height=32&width=32",
+            avatar: "https://i.ibb.co.com/Pr9hpG0/paris2.png",
           },
           content:
             "Check with local housing assistance programs. They might have emergency rental assistance available.",
@@ -180,24 +129,11 @@ const ReflectionsPosts = () => {
       ],
     },
     {
-      id: 9,
-      type: "simple",
-      author: {
-        name: "Carlos V",
-        avatar: "/placeholder.svg?height=40&width=40",
-      },
-      timestamp: "Posted 16 hours ago",
-      title: "Car broke down, can't get to work",
-      content:
-        "My car died and I can't afford to fix it. I need it to get to work and I'm worried about losing my job. Public transportation isn't reliable in my area. Any suggestions for affordable car repair or transportation alternatives?",
-      likes: 14,
-    },
-    {
       id: 10,
       type: "with_comments",
       author: {
         name: "Emma T",
-        avatar: "/placeholder.svg?height=40&width=40",
+        avatar: "https://i.ibb.co.com/Pr9hpG0/paris2.png",
       },
       timestamp: "Posted 18 hours ago",
       title: "Single mom struggling",
@@ -211,7 +147,7 @@ const ReflectionsPosts = () => {
           id: 1,
           author: {
             name: "Sophie R",
-            avatar: "/placeholder.svg?height=32&width=32",
+            avatar: "https://i.ibb.co.com/V7XRPhM/image-6-1.png",
           },
           content:
             "There are some great single parent support groups in the area. I can share some resources with you.",
@@ -220,7 +156,7 @@ const ReflectionsPosts = () => {
           id: 2,
           author: {
             name: "Hannah L",
-            avatar: "/placeholder.svg?height=32&width=32",
+            avatar: "https://i.ibb.co.com/fYcPSK0y/profile-2.png",
           },
           content:
             "I've been there. It gets better. Have you looked into childcare assistance programs?",
@@ -245,11 +181,11 @@ const ReflectionsPosts = () => {
         </div>
       </div>
       <div className="flex flex-col gap-6">
-        {/* {posts.map((item, index) => (
+        {posts.map((item, index) => (
           <Post key={index} post={item} />
-        ))} */}
-        <h2 className="text-2xl font-semibold text-center">Reflections Posts Here</h2>
+        ))}
       </div>
+      <Pagination />
     </div>
   );
 };
