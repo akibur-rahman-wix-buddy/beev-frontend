@@ -166,7 +166,7 @@ const ReflectionsPosts = () => {
   ];
 
   return (
-    <div className="space-y-8 pb-40">
+    <div className="space-y-8">
       <div className="flex items-center justify-between">
         <h2 className="text-3xl font-semibold">Posts</h2>
         <div className="flex gap-2">

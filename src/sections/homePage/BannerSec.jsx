@@ -33,10 +33,10 @@ const BannerSec = () => {
           <p>Here, support isn’t loud. It’s soft. It’s kind. It’s real.</p>
           <div className="flex gap-5">
             <Button className="py-4 px-10" variant="secondary" asChild>
-              <Link to="/login">I Have a Need</Link>
+              <Link to="/have-a-need">I Have a Need</Link>
             </Button>
             <Button className="py-4 px-10" asChild>
-              <Link to="/register">I Want to Help</Link>
+              <Link to="/have-a-need">I Want to Help</Link>
             </Button>
           </div>
         </div>

@@ -19,10 +19,10 @@ const TheHeartWallPage = () => {
       <Breadcrumb
         breadcrumbs={[
           { label: "Home", href: "/" },
-          { label: "The Heart Wall", href: "/help/now" },
+          { label: "The Heart Wall", href: "#" },
         ]}
       />
-      <section className="mt-8 space-y-14">
+      <section className="pt-10 space-y-14 pb-20">
         <TabsComponent
           tabs={tabs}
           defaultTab={0}

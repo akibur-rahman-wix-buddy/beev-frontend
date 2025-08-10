@@ -24,7 +24,7 @@ const BehindMissionSec = ({ className }) => {
       image: card3,
       title: "A community that remembers each other in quiet moments of need",
       description:
-        "One Heart Society is more than a support platform. It’s a sanctuary for emotional and practical care. We provide a safe, non-judgmental space for human connection.",
+        "One Heart Society is a haven for care and connection. We offer emotional and practical support in a safe, compassionate space where every person is met with dignity and respect.",
     },
   ];
 
