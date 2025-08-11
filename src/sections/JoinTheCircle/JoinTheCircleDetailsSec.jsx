@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 const JoinTheCircleDetailsSec = ({ className }) => {
   return (
     <section className={cn("py-20 relative", className)}>
-      <Container className="flex items-center gap-16 relative z-10">
+      <Container className="flex items-start gap-16 relative z-10">
         <div className="flex-[55%] text-lg">
           <SectionTitle className="mb-9">Join The Circle</SectionTitle>
           <div className="space-y-10 max-w-[620px]">

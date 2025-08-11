@@ -22,14 +22,8 @@ const Footer = () => {
   ];
 
   return (
-    <footer
-      className="relative text-white"
-      style={{
-        background:
-          "linear-gradient(0deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0.10) 100%), rgba(112, 191, 164, 0.65)",
-      }}
-    >
-      <div className="">
+    <footer className="relative text-white">
+      <div className="relative z-10">
         <Container as="section" className="flex gap-10 pt-12 pb-16">
           <div className="w-full max-w-[400px]">
             <Logo className="h-24 mb-12" />
@@ -93,12 +87,19 @@ const Footer = () => {
         </Container>
       </div>
 
-      <figure className="absolute inset-0 overflow-hidden -z-10">
+      <figure className="absolute inset-0 overflow-hidden">
         <img
           src={bg}
           alt=""
           className="w-full h-full object-cover object-center"
         />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(0deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0.10) 100%), rgba(112, 191, 164, 0.65)",
+          }}
+        ></div>
       </figure>
     </footer>
   );

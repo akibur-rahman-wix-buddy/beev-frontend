@@ -15,7 +15,7 @@ const TheHeartWallPage = () => {
   };
 
   return (
-    <Container as="section" className="pt-28">
+    <Container as="section" className="pt-5">
       <Breadcrumb
         breadcrumbs={[
           { label: "Home", url: "/" },

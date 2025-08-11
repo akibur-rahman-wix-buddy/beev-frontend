@@ -6,6 +6,7 @@ import Home from "@/pages/home/Home";
 import TheHeartWallPage from "@/pages/public/TheHeartWallPage";
 import HaveANeedPage from "@/pages/public/HaveANeedPage";
 import JoinTheCirclePage from "@/pages/public/JoinTheCirclePage";
+import OurMissionPage from "@/pages/public/OurMissionPage";
 
 export const routes = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ export const routes = createBrowserRouter([
       {
         path: "/join-the-circle",
         element: <JoinTheCirclePage />,
+      },
+      {
+        path: "/our-mission",
+        element: <OurMissionPage />,
       },
     ],
   },

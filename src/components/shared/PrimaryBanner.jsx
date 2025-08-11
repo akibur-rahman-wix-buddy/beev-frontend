@@ -8,18 +8,20 @@ const PrimaryBanner = ({ bgImg, breadcrumbs, title, subTitle }) => {
   return (
     <div className="text-white relative">
       <Container as="section" className="relative z-10">
-        <div className="relative py-32">
+        <div className="relative">
           <BreadcrumbTransparent
             breadcrumbs={breadcrumbs}
             className="absolute top-10 left-0"
           />
-          <SectionTitle
-            className="space-y-4 mb-0"
-            description={subTitle}
-            center
-          >
-            {title}
-          </SectionTitle>
+          <div className="min-h-[400px] flex items-center justify-center">
+            <SectionTitle
+              className="space-y-4 mb-0 mx-auto max-w-[950px] py-32"
+              description={subTitle}
+              center
+            >
+              {title}
+            </SectionTitle>
+          </div>
         </div>
       </Container>
       <figure className="absolute inset-0 overflow-hidden">

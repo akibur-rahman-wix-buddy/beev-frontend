@@ -27,7 +27,7 @@ const Navbar = ({ className, istrue = false, onHomePage = false }) => {
     { name: "The Heart Wall", link: "/the-heart-wall" },
     { name: "One Heart Sanctuary", link: "/services" },
     { name: "Join The Circle", link: "/join-the-circle" },
-    { name: "Our Mission", link: "/contact" },
+    { name: "Our Mission", link: "/our-mission" },
   ];
 
   return (
@@ -49,7 +49,7 @@ const Navbar = ({ className, istrue = false, onHomePage = false }) => {
       >
         <div className="flex-1">
           <Logo
-            className={cn("h-20 transition-all duration-300", {
+            className={cn("h-[70px] transition-all duration-300", {
               "h-[60px]": isScrolled,
             })}
           />
