@@ -15,11 +15,11 @@ const TheHeartWallPage = () => {
   };
 
   return (
-    <Container as="section" className="pt-36">
+    <Container as="section" className="pt-28">
       <Breadcrumb
         breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "The Heart Wall", href: "#" },
+          { label: "Home", url: "/" },
+          { label: "The Heart Wall", url: "#" },
         ]}
       />
       <section className="pt-10 space-y-14 pb-20">

@@ -5,6 +5,7 @@ import MainLayout from "@/layouts/MainLayout";
 import Home from "@/pages/home/Home";
 import TheHeartWallPage from "@/pages/public/TheHeartWallPage";
 import HaveANeedPage from "@/pages/public/HaveANeedPage";
+import JoinTheCirclePage from "@/pages/public/JoinTheCirclePage";
 
 export const routes = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ export const routes = createBrowserRouter([
       {
         path: "/have-a-need",
         element: <HaveANeedPage />,
+      },
+      {
+        path: "/join-the-circle",
+        element: <JoinTheCirclePage />,
       },
     ],
   },
