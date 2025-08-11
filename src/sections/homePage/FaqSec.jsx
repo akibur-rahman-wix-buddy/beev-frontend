@@ -15,32 +15,32 @@ const FaqSec = ({ className }) => {
     {
       question: "What is One Heart Society?",
       answer:
-        "One Heart Society is a kindness-based care circle where people can ask for help with small but meaningful needs and where others give from the heart. It’s a space rooted in dignity, honesty, and connection ran by real people who care.",
+        "One Heart Society is a platform for compassionate support. We share meaningful needs and invite supporters to contribute toward these needs through our community space. Although we’re not a charity or peer-to-peer service but we provide a managed, heart-centered platform experience that connects support where it’s needed while maintaining privacy and dignity.",
     },
     {
       question: "Who can ask for help?",
       answer:
-        "Anyone in need can ask for help. Our community is open to all individuals seeking support, regardless of their background or circumstances.",
+        "AAnyone who needs to be seen, heard, or held with care. We believe in whole-person support, not just meeting needs, but tending to the heart through gentle encouragement and emotional presence. It’s how we begin to restore sincerity, belonging, and trust in one another in the world.",
     },
     {
       question: "How do I ask for help?",
       answer:
-        "To ask for help, simply reach out to our community through our website or social media channels. You can describe your needs, and our members will respond with support and resources.",
+        "Submit your need through our private form. Every request is reviewed with an open heart. Some may be featured anonymously to offer supporters a clearer picture of where help is needed. Many other needs remain unseen, but all are held with the same care and fulfilled as support becomes available.",
     },
     {
       question: "How much help can I ask for?",
       answer:
-        "There is no set limit to the help you can ask for. We encourage you to reach out with any needs, big or small, and our community will do its best to support you.",
+        "At this time, requests are limited to a maximum of $100. This helps us stretch the available support and care for more people. As we grow and build steady monthly backing, we hope to increase this amount in the future and say yes to more needs.",
     },
     {
       question: "How can I give?",
       answer:
-        "You can give by donating resources, time, or skills to those in need within our community. Whether it’s providing financial support, volunteering your time, or sharing your expertise, every contribution makes a difference.",
+        "You’re welcome to offer a one-time contribution or become a monthly supporter. All contributions flow through the platform and are directed thoughtfully toward the care we hold space for.",
     },
     {
       question: "How is the money used?",
       answer:
-        "Donations to One Heart Society are used directly to support individuals in need within our community. This includes funding for essential resources, services, and initiatives that promote kindness and connection.",
+        "Each contribution supports the platform’s mission of quiet, dignified care. A portion goes toward maintaining this safe space, reviewing needs, and responding to private requests that aren’t shared publicly. The rest is distributed to thoughtfully reviewed needs through our internal process.",
     },
   ];
 
