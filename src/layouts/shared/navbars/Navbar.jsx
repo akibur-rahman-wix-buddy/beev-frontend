@@ -56,16 +56,19 @@ const Navbar = ({ className, istrue = false, onHomePage = false }) => {
         </div>
 
         <div className="grow flex justify-center">
-          <ul className="flex space-x-12">
+          <ul className="flex space-x-6">
             {pages.map((page, index) => (
               <li key={index}>
                 <NavLink
                   to={page.link}
                   className={({ isActive }) =>
-                    cn("font-medium transition-colors text-textPrimary", {
-                      "text-white": onHomePage && !isScrolled,
-                      "text-primary": isActive,
-                    })
+                    cn(
+                      "relative font-medium transition-all duration-300 ease-in-out text-textPrimary after:content-[''] after:absolute after:-bottom-2.5 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-current after:transition-all after:duration-500 hover:after:w-full px-3",
+                      {
+                        "text-white": onHomePage && !isScrolled,
+                        "text-primary": isActive,
+                      }
+                    )
                   }
                 >
                   {page.name}
@@ -79,7 +82,7 @@ const Navbar = ({ className, istrue = false, onHomePage = false }) => {
           <Button
             variant="ghost"
             className={cn(
-              "transition-colors py-3.5 px-6 text-textPrimary hover:bg-primary hover:text-white",
+              "transition-colors duration-300 ease-in-out py-3.5 px-6 text-textPrimary hover:bg-primary hover:text-white",
               {
                 "text-white hover:bg-primary hover:text-white":
                   onHomePage && !isScrolled,
@@ -91,7 +94,7 @@ const Navbar = ({ className, istrue = false, onHomePage = false }) => {
           </Button>
           <Button
             className={cn(
-              "transition-colors py-3.5 px-6 bg-primary text-white hover:bg-primary",
+              "transition-colors duration-300 ease-in-out py-3.5 px-6 bg-primary text-white hover:bg-primary",
               {
                 "bg-white text-accent-foreground hover:bg-primary hover:text-white":
                   onHomePage && !isScrolled,
