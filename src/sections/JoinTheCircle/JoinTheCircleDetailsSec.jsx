@@ -3,11 +3,14 @@ import SectionTitle from "@/components/shared/SectionTitle";
 import React from "react";
 import joinCircle from "@/assets/images/join-circle.png";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { FaInstagram } from "react-icons/fa";
+import { Link } from "react-router";
 
 const JoinTheCircleDetailsSec = ({ className }) => {
   return (
     <section className={cn("py-20 relative", className)}>
-      <Container className="flex items-start gap-16 relative z-10">
+      <Container className="flex items-center gap-16 relative z-10">
         <div className="flex-[55%] text-lg">
           <SectionTitle className="mb-9">Join The Circle</SectionTitle>
           <div className="space-y-7 max-w-[620px]">
@@ -28,6 +31,12 @@ const JoinTheCircleDetailsSec = ({ className }) => {
               Together, we create a space where even in the hardest moments,
               kindness can still be found.
             </p>
+            <Button asChild>
+              <Link to="#">
+                <FaInstagram className="size-6" />
+                Follow Us On Instagram
+              </Link>
+            </Button>
           </div>
         </div>
         <figure className="flex-[45%] rounded-xl overflow-hidden">
