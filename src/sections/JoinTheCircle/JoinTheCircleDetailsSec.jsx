@@ -10,16 +10,23 @@ const JoinTheCircleDetailsSec = ({ className }) => {
       <Container className="flex items-start gap-16 relative z-10">
         <div className="flex-[55%] text-lg">
           <SectionTitle className="mb-9">Join The Circle</SectionTitle>
-          <div className="space-y-10 max-w-[620px]">
+          <div className="space-y-7 max-w-[620px]">
             <p>
-              Every day, someone lands in this space holding something heavy.
-              Grief. Shame. Overwhelm. Financial strain. Emotional collapse.
-              Some of them are quietly falling apart. Some just need to know
-              they’re not alone.
+              Every day, someone arrives here carrying something heavy - grief,
+              shame, overwhelm, financial strain, or emotional collapse. Some
+              are quietly falling apart. Others just need to know they are not
+              alone.
+            </p>
+            <p>The Circle turns compassion into action.</p>
+            <p>
+              Your presence helps us meet delicate needs with care, create
+              moments of genuine connection, and remind people that they matter.
+              When you Join the Circle, you become part of a living network of
+              hearts committed to looking out for one another.
             </p>
             <p>
-              When you Join the Circle, you become part of how we care for one
-              another.
+              Together, we create a space where even in the hardest moments,
+              kindness can still be found.
             </p>
           </div>
         </div>
