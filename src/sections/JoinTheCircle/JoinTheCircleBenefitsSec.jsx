@@ -5,12 +5,13 @@ import { DocumentsIcon, LoveIcon2, MsgLifterIcon } from "@/assets/icons/icons";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router";
 import { ArrowRight } from "lucide-react";
+import parse from 'html-react-parser';
 
 const JoinTheCircleBenefitsSec = ({ className }) => {
   const cardsData = [
     {
       icon: DocumentsIcon,
-      title: "Quietly Ask for Help",
+      title: "Witness & Supporter",
       description:
         "Spread the Word & Support. Even the smallest actions can ripple far.",
       points: [
@@ -21,7 +22,7 @@ const JoinTheCircleBenefitsSec = ({ className }) => {
     },
     {
       icon: LoveIcon2,
-      title: "We Review and Prioritize",
+      title: "Extend Private Care",
       description: "Sometimes, the most urgent needs aren’t shared publicly.",
       points: [
         "Help provide food, essentials, or safe transport",
@@ -31,10 +32,10 @@ const JoinTheCircleBenefitsSec = ({ className }) => {
     },
     {
       icon: MsgLifterIcon,
-      title: "Supporters Give with Heart",
+      title: "Message Lifter",
       description: "Share words of encouragement, hope, or healing.",
       points: [
-        "Leave a kind note on The Heart Wall",
+        "Leave a kind note on <b>The Heart Wall</b>",
         "Send birthday messages or affirmations to someone going through a hard time",
         "Share your story to inspire others",
       ],
@@ -84,7 +85,7 @@ const Card = ({
         <ul className="list-disc pl-5 space-y-3">
           {points.map((point, index) => (
             <li key={index} className="text-[18px]">
-              {point}
+              {parse(point)}
             </li>
           ))}
         </ul>

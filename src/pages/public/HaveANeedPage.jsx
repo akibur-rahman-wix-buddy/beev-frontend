@@ -300,7 +300,10 @@ const HaveANeedPage = () => {
           </div>
         </div>
       </section>
-      <HaveNeedDialog open={isHaveNeedDialogOpen} onOpenChange={setIsHaveNeedDialogOpen} />
+      <HaveNeedDialog
+        open={isHaveNeedDialogOpen}
+        onOpenChange={setIsHaveNeedDialogOpen}
+      />
     </Container>
   );
 };
