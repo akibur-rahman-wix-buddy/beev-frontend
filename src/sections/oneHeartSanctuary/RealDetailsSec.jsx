@@ -33,7 +33,7 @@ const RealDetailsSec = ({ className }) => {
           <SectionTitle center>
             Real people. Real hearts. Real compassion.
           </SectionTitle>
-          <div className="grid grid-cols-3 gap-5">
+          <div className="grid grid-cols-3 gap-8">
             {cardsData.map((card, index) => (
               <Card
                 key={index}
