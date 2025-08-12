@@ -42,8 +42,8 @@ const JustPresenceSec = ({ className }) => {
         </figure>
       </Container>
       <div className="absolute inset-0 flex">
-        <div className="left flex-[calc(50%+350px)]"></div>
-        <div className="right flex-[calc(50%-500px)] bg-[#F3EDE5] rounded-l-2xl"></div>
+        <div className="left flex-[calc(50%+450px)]"></div>
+        <div className="right flex-[calc(50%-450px)] bg-[#F3EDE5] rounded-l-2xl"></div>
       </div>
     </section>
   );

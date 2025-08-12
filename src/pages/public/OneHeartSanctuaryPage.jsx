@@ -1,3 +1,4 @@
+import CtaSec from "@/sections/oneHeartSanctuary/CtaSec";
 import InsidetheSanctuarySec from "@/sections/oneHeartSanctuary/InsidetheSanctuarySec";
 import JustPresenceSec from "@/sections/oneHeartSanctuary/JustPresenceSec";
 import MeetOurAICompanionSec from "@/sections/oneHeartSanctuary/MeetOurAICompanionSec";
@@ -13,6 +14,7 @@ const OneHeartSanctuaryPage = () => {
       <MeetOurAICompanionSec className="my-20" />
       <InsidetheSanctuarySec className="my-20" />
       <JustPresenceSec className="my-20" />
+      <CtaSec className="my-20" />
     </section>
   );
 };

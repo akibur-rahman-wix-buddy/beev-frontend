@@ -8,8 +8,15 @@ import { CorrectIcon } from "@/assets/icons/icons";
 const MeetOurAICompanionSec = ({ className }) => {
   return (
     <section className={cn("py-16 relative", className)}>
-      <Container className="flex items-center gap-60 relative z-10">
-        <div className="flex-[55%] text-[17px]">
+      <Container className="flex items-center gap-32 relative z-10">
+        <figure className="flex-[40%] rounded-xl overflow-hidden">
+          <img
+            src={meetOurAICompanionImg}
+            alt=""
+            className="h-full w-full object-cover object-center"
+          />
+        </figure>
+        <div className="flex-[60%] text-[17px]">
           <SectionTitle className="mb-6">
             When Pain Comes at 2AM - Meet Our AI Companion
           </SectionTitle>
@@ -34,17 +41,10 @@ const MeetOurAICompanionSec = ({ className }) => {
             </div>
           </div>
         </div>
-        <figure className="flex-[45%] rounded-xl overflow-hidden">
-          <img
-            src={meetOurAICompanionImg}
-            alt=""
-            className="h-full w-full object-cover object-center"
-          />
-        </figure>
       </Container>
       <div className="absolute inset-0 flex">
-        <div className="left flex-[calc(50%+350px)]"></div>
-        <div className="right flex-[calc(50%-500px)] bg-[#F3EDE5] rounded-l-2xl"></div>
+        <div className="right flex-[calc(50%-450px)] bg-[#F3EDE5] rounded-r-2xl"></div>
+        <div className="left flex-[calc(50%+450px)]"></div>
       </div>
     </section>
   );
