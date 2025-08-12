@@ -7,6 +7,9 @@ import TheHeartWallPage from "@/pages/public/TheHeartWallPage";
 import HaveANeedPage from "@/pages/public/HaveANeedPage";
 import JoinTheCirclePage from "@/pages/public/JoinTheCirclePage";
 import OurMissionPage from "@/pages/public/OurMissionPage";
+import PrivacyPolicyPage from "@/pages/public/PrivacyPolicyPage";
+import TermsConditionsPage from "@/pages/public/TermsConditionsPage";
+import OneHeartSanctuaryPage from "@/pages/public/OneHeartSanctuaryPage";
 
 export const routes = createBrowserRouter([
   {
@@ -33,6 +36,22 @@ export const routes = createBrowserRouter([
       {
         path: "/our-mission",
         element: <OurMissionPage />,
+      },
+      {
+        path: "/one-heart-sanctuary",
+        element: <OneHeartSanctuaryPage />,
+      },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicyPage />,
+      },
+      {
+        path: "/terms-conditions",
+        element: <TermsConditionsPage />,
+      },
+      {
+        path: "/contact-us",
+        // element: <ContactUsPage />,
       },
     ],
   },

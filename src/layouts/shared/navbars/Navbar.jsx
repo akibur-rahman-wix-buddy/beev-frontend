@@ -25,7 +25,7 @@ const Navbar = ({ className, istrue = false, onHomePage = false }) => {
   const pages = [
     { name: "Home", link: "/" },
     { name: "The Heart Wall", link: "/the-heart-wall" },
-    { name: "One Heart Sanctuary", link: "/services" },
+    { name: "One Heart Sanctuary", link: "/one-heart-sanctuary" },
     { name: "Join The Circle", link: "/join-the-circle" },
     { name: "Our Mission", link: "/our-mission" },
   ];

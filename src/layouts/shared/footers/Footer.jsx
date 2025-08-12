@@ -17,8 +17,8 @@ const Footer = () => {
 
   const supportPages = [
     { name: "Privacy Policy", link: "/privacy-policy" },
-    { name: "Terms & Conditions", link: "/terms-of-service" },
-    { name: "Contact Us", link: "/contact" },
+    { name: "Terms & Conditions", link: "/terms-conditions" },
+    { name: "Contact Us", link: "/contact-us" },
   ];
 
   return (
