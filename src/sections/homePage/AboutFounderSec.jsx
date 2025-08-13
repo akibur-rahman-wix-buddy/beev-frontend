@@ -46,7 +46,7 @@ const AboutFounderSec = ({ className }) => {
           </p>
           <p className="font-medium text-textPrimary">
             One Heart Society is here to say: You’re not alone. You are worthy
-            of care. We are always with you.
+            of care. Always.
           </p>
         </div>
       </Container>
