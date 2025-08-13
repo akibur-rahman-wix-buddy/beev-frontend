@@ -10,6 +10,8 @@ import OurMissionPage from "@/pages/public/OurMissionPage";
 import PrivacyPolicyPage from "@/pages/public/PrivacyPolicyPage";
 import TermsConditionsPage from "@/pages/public/TermsConditionsPage";
 import OneHeartSanctuaryPage from "@/pages/public/OneHeartSanctuaryPage";
+import WantToHelp from "@/pages/public/WantToHelp";
+import ImpactOfYourSupportPage from "@/pages/public/ImpactOfYourSupportPage";
 
 export const routes = createBrowserRouter([
   {
@@ -28,6 +30,14 @@ export const routes = createBrowserRouter([
       {
         path: "/have-a-need",
         element: <HaveANeedPage />,
+      },
+      {
+        path: "/want-to-help",
+        element: <WantToHelp />,
+      },
+      {
+        path: "/impact-of-your-support",
+        element: <ImpactOfYourSupportPage />,
       },
       {
         path: "/join-the-circle",

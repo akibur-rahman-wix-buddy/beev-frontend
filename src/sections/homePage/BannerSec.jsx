@@ -36,7 +36,7 @@ const BannerSec = () => {
               <Link to="/have-a-need">I Have a Need</Link>
             </Button>
             <Button className="py-4 px-10" asChild>
-              <Link to="/have-a-need">I Want to Help</Link>
+              <Link to="/want-to-help">I Want to Help</Link>
             </Button>
           </div>
         </div>

@@ -311,13 +311,13 @@ const HaveANeedPage = () => {
                               Cash App
                             </FormLabel>
                           </FormItem>
-                          {/* {field.value === "Cash App" && ( */}
+                          {field.value === "Cash App" && (
                             <FormField
                               control={form.control}
                               name="supportCashAppHandle"
                               render={({ field }) => (
                                 <FormItem>
-                                  <FormLabel className="text-lg font-medium">
+                                  <FormLabel className="text-[15px] font-medium">
                                     Enter Your Cash App Handle{" "}
                                     <span className="">*</span>
                                   </FormLabel>
@@ -333,7 +333,7 @@ const HaveANeedPage = () => {
                                 </FormItem>
                               )}
                             />
-                          {/* // )} */}
+                          )}
 
                           {/* PayPal Option */}
                           <FormItem className="flex items-center gap-3">
@@ -344,13 +344,13 @@ const HaveANeedPage = () => {
                               PayPal
                             </FormLabel>
                           </FormItem>
-                          {/* {field.value === "PayPal" && ( */}
+                          {field.value === "PayPal" && (
                             <FormField
                               control={form.control}
                               name="supportPayPalHandle"
                               render={({ field }) => (
                                 <FormItem>
-                                  <FormLabel className="text-lg font-medium">
+                                  <FormLabel className="text-[15px] font-medium">
                                     Enter Your PayPal Email Address{" "}
                                     <span className="">*</span>
                                   </FormLabel>
@@ -366,10 +366,10 @@ const HaveANeedPage = () => {
                                 </FormItem>
                               )}
                             />
-                          {/* )} */}
+                          )}
                         </RadioGroup>
                       </FormControl>
-                      <FormMessage /> {/* For supportMethod errors */}
+                      <FormMessage />
                     </FormItem>
                   )}
                 />
