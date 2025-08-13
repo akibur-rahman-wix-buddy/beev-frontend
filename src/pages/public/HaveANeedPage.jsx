@@ -20,26 +20,56 @@ import { BiDollar } from "react-icons/bi";
 import HaveNeedDialog from "@/components/dialog/HaveNeedDialog";
 import { useState } from "react";
 
-const formSchema = z.object({
-  name: z.string().min(1, "Name is required"),
-  email: z
-    .string()
-    .min(1, "Email is required")
-    .email({ message: "Please enter a valid email address" }),
-  typeOfSupport: z.string().min(1, "Please select a type of support"),
-  descriptionAboutYourNeed: z
-    .string()
-    .min(1, "Please tell us more about your need"),
-  howCanWeSupportYou: z.string().optional(),
-  amountOfSupport: z
-    .string()
-    .min(1, "Amount is required")
-    .refine((val) => {
-      const num = parseFloat(val);
-      return !isNaN(num) && num > 0 && num <= 100;
-    }, "Please enter a valid amount between $1 and $100"),
-  supportMethod: z.string().min(1, "Please select a support method"),
-});
+const formSchema = z
+  .object({
+    name: z.string().min(1, "Name is required"),
+    email: z
+      .string()
+      .min(1, "Email is required")
+      .pipe(z.email("Please enter a valid email address")),
+    typeOfSupport: z.string().min(1, "Please select a type of support"),
+    descriptionAboutYourNeed: z
+      .string()
+      .min(1, "Please tell us more about your need"),
+    howCanWeSupportYou: z.string().optional(),
+    amountOfSupport: z
+      .string()
+      .min(1, "Amount is required")
+      .refine((val) => {
+        const num = parseFloat(val);
+        return !isNaN(num) && num > 0 && num <= 100;
+      }, "Please enter a valid amount between $1 and $100"),
+    supportMethod: z.string().min(1, "Please select a support method"),
+    supportCashAppHandle: z.string().optional(),
+    supportPayPalHandle: z.string().optional(),
+  })
+  .superRefine((data, ctx) => {
+    // Cash App validation
+    if (data.supportMethod === "Cash App" && !data.supportCashAppHandle) {
+      ctx.addIssue({
+        path: ["supportCashAppHandle"], // ✅ attaches error to this field
+        message: "Cash App handle is required",
+        code: "custom",
+      });
+    }
+
+    // PayPal validation
+    if (data.supportMethod === "PayPal") {
+      if (!data.supportPayPalHandle) {
+        ctx.addIssue({
+          path: ["supportPayPalHandle"],
+          message: "PayPal email address is required",
+          code: "custom",
+        });
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.supportPayPalHandle)) {
+        ctx.addIssue({
+          path: ["supportPayPalHandle"],
+          message: "Please enter a valid PayPal email address",
+          code: "custom",
+        });
+      }
+    }
+  });
 
 const HaveANeedPage = () => {
   const [isHaveNeedDialogOpen, setIsHaveNeedDialogOpen] = useState(false);
@@ -49,11 +79,13 @@ const HaveANeedPage = () => {
     defaultValues: {
       name: "",
       email: "",
-      typeOfSupport: "",
+      typeOfSupport: "Financial",
       descriptionAboutYourNeed: "",
       howCanWeSupportYou: "",
       amountOfSupport: "",
       supportMethod: "",
+      supportCashAppHandle: "",
+      supportPayPalHandle: "",
     },
   });
 
@@ -70,7 +102,7 @@ const HaveANeedPage = () => {
         ]}
       />
       <section className="pt-10 space-y-10 pb-20">
-        <div className="text-center pt-10">
+        <div className="text-center">
           <h2 className="text-4xl font-semibold mb-5">
             What’s Weighing on Your Heart Right Now?
           </h2>
@@ -241,16 +273,16 @@ const HaveANeedPage = () => {
                         How much support are you requesting?{" "}
                         <span className="">*</span>
                       </FormLabel>
-                      <FormControl>
-                        <div className="relative">
+                      <div className="relative">
+                        <FormControl>
                           <Input
                             placeholder="Enter amount (max $100)"
                             className="bg-[#FBF7F0] px-6 py-4 pl-12 h-[60px] rounded-[10px] !text-base"
                             {...field}
                           />
-                          <BiDollar className="absolute size-6 left-4 top-1/2 transform -translate-y-1/2" />
-                        </div>
-                      </FormControl>
+                        </FormControl>
+                        <BiDollar className="absolute size-6 left-4 top-1/2 transform -translate-y-1/2" />
+                      </div>
                       <FormMessage />
                     </FormItem>
                   )}
@@ -270,6 +302,7 @@ const HaveANeedPage = () => {
                           defaultValue={field.value}
                           className="flex flex-col gap-5 bg-[#FBF7F0] p-8 rounded-lg"
                         >
+                          {/* Cash App Option */}
                           <FormItem className="flex items-center gap-3">
                             <FormControl>
                               <RadioGroupItem value="Cash App" />
@@ -278,6 +311,31 @@ const HaveANeedPage = () => {
                               Cash App
                             </FormLabel>
                           </FormItem>
+                          {/* {field.value === "Cash App" && ( */}
+                            <FormField
+                              control={form.control}
+                              name="supportCashAppHandle"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel className="text-lg font-medium">
+                                    Enter Your Cash App Handle{" "}
+                                    <span className="">*</span>
+                                  </FormLabel>
+                                  <FormControl>
+                                    <Input
+                                      placeholder="Enter handle"
+                                      className="bg-[#F3EDE5] border-[#F3EDE5] px-6 py-4 h-[60px] rounded-[10px] !text-base"
+                                      {...field}
+                                    />
+                                  </FormControl>
+                                  <FormMessage />{" "}
+                                  {/* ✅ Shows error under input */}
+                                </FormItem>
+                              )}
+                            />
+                          {/* // )} */}
+
+                          {/* PayPal Option */}
                           <FormItem className="flex items-center gap-3">
                             <FormControl>
                               <RadioGroupItem value="PayPal" />
@@ -286,12 +344,36 @@ const HaveANeedPage = () => {
                               PayPal
                             </FormLabel>
                           </FormItem>
+                          {/* {field.value === "PayPal" && ( */}
+                            <FormField
+                              control={form.control}
+                              name="supportPayPalHandle"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel className="text-lg font-medium">
+                                    Enter Your PayPal Email Address{" "}
+                                    <span className="">*</span>
+                                  </FormLabel>
+                                  <FormControl>
+                                    <Input
+                                      placeholder="Enter email"
+                                      className="bg-[#F3EDE5] border-[#F3EDE5] px-6 py-4 h-[60px] rounded-[10px] !text-base"
+                                      {...field}
+                                    />
+                                  </FormControl>
+                                  <FormMessage />{" "}
+                                  {/* ✅ Shows error under input */}
+                                </FormItem>
+                              )}
+                            />
+                          {/* )} */}
                         </RadioGroup>
                       </FormControl>
-                      <FormMessage />
+                      <FormMessage /> {/* For supportMethod errors */}
                     </FormItem>
                   )}
                 />
+
                 <Button type="submit" className="w-full">
                   Submit Request
                 </Button>

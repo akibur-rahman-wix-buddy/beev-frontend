@@ -18,7 +18,7 @@ const StaticSupportTypeDetails = () => {
         />
       </div>
       {isDescriptionOpen && (
-        <div className="space-y-5 text-lg">
+        <div className="space-y-6 text-lg">
           <p>
             <span className="text-primary font-semibold">Financial Needs:</span>{" "}
             These are small but meaningful everyday circumstances like help with
