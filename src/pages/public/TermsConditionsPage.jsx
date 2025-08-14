@@ -67,7 +67,7 @@ const TermsConditionsPage = () => {
             <ul className="list-disc pl-5 space-y-0.5">
               <li>
                 You’re welcome to engage with any features that feel supportive
-                to you — including, but not limited to, the One Heart Companion
+                to you - including, but not limited to, the One Heart Companion
                 AI.
               </li>
               <li>

@@ -21,19 +21,19 @@ const HowWorksSec = ({ className }) => {
       icon: CardIcon2,
       title: "We Review and Prioritize",
       description:
-        "Every request is reviewed with care and sincerity. Our team prioritizes based on urgency and emotional or financial need — not popularity. This ensures fair, heart-centered support.",
+        "Every request is reviewed with care and sincerity. Our team prioritizes based on urgency and emotional or financial need - not popularity. This ensures fair, heart-centered support.",
     },
     {
       icon: CardIcon3,
       title: "Supporters Give with Heart",
       description:
-        "Supporters can give once, give monthly, or give in honor of a featured need. Every gift given from the heart brings quiet, meaningful impact.",
+        "Supporters can give once or give monthly. Every gift given from the heart brings quiet, meaningful impact.",
     },
     {
       icon: CardIcon4,
       title: "Gentle Emotional Support",
       description:
-        "One Heart Sanctuary is our private support space offering emotional care for those experiencing grief, anxiety, or overwhelm — so your heart can be held, even when the need isn’t financial.",
+        "One Heart Sanctuary is our private support space offering emotional care for those experiencing grief, anxiety, or overwhelm - so your heart can be held, even when the need isn’t financial.",
     },
   ];
 
