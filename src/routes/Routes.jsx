@@ -3,7 +3,7 @@ import ErrorPage from "@/pages/Error/ErrorPage";
 import NotFoundError from "@/pages/Error/NotFoundError";
 import MainLayout from "@/layouts/MainLayout";
 import Home from "@/pages/home/Home";
-import TheHeartWallPage from "@/pages/public/TheHeartWallPage";
+// import TheHeartWallPage from "@/pages/public/TheHeartWallPage";
 import HaveANeedPage from "@/pages/public/HaveANeedPage";
 import JoinTheCirclePage from "@/pages/public/JoinTheCirclePage";
 import OurMissionPage from "@/pages/public/OurMissionPage";
@@ -13,6 +13,7 @@ import OneHeartSanctuaryPage from "@/pages/public/OneHeartSanctuaryPage";
 import WantToHelp from "@/pages/public/WantToHelp";
 import ImpactOfYourSupportPage from "@/pages/public/ImpactOfYourSupportPage";
 import FaqsPage from "@/pages/public/FaqsPage";
+import ContactUsPage from "@/pages/public/ContactUsPage";
 
 export const routes = createBrowserRouter([
   {

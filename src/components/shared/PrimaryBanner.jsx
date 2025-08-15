@@ -3,8 +3,9 @@ import Container from "./Container";
 import BreadcrumbTransparent from "./BreadcrumbTransparent";
 import { Section } from "lucide-react";
 import SectionTitle from "./SectionTitle";
+import { cn } from "@/lib/utils";
 
-const PrimaryBanner = ({ bgImg, breadcrumbs, title, subTitle }) => {
+const PrimaryBanner = ({ bgImg, breadcrumbs, title, subTitle, onLeft }) => {
   return (
     <div className="text-white relative">
       <Container as="section" className="relative z-10">
@@ -13,9 +14,17 @@ const PrimaryBanner = ({ bgImg, breadcrumbs, title, subTitle }) => {
             breadcrumbs={breadcrumbs}
             className="absolute top-10 left-0"
           />
-          <div className="min-h-[400px] flex items-center justify-center">
+          <div
+            className={cn(
+              "min-h-[400px] flex items-center",
+              onLeft && "max-w-[700px]"
+            )}
+          >
             <SectionTitle
-              className="space-y-4 mb-0 mx-auto max-w-[950px] py-32"
+              className={cn("space-y-4 mb-0 py-32", {
+                "text-left": onLeft,
+                "text-center max-w-[950px] mx-auto": !onLeft,
+              })}
               description={subTitle}
               center
             >

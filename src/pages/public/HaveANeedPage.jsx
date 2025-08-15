@@ -269,9 +269,14 @@ const HaveANeedPage = () => {
                   name="amountOfSupport"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-lg font-medium">
+                      <FormLabel className="text-lg leading-[100%] font-medium inline">
                         How much support are you requesting?{" "}
-                        <span className="">*</span>
+                        <span className="">*</span>{" "}
+                        <span className="text-[13px] text-[#7E7971] font-normal">
+                          (If your request is selected for financial assistance,
+                          support will be provided directly by One Heart Society
+                          as resources allow)
+                        </span>
                       </FormLabel>
                       <div className="relative">
                         <FormControl>
@@ -292,9 +297,14 @@ const HaveANeedPage = () => {
                   name="supportMethod"
                   render={({ field }) => (
                     <FormItem className="space-y-3">
-                      <FormLabel className="text-lg font-medium">
+                      <FormLabel className="text-lg leading-[100%] font-medium inline">
                         If we’re able to respond to your need, what’s the best
-                        way to send support? <span className="">*</span>
+                        way to send support? <span className="">*</span>{" "}
+                        <span className="text-[13px] text-[#7E7971] font-normal">
+                          (Payment details are collected only so we can send
+                          support if we’re able to respond. They are never
+                          shared publicly or with other members)
+                        </span>
                       </FormLabel>
                       <FormControl>
                         <RadioGroup
