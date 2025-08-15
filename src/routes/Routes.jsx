@@ -12,6 +12,7 @@ import TermsConditionsPage from "@/pages/public/TermsConditionsPage";
 import OneHeartSanctuaryPage from "@/pages/public/OneHeartSanctuaryPage";
 import WantToHelp from "@/pages/public/WantToHelp";
 import ImpactOfYourSupportPage from "@/pages/public/ImpactOfYourSupportPage";
+import FaqsPage from "@/pages/public/FaqsPage";
 
 export const routes = createBrowserRouter([
   {
@@ -62,6 +63,10 @@ export const routes = createBrowserRouter([
       {
         path: "/contact-us",
         // element: <ContactUsPage />,
+      },
+      {
+        path: "/faqs",
+        element: <FaqsPage />,
       },
     ],
   },

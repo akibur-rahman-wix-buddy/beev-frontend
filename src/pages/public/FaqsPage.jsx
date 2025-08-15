@@ -7,11 +7,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Link } from "react-router";
+import { Input } from "@/components/ui/input";
 
-const FaqSec = ({ className }) => {
+const FaqsPage = ({ className }) => {
   const faqData = [
     {
       question: "What is One Heart Society?",
@@ -48,11 +47,17 @@ const FaqSec = ({ className }) => {
   return (
     <Container className={cn("", className)}>
       <div className="flex flex-col items-center">
-        <SectionTitle center>Frequently Asked Questions</SectionTitle>
+        <SectionTitle className="my-6" center>
+          Frequently Asked Questions
+        </SectionTitle>
+        <Input
+          placeholder="Search FAQ’s"
+          className="w-full max-w-[950px] px-8 py-5 bg-[#F3EDE5] rounded-full h-auto !text-base mb-10"
+        />
         <Accordion
           type="single"
           collapsible
-          className="w-full space-y-5 mb-9"
+          className="w-full space-y-5 mb-20"
           defaultValue="item-1"
         >
           {faqData.map((faq, index) => (
@@ -64,12 +69,9 @@ const FaqSec = ({ className }) => {
             </AccordionItem>
           ))}
         </Accordion>
-        <Button variant="outline" asChild>
-          <Link to="/faqs">More FAQs</Link>
-        </Button>
       </div>
     </Container>
   );
 };
 
-export default FaqSec;
+export default FaqsPage;
