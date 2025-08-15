@@ -27,7 +27,7 @@ const HowWorksSec = ({ className }) => {
       icon: CardIcon3,
       title: "Supporters Give with Heart",
       description:
-        "Supporters can give once or give monthly. Every gift given from the heart brings quiet, meaningful impact.",
+        "Supporters can give once or monthly. Every gift strengthens our collective impact and helps this circle of care expand, reaching and supporting even more people.",
     },
     {
       icon: CardIcon4,

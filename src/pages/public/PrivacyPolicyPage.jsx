@@ -17,9 +17,7 @@ const PrivacyPolicyPage = () => {
           </p>
         </div>
         <div className="space-y-6">
-          <p className="font-semibold text-2xl">
-            1. We Never sell or rent your information
-          </p>
+          <p className="font-semibold text-2xl">1. Collection of Information</p>
           <div className="space-y-2">
             <p>
               We only collect the information necessary to support your
@@ -63,15 +61,21 @@ const PrivacyPolicyPage = () => {
           <p className="font-semibold text-2xl">3. Financial Transactions</p>
           <div className="space-y-2">
             <p>
-              We do not collect or store any payment card information directly.
+              We do not collect or store any credit or debit card details
+              directly.
             </p>
             <p>
-              All financial transactions are processed securely through trusted
-              third-party providers (such as Stripe).
+              If you choose to receive support via Cash App or PayPal, we will
+              collect only the information needed to send funds (such as your
+              Cash App handle or PayPal email). We do not have access to your
+              full account information for these services.
             </p>
             <p>
-              Your financial details are handled according to their encryption
-              standards and privacy policies.
+              All credit or debit card payments are processed securely through
+              Stripe, and all payments through Cash App and PayPal are handled on
+              their respective platforms. Your financial details are protected
+              according to each provider's encryption standards and privacy
+              policies.
             </p>
           </div>
         </div>
@@ -106,7 +110,9 @@ const PrivacyPolicyPage = () => {
           <p>
             You may request to review, update, or delete your information at any
             time by contacting us: <br />
-            <span className="text-primary font-medium">info@oneheartsociety.org</span>
+            <span className="text-primary font-medium">
+              info@oneheartsociety.org
+            </span>
           </p>
         </div>
         <div className="space-y-6">

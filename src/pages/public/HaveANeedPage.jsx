@@ -323,7 +323,7 @@ const HaveANeedPage = () => {
                                   </FormLabel>
                                   <FormControl>
                                     <Input
-                                      placeholder="Enter handle"
+                                      placeholder="Enter $YourHandle"
                                       className="bg-[#F3EDE5] border-[#F3EDE5] px-6 py-4 h-[60px] rounded-[10px] !text-base"
                                       {...field}
                                     />

@@ -28,8 +28,8 @@ const TermsConditionsPage = () => {
             <p>
               While we hold every request with deep care, we cannot promise
               support, responses, or outcomes. We are not able to guarantee help
-              for every request, and no request is prioritized over others.
-              Submissions are reviewed as time, resources, and capacity allow.
+              for every single request or any one request in particular. All
+              submissions are reviewed as time, resources, and capacity allow.
             </p>
             <ul className="list-disc pl-5 space-y-0.5">
               <li>
