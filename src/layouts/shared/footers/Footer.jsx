@@ -8,11 +8,11 @@ import { IoMdMail } from "react-icons/io";
 const Footer = () => {
   const pages = [
     { name: "Return to Home", link: "/" },
-    { name: "The Heart Wall", link: "/about" },
-    { name: "One Heart Sanctuary", link: "/services" },
-    { name: "Our Mission", link: "/contact" },
-    { name: "Join The Circle", link: "/contact" },
-    { name: "FAQs", link: "/contact" },
+    { name: "The Heart Wall", link: "/the-heart-wall" },
+    { name: "One Heart Sanctuary", link: "/one-heart-sanctuary" },
+    { name: "Join The Circle", link: "/join-the-circle" },
+    { name: "Our Mission", link: "/our-mission" },
+    { name: "FAQs", link: "/faqs" },
   ];
 
   const supportPages = [
