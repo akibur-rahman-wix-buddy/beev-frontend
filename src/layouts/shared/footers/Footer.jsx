@@ -1,7 +1,8 @@
 import Container from "@/components/shared/Container";
 import bg from "@/assets/images/footer-bg.jpg";
 import Logo from "@/components/shared/Logo";
-import { FaFacebook, FaInstagramSquare, FaTwitterSquare } from "react-icons/fa";
+import { FaFacebookSquare, FaInstagramSquare, FaTwitterSquare } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
 import { Link } from "react-router";
 import { IoMdMail } from "react-icons/io";
 
@@ -64,13 +65,13 @@ const Footer = () => {
             <h3 className="footer-title">Follow Us</h3>
             <div className="flex gap-4">
               <Link to="#">
-                <FaFacebook className="size-8" />
+                <FaFacebookSquare className="size-8" />
               </Link>
               <Link to="#">
                 <FaInstagramSquare className="size-8" />
               </Link>
               <Link to="#">
-                <FaTwitterSquare className="size-8" />
+                <FaSquareXTwitter className="size-8" />
               </Link>
             </div>
           </div>

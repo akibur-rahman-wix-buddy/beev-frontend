@@ -62,7 +62,7 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/contact-us",
-        // element: <ContactUsPage />,
+        element: <ContactUsPage />,
       },
       {
         path: "/faqs",

@@ -78,7 +78,7 @@ const Navbar = ({ className, istrue = false, onHomePage = false }) => {
           </ul>
         </div>
 
-        <div className="flex-1 flex gap-2">
+        <div className="flex-1 flex justify-end gap-2">
           <Button
             variant="ghost"
             className={cn(
