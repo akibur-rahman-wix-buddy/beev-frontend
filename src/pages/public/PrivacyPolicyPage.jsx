@@ -72,10 +72,10 @@ const PrivacyPolicyPage = () => {
             </p>
             <p>
               All credit or debit card payments are processed securely through
-              Stripe, and all payments through Cash App and PayPal are handled on
-              their respective platforms. Your financial details are protected
-              according to each provider's encryption standards and privacy
-              policies.
+              Stripe, and all payments through Cash App and PayPal are handled
+              on their respective platforms. Your financial details are
+              protected according to each provider's encryption standards and
+              privacy policies.
             </p>
           </div>
         </div>

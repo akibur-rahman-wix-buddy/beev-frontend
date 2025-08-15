@@ -22,7 +22,7 @@ const SpaceSustainableSec = ({ className }) => {
       <div className="grid grid-cols-2 gap-8 mt-10 text-center">
         <div className="bg-[#F3EDE5] p-10 rounded-2xl">
           <div className="text-primary font-semibold flex flex-col items-center gap-2 mb-3">
-            <h3 className="text-5xl">15%</h3>
+            <h3 className="text-5xl">18%</h3>
             <p className="text-lg">One-Time Contributions</p>
           </div>
           <div className="flex flex-col items-center gap-2 mb-3 max-w-[460px] mx-auto">

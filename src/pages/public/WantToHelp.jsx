@@ -182,26 +182,28 @@ const WantToHelp = () => {
                           )}
                         >
                           <FormItem
-                            className={cn(
-                              "flex gap-3",
-                              field.value == "One Time"
-                                ? "items-start"
-                                : "items-center"
-                            )}
+                            className={cn("flex gap-3 items-center")}
+                            // className={cn(
+                            //   "flex gap-3",
+                            //   field.value == "One Time"
+                            //     ? "items-start"
+                            //     : "items-center"
+                            // )}
                           >
                             <FormControl>
                               <RadioGroupItem
                                 value="One Time"
-                                className={cn(
-                                  field.value == "One Time" && "mt-1"
-                                )}
+                                className={cn("")}
+                                // className={cn(
+                                //   field.value == "One Time" && "mt-1"
+                                // )}
                               />
                             </FormControl>
                             <div className="">
                               <FormLabel className="font-normal text-lg cursor-pointer">
                                 One Time Only
                               </FormLabel>
-                              {field.value == "One Time" && (
+                              {/* {field.value == "One Time" && (
                                 <div className="flex items-center gap-1">
                                   <InfoIcon />
                                   <p className="text-sm text-[#8F8D8D]">
@@ -209,30 +211,32 @@ const WantToHelp = () => {
                                     platform and secure delivery of your gift
                                   </p>
                                 </div>
-                              )}
+                              )} */}
                             </div>
                           </FormItem>
                           <FormItem
-                            className={cn(
-                              "flex gap-3",
-                              field.value == "Monthly"
-                                ? "items-start"
-                                : "items-center"
-                            )}
+                            className={cn("flex gap-3 items-center")}
+                            // className={cn(
+                            //   "flex gap-3",
+                            //   field.value == "One Time"
+                            //     ? "items-start"
+                            //     : "items-center"
+                            // )}
                           >
                             <FormControl>
                               <RadioGroupItem
                                 value="Monthly"
-                                className={cn(
-                                  field.value == "Monthly" && "mt-1"
-                                )}
+                                className={cn("")}
+                                // className={cn(
+                                //   field.value == "One Time" && "mt-1"
+                                // )}
                               />
                             </FormControl>
                             <div className="">
                               <FormLabel className="font-normal text-lg cursor-pointer">
                                 Regularly (monthly or ongoing)
                               </FormLabel>
-                              {field.value == "Monthly" && (
+                              {/* {field.value == "Monthly" && (
                                 <div className="flex items-center gap-1">
                                   <InfoIcon />
                                   <p className="text-sm text-[#8F8D8D]">
@@ -240,7 +244,7 @@ const WantToHelp = () => {
                                     and keeps this space alive for all
                                   </p>
                                 </div>
-                              )}
+                              )} */}
                             </div>
                           </FormItem>
                           <hr className="border-t border-[#EEE9E2]" />
@@ -342,7 +346,9 @@ const WantToHelp = () => {
 
                 <div className="space-y-4">
                   <h3 className="text-lg font-medium">
-                    Choose Your {paymentType === "Monthly" ? "Monthly" : "One-Time"} Contribution
+                    Choose Your{" "}
+                    {paymentType === "Monthly" ? "Monthly" : "One-Time"}{" "}
+                    Contribution
                   </h3>
                   <div className="grid grid-cols-3 gap-4">
                     {[

@@ -23,10 +23,10 @@ export const routes = createBrowserRouter([
         index: true,
         element: <Home />,
       },
-      {
-        path: "/the-heart-wall",
-        element: <TheHeartWallPage />,
-      },
+      // {
+      //   path: "/the-heart-wall",
+      //   element: <TheHeartWallPage />,
+      // },
       {
         path: "/have-a-need",
         element: <HaveANeedPage />,
