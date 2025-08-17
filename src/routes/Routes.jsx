@@ -14,6 +14,7 @@ import WantToHelp from "@/pages/public/WantToHelp";
 import ImpactOfYourSupportPage from "@/pages/public/ImpactOfYourSupportPage";
 import FaqsPage from "@/pages/public/FaqsPage";
 import ContactUsPage from "@/pages/public/ContactUsPage";
+import LoginPage from "@/pages/auth/LoginPage";
 
 export const routes = createBrowserRouter([
   {
@@ -70,6 +71,10 @@ export const routes = createBrowserRouter([
         element: <FaqsPage />,
       },
     ],
+  },
+  {
+    path: "/login",
+    element: <LoginPage />,
   },
   {
     path: "*",
