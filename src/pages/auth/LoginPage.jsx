@@ -22,10 +22,12 @@ import { GoogleIcon } from "@/assets/icons/icons";
 
 const formSchema = z.object({
   email: z
-    .email({ message: "Enter a valid email address" })
-    .trim()
-    .min(1, { message: "Email is required" }),
-  password: z.string().min(6, { message: "Password must be at least 6 characters long" }),
+    .string()
+    .min(1, "Email is required")
+    .pipe(z.email("Please enter a valid email address")),
+  password: z
+    .string()
+    .min(6, { message: "Password must be at least 6 characters long" }),
   keepme: z.boolean().optional(),
 });
 
@@ -66,7 +68,7 @@ const LoginPage = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <TextInput title="Email" type="email" {...field} />
+                      <TextInput title="Email" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

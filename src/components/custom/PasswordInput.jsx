@@ -19,7 +19,7 @@ const PasswordInput = ({ className, title, ...props }) => {
           props.value
             ? "top-0 left-4 scale-[0.9] bg-[#F9F5F0] -translate-y-1/2 peer-focus:text-primary text-[#707070]"
             : "left-4 top-1/2 -translate-y-1/2 peer-focus:text-primary text-[#707070]",
-          "absolute peer-focus:top-0 peer-focus:bg-[#F9F5F0] peer-focus:left-4 peer-focus:scale-[0.9] transition-all duration-300 font-medium px-2 pointer-events-none peer-aria-invalid:text-destructive"
+          "absolute peer-focus:top-0 peer-focus:bg-[#F9F5F0] rounded-[3px] peer-focus:left-4 peer-focus:scale-[0.9] transition-all duration-300 font-medium px-2 pointer-events-none peer-aria-invalid:text-destructive"
         )}
       >
         {title}
