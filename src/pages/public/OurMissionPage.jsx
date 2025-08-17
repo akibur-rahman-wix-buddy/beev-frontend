@@ -19,7 +19,7 @@ const OurMissionPage = () => {
         bgImg={banner}
         breadcrumbs={breadcrumbs}
         title="Our Mission"
-        subTitle="We are here for the ones who don’t know how to ask. For the ones who have asked and were met with silence. For the ones who whisper their needs and hope someone hears. This is where someone does."
+        subTitle="We are here for those who don’t know how to ask. For those who have asked and were met with silence. For those who whisper their needs and hope someone hears. This is where someone does."
       />
       <WhyWeExistSec className="my-20" />
       <WhatWeOfferSec className="my-20" />

@@ -25,7 +25,7 @@ const MeetOurAICompanionSec = ({ className }) => {
               Our gentle AI companion is there to hold space when you need it
               most. Because we know that sometimes the hardest moments happen
               during hours where support is less likely to be found. One Heart
-              Companion is a comforting presence in your darkest hours through.
+              Companion is a comforting presence in your darkest hours through
             </p>
             <div className="space-y-4">
               {[

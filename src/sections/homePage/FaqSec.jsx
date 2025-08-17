@@ -41,7 +41,7 @@ const FaqSec = ({ className }) => {
     {
       question: "How is the money used?",
       answer:
-        "Your support helps us meet delicate and time sensitive needs with care, nurture emotional well-being, and keep One Heart Society alive and thriving from the heart.",
+        "Your support helps us meet delicate and time-sensitive needs with care, nurture emotional well-being, and helps keep One Heart Society alive and thriving from the heart.",
     },
   ];
 

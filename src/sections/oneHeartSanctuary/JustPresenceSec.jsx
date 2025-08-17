@@ -15,7 +15,7 @@ const JustPresenceSec = ({ className }) => {
           </SectionTitle>
           <div className=" text-lg space-y-6">
             <p className="pr-14">
-              We've created this private space with your emotional safety as our
+              We've created this space with your emotional safety as our
               highest priority. Every aspect is designed to give you control
               over your experience.
             </p>

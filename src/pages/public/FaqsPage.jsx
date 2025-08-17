@@ -43,7 +43,7 @@ const FaqsPage = ({ className }) => {
       {
         question: "How is the money used?",
         answer:
-          "Your support helps us meet delicate and time sensitive needs with care, nurture emotional well-being, and keep One Heart Society alive and thriving from the heart.",
+          "Your support helps us meet delicate and time-sensitive needs with care, nurture emotional well-being, and helps keep One Heart Society alive and thriving from the heart.",
       },
       {
         question: "How are payments sent?",
@@ -88,7 +88,7 @@ const FaqsPage = ({ className }) => {
       {
         question: "How often can someone ask for help?",
         answer:
-          "At this time you can submit a request every 30 days for review. We limit frequency to ensure fairness to others and to allow support and attention to flow where it's needed most. (note to self: talk to developer)",
+          "We limit frequency to ensure fairness to others and to allow support and attention to flow where it's needed most.",
       },
       {
         question: "What if someone lies or abuses the system?",
@@ -176,9 +176,9 @@ const FaqsPage = ({ className }) => {
           'Yes. You’re welcome to make your support in honor of a loved one, a special date, or a meaningful cause. We will try our best to honor it on The Heart Wall under Reflections. Leave a short description under "What inspires you to give?" on the I Want to Help form.',
       },
       {
-        question: "Can I help without offering money?",
+        question: "Can I support without offering money?",
         answer:
-          "Absolutely. Support can look like sharing One Heart Society with others, posting encouragement or positive words on the Heart Wall, or contacting us with ways you’d like to contribute your time or resources. All forms of care are welcome here and are deeply appreciated.",
+          "Absolutely. Support can look like sharing One Heart Society with others, posting encouragement or positive words on The Heart Wall, or contacting us with ways you’d like to contribute your time or resources. All forms of care are welcome here and are deeply appreciated.",
       },
     ],
     []

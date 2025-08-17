@@ -36,7 +36,7 @@ const JoinTheCircleBenefitsSec = ({ className }) => {
       description: "Share words of encouragement, hope, or healing.",
       points: [
         "Leave a kind note on <b>The Heart Wall</b>",
-        "Send birthday messages or affirmations to someone going through a hard time",
+        "Send thoughtful messages or affirmations to someone going through a hard time",
         "Share your story to inspire others",
       ],
       shareStory: true,

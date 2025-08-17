@@ -86,10 +86,6 @@ const TermsConditionsPage = () => {
               </li>
             </ul>
           </div>
-          <p>
-            Our goal is to protect both support seekers and supporters with
-            thoughtful, values-aligned moderation.
-          </p>
         </div>
         <div className="space-y-6">
           <p className="font-semibold text-2xl">4. Platform Fees</p>
@@ -141,23 +137,23 @@ const TermsConditionsPage = () => {
             affiliates responsible for any personal, emotional, or financial
             outcomes resulting from use of the platform.
           </p>
-          <div className="space-y-0.5">
-            <p>
+          <ul className="list-disc pl-5 space-y-0.5">
+            <li>
               You assume full responsibility for your decisions, participation,
               and experiences.
-            </p>
-            <p>
+            </li>
+            <li>
               We exist to offer compassionate support, not professional
               services.
-            </p>
-            <p>
+            </li>
+            <li>
               We aim to hold space with kindness and compassion, but never to
               diagnose, treat, or fix.
-            </p>
-          </div>
+            </li>
+          </ul>
         </div>
         <div className="space-y-6">
-          <p className="font-semibold text-2xl">9. Policy Updates</p>
+          <p className="font-semibold text-2xl">9. Updates</p>
           <p>
             We reserve the right to update or modify these Terms & Conditions at
             any time. Continued use of the platform after changes constitutes
