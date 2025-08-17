@@ -53,7 +53,7 @@ const LoginPage = () => {
             <Logo className="h-20" />
           </nav>
         </header>
-        <section className="min-h-screen flex flex-col justify-center text-center gap-10 max-w-[500px] mx-auto">
+        <section className="min-h-screen flex flex-col justify-center text-center gap-8 max-w-[500px] mx-auto py-10">
           <div className="space-y-3">
             <SectionTitle className="mb-0">Welcome Back</SectionTitle>
             <h2 className="text-[#707070] text-lg font-medium">
@@ -61,7 +61,7 @@ const LoginPage = () => {
             </h2>
           </div>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
               <FormField
                 control={form.control}
                 name="email"

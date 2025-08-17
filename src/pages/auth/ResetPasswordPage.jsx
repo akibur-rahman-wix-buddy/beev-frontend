@@ -1,6 +1,6 @@
 import React from "react";
 
-const ResetPassPage = () => {
+const ResetPasswordPage = () => {
   return (
     <div>
       <h1>Reset Password</h1>
@@ -14,4 +14,4 @@ const ResetPassPage = () => {
   );
 };
 
-export default ResetPassPage;
+export default ResetPasswordPage;

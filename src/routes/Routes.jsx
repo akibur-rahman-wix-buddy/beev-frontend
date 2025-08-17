@@ -15,6 +15,10 @@ import ImpactOfYourSupportPage from "@/pages/public/ImpactOfYourSupportPage";
 import FaqsPage from "@/pages/public/FaqsPage";
 import ContactUsPage from "@/pages/public/ContactUsPage";
 import LoginPage from "@/pages/auth/LoginPage";
+import RegisterPage from "@/pages/auth/RegisterPage";
+import ForgotPasswordPage from "@/pages/auth/ForgotPasswordPage";
+import ResetPasswordPage from "@/pages/auth/ResetPasswordPage";
+import VerifyOtpPage from "@/pages/auth/VerifyOtpPage";
 
 export const routes = createBrowserRouter([
   {
@@ -75,6 +79,22 @@ export const routes = createBrowserRouter([
   {
     path: "/login",
     element: <LoginPage />,
+  },
+  {
+    path: "/register",
+    element: <RegisterPage />,
+  },
+  {
+    path: "/forgot-password",
+    element: <ForgotPasswordPage />,
+  },
+  {
+    path: "/reset-password",
+    element: <ResetPasswordPage />,
+  },
+  {
+    path: "/verify-otp",
+    element: <VerifyOtpPage />,
   },
   {
     path: "*",
