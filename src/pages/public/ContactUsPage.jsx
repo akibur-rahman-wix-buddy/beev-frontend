@@ -23,6 +23,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useState } from "react";
+import ContactUsDialog from "@/components/dialog/ContactUsDialog";
 
 const formSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -35,6 +37,8 @@ const formSchema = z.object({
 });
 
 const ContactUsPage = () => {
+  const [isContactUsDialogOpen, setIsContactUsDialogOpen] = useState(false);
+
   const breadcrumbs = [
     { label: "Home", url: "/" },
     { label: "Contact Us", url: "#" },
@@ -52,6 +56,7 @@ const ContactUsPage = () => {
 
   function onSubmit(values) {
     console.log(values);
+    setIsContactUsDialogOpen(true);
   }
 
   return (
@@ -116,7 +121,7 @@ const ContactUsPage = () => {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="text-lg font-medium">
-                        Select Category
+                        Select Category <span className="">*</span>
                       </FormLabel>
                       <Select
                         onValueChange={field.onChange}
@@ -127,20 +132,35 @@ const ContactUsPage = () => {
                             <SelectValue placeholder="Select Category" />
                           </SelectTrigger>
                         </FormControl>
-                        <SelectContent className="border-0 bg-[#FBF7F0]">
-                          <SelectItem value="General Inquiry" className="border-b border-[#E9E4E0] rounded-none py-3 px-2 text-base text-[#6F7875]">
+                        <SelectContent className="border-0 bg-[#FBF7F0] rounded-[10px]">
+                          <SelectItem
+                            value="General Inquiry"
+                            className="border-b border-[#E9E4E0] rounded-none py-3 px-2 text-base text-[#6F7875]"
+                          >
                             General Inquiry
                           </SelectItem>
-                          <SelectItem value="Media/Press" className="border-b border-[#E9E4E0] rounded-none py-3 px-2 text-base text-[#6F7875]">
+                          <SelectItem
+                            value="Media/Press"
+                            className="border-b border-[#E9E4E0] rounded-none py-3 px-2 text-base text-[#6F7875]"
+                          >
                             Media/Press
                           </SelectItem>
-                          <SelectItem value="Technical Support" className="border-b border-[#E9E4E0] rounded-none py-3 px-2 text-base text-[#6F7875]">
+                          <SelectItem
+                            value="Technical Support"
+                            className="border-b border-[#E9E4E0] rounded-none py-3 px-2 text-base text-[#6F7875]"
+                          >
                             Technical Support
                           </SelectItem>
-                          <SelectItem value="Feedback" className="border-b border-[#E9E4E0] rounded-none py-3 px-2 text-base text-[#6F7875]">
+                          <SelectItem
+                            value="Feedback"
+                            className="border-b border-[#E9E4E0] rounded-none py-3 px-2 text-base text-[#6F7875]"
+                          >
                             Feedback
                           </SelectItem>
-                          <SelectItem value="Other" className="rounded-none py-3 px-2 text-base text-[#6F7875]">
+                          <SelectItem
+                            value="Other"
+                            className="rounded-none py-3 px-2 text-base text-[#6F7875]"
+                          >
                             Other
                           </SelectItem>
                         </SelectContent>
@@ -191,6 +211,10 @@ const ContactUsPage = () => {
           </div>
         </div>
       </Container>
+      <ContactUsDialog
+        open={isContactUsDialogOpen}
+        onOpenChange={setIsContactUsDialogOpen}
+      />
     </section>
   );
 };

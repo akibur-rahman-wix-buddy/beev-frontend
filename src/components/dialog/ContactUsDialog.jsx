@@ -8,7 +8,7 @@ import {
 import { Button } from "../ui/button";
 import { Link } from "react-router";
 
-const HaveNeedDialog = ({ open, onOpenChange }) => {
+const ContactUsDialog = ({ open, onOpenChange }) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
@@ -22,15 +22,11 @@ const HaveNeedDialog = ({ open, onOpenChange }) => {
             }
           >
             <HeartIcon />
-            <div className="">
-              <p>Thank you for trusting us with your story.</p>
-              <p>
-                One Heart Society is still growing. While we can’t promise help
-                for every request, each one is received with care. As support
-                becomes available, we do our best to respond.
-              </p>
-            </div>
-            <p>You are not alone. You are seen. You are safe here.</p>
+            <p>
+              Thank you for contacting One Heart Society. We appreciate you
+              taking the time to reach out. Our team will respond as soon as
+              we're able.
+            </p>
             <div className="pt-4">
               <Button asChild>
                 <Link to="/">Go Home</Link>
@@ -43,4 +39,4 @@ const HaveNeedDialog = ({ open, onOpenChange }) => {
   );
 };
 
-export default HaveNeedDialog;
+export default ContactUsDialog;
