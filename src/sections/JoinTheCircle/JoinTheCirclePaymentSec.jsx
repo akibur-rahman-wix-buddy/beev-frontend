@@ -53,15 +53,16 @@ const JoinTheCirclePaymentSec = ({ className }) => {
         <SectionTitle description="Choose Your Contribution" center>
           Join the Circle of Care
         </SectionTitle>
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid grid-cols-4 gap-6">
           {[
-            { amount: "15", label: "Seed Supporter" },
-            { amount: "30", label: "Heart Holder" },
-            { amount: "50", label: "Sanctuary Sustainer" },
+            { amount: "10", label: "Seed Supporter" },
+            { amount: "25", label: "Heart Holder" },
+            { amount: "50", label: "Circle Sustainer" },
+            { amount: "100", label: "Founding Heart" },
           ].map((item, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-lg bg-[#FBF7F0] text-primary w-full aspect-[2/1] flex flex-col justify-between gap-4"
+              className="p-6 rounded-lg bg-[#FBF7F0] text-primary w-full aspect-[2/1] flex flex-col justify-between gap-6"
             >
               <div className="space-y-2">
                 <h4 className="text-3xl font-semibold">
