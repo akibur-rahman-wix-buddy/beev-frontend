@@ -50,13 +50,13 @@ const LoginPage = () => {
       <Container className="">
         <header className="relative">
           <nav className="absolute top-8 left-0">
-            <Logo className="h-20" />
+            <Logo className="h-[70px]" />
           </nav>
         </header>
         <section className="min-h-screen flex flex-col justify-center text-center gap-8 max-w-[500px] mx-auto py-10">
-          <div className="space-y-3">
+          <div className="">
             <SectionTitle className="mb-0">Welcome Back</SectionTitle>
-            <h2 className="text-[#707070] text-lg font-medium">
+            <h2 className="text-[#707070] text-lg mt-2">
               Please login to continue to your account.
             </h2>
           </div>

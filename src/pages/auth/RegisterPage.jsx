@@ -57,13 +57,13 @@ const RegisterPage = () => {
       <Container className="">
         <header className="relative">
           <nav className="absolute top-8 left-0">
-            <Logo className="h-20" />
+            <Logo className="h-[70px]" />
           </nav>
         </header>
         <section className="min-h-screen flex flex-col justify-center text-center gap-8 max-w-[500px] mx-auto py-10">
-          <div className="space-y-3">
+          <div className="">
             <SectionTitle className="mb-0">Create your account</SectionTitle>
-            <h2 className="text-[#707070] text-lg font-medium max-w-[80%] mx-auto">
+            <h2 className="text-[#707070] text-lg mt-2 max-w-[80%] mx-auto">
               We recommend signing up with your work email to keep all your
               content in one place.
             </h2>
