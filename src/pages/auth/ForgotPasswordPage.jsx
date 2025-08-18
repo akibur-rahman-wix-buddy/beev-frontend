@@ -15,10 +15,8 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import TextInput from "@/components/custom/TextInput";
-import PasswordInput from "@/components/custom/PasswordInput";
-import { Link } from "react-router";
-import { Checkbox } from "@/components/ui/checkbox";
-import { GoogleIcon } from "@/assets/icons/icons";
+import { Link, useNavigate } from "react-router";
+import { useStateContext } from "@/hooks/useStateContext";
 
 const formSchema = z.object({
   email: z
@@ -28,6 +26,8 @@ const formSchema = z.object({
 });
 
 const ForgotPasswordPage = () => {
+  const { setEmail } = useStateContext();
+  const navigate = useNavigate();
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -37,6 +37,8 @@ const ForgotPasswordPage = () => {
 
   function onSubmit(values) {
     console.log(values);
+    setEmail(values.email);
+    navigate("/verify-otp");
   }
 
   return (
@@ -74,7 +76,7 @@ const ForgotPasswordPage = () => {
             </form>
           </Form>
           <p className="text-[17px] font-medium text-[#727272]">
-            Remember Password? {" "}
+            Remember Password?{" "}
             <Link to="/register" className="text-primary hover:underline">
               Return to login
             </Link>

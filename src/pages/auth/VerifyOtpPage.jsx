@@ -11,9 +11,11 @@ import {
   InputOTPSeparator,
   InputOTPSlot,
 } from "@/components/ui/input-otp";
+import { useStateContext } from "@/hooks/useStateContext";
 
 const VerifyOtpPage = () => {
   const [value, setValue] = useState("");
+  const { email } = useStateContext();
   return (
     <main className="bg-[#F9F5F0] text-textPrimary">
       <Container className="">
@@ -26,8 +28,7 @@ const VerifyOtpPage = () => {
           <div className="">
             <SectionTitle className="mb-0">Verify</SectionTitle>
             <h2 className="text-[#707070] text-lg mt-2">
-              Enter the verification code we just sent to
-              md*************or@gmail.com.
+              Enter the verification code we just sent to {email}.
             </h2>
           </div>
           <div className="w-full space-y-4 sm:space-y-6">
@@ -63,7 +64,10 @@ const VerifyOtpPage = () => {
           </div>
           <p className="text-[17px] font-medium text-[#727272]">
             Didn’t receive code?{" "}
-            <button type="button" className="text-primary hover:underline cursor-pointer">
+            <button
+              type="button"
+              className="text-primary hover:underline cursor-pointer"
+            >
               Resend
             </button>
           </p>

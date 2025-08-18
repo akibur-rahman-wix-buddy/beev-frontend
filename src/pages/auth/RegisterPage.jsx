@@ -64,8 +64,7 @@ const RegisterPage = () => {
           <div className="">
             <SectionTitle className="mb-0">Create your account</SectionTitle>
             <h2 className="text-[#707070] text-lg mt-2 max-w-[80%] mx-auto">
-              We recommend signing up with your work email to keep all your
-              content in one place.
+              WeIcome! Let's get you started.
             </h2>
           </div>
           <Form {...form}>

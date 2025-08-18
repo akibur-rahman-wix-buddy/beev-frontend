@@ -5,6 +5,7 @@ const StateContext = createContext(null);
 const StateContextProvider = ({ children }) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [isSmall, setIsSmall] = useState(false);
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -22,6 +23,8 @@ const StateContextProvider = ({ children }) => {
         setCurrentStep,
         isSmall,
         setIsSmall,
+        email,
+        setEmail,
       }}
     >
       {children}

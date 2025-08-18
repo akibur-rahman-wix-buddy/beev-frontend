@@ -16,7 +16,7 @@ const FaqSec = ({ className }) => {
     {
       question: "What is One Heart Society?",
       answer:
-        "We are an impact-based, heart-led platform transforming kindness into action and connection into care. Together, we create space for understanding and shared impact.",
+        "One Heart Society is a heart-led membership community and digital wellness platform. We provide emotional support tools, guided practices, and safe spaces for healing and reflection. Our core membership, One Heart Sanctuary, offers subscribers access to our Al support companion, healing prompts, and self-care resources. We also host 'I Have a Need', a free community feature where anyone can share requests for care, and the Society responds with compassion, understanding, and support.",
     },
     {
       question: "Who can ask for help?",
