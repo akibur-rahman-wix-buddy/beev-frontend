@@ -5,7 +5,7 @@ import { Section } from "lucide-react";
 import SectionTitle from "./SectionTitle";
 import { cn } from "@/lib/utils";
 
-const PrimaryBanner = ({ bgImg, breadcrumbs, title, subTitle, onLeft }) => {
+const PrimaryBanner = ({ bgImg, breadcrumbs, title, subTitle, onLeft, maxWWidth="" }) => {
   return (
     <div className="text-white relative">
       <Container as="section" className="relative z-10">
@@ -24,7 +24,7 @@ const PrimaryBanner = ({ bgImg, breadcrumbs, title, subTitle, onLeft }) => {
               className={cn("space-y-4 mb-0 py-32", {
                 "text-left": onLeft,
                 "text-center max-w-[950px] mx-auto": !onLeft,
-              })}
+              }, maxWWidth)}
               description={subTitle}
               center
             >

@@ -19,6 +19,7 @@ import RegisterPage from "@/pages/auth/RegisterPage";
 import ForgotPasswordPage from "@/pages/auth/ForgotPasswordPage";
 import ResetPasswordPage from "@/pages/auth/ResetPasswordPage";
 import VerifyOtpPage from "@/pages/auth/VerifyOtpPage";
+import AddPostPage from "@/pages/public/AddPostPage";
 
 export const routes = createBrowserRouter([
   {
@@ -65,6 +66,10 @@ export const routes = createBrowserRouter([
       {
         path: "/terms-conditions",
         element: <TermsConditionsPage />,
+      },
+      {
+        path: "/add-post",
+        element: <AddPostPage />,
       },
       {
         path: "/contact-us",

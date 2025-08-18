@@ -19,6 +19,8 @@ import PasswordInput from "@/components/custom/PasswordInput";
 import { Link } from "react-router";
 import { Checkbox } from "@/components/ui/checkbox";
 import { GoogleIcon } from "@/assets/icons/icons";
+import RegistrationSuccessDialog from "@/components/dialog/RegistrationSuccessDialog";
+import { useState } from "react";
 
 const formSchema = z
   .object({
@@ -38,6 +40,7 @@ const formSchema = z
   });
 
 const RegisterPage = () => {
+  const [isRegisterDialogOpen, setIsRegisterDialogOpen] = useState(false);
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -50,6 +53,7 @@ const RegisterPage = () => {
 
   function onSubmit(values) {
     console.log(values);
+    setIsRegisterDialogOpen(true);
   }
 
   return (
@@ -143,6 +147,10 @@ const RegisterPage = () => {
           </p>
         </section>
       </Container>
+      <RegistrationSuccessDialog
+        open={isRegisterDialogOpen}
+        onOpenChange={setIsRegisterDialogOpen}
+      />
     </main>
   );
 };

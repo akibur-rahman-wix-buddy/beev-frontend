@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/form";
 import TextInput from "@/components/custom/TextInput";
 import PasswordInput from "@/components/custom/PasswordInput";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { GoogleIcon } from "@/assets/icons/icons";
 
 const formSchema = z
@@ -32,6 +32,7 @@ const formSchema = z
   });
 
 const ResetPasswordPage = () => {
+  const navigate = useNavigate();
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -42,6 +43,7 @@ const ResetPasswordPage = () => {
 
   function onSubmit(values) {
     console.log(values);
+    navigate("/");
   }
 
   return (

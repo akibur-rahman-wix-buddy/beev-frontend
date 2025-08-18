@@ -3,19 +3,31 @@ import Logo from "@/components/shared/Logo";
 import SectionTitle from "@/components/shared/SectionTitle";
 import { Button } from "@/components/ui/button";
 import { REGEXP_ONLY_DIGITS } from "input-otp";
-import React, { useState } from "react";
-import { Link } from "react-router";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import {
   InputOTP,
   InputOTPGroup,
-  InputOTPSeparator,
   InputOTPSlot,
 } from "@/components/ui/input-otp";
 import { useStateContext } from "@/hooks/useStateContext";
 
 const VerifyOtpPage = () => {
   const [value, setValue] = useState("");
+  const [isBtnDisabled, setIsBtnDisabled] = useState(true);
   const { email } = useStateContext();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    setIsBtnDisabled(value.length !== 6);
+  }, [value]);
+
+  const handleSubmit = () => {
+    if (value.length === 6) {
+      navigate("/reset-password");
+    }
+  };
+
   return (
     <main className="bg-[#F9F5F0] text-textPrimary">
       <Container className="">
@@ -58,7 +70,11 @@ const VerifyOtpPage = () => {
                 <InputOTPSlot index={5} />
               </InputOTPGroup>
             </InputOTP>
-            <Button type="submit" className="w-full">
+            <Button
+              onClick={handleSubmit}
+              className="w-full"
+              disabled={isBtnDisabled}
+            >
               Verify
             </Button>
           </div>
