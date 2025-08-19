@@ -37,24 +37,24 @@ const UserProfileDropdown = ({ className }) => {
       >
         <Link to="/profile" className="group">
           <DropdownMenuItem className="flex items-center gap-3 px-4 py-3 text-textPrimary font-medium hover:bg-[#F9F5F0] cursor-pointer">
-            <User className="size-4 group-hover:scale-120 text-textPrimary transition-all duration-200" />
+            <User className="size-4.5 group-hover:scale-120 text-textPrimary transition-all duration-200" />
             Profile
           </DropdownMenuItem>
         </Link>
         <Link to="/profile/my-activity" className="group">
           <DropdownMenuItem className="flex items-center gap-3 px-4 py-3 text-textPrimary font-medium hover:bg-[#F9F5F0] cursor-pointer">
-            <Activity className="size-4 group-hover:scale-120 text-textPrimary transition-all duration-200" />
+            <Activity className="size-4.5 group-hover:scale-120 text-textPrimary transition-all duration-200" />
             My Activity
           </DropdownMenuItem>
         </Link>
         <Link to="/profile/settings" className="group">
           <DropdownMenuItem className="flex items-center gap-3 px-4 py-3 text-textPrimary font-medium hover:bg-[#F9F5F0] cursor-pointer">
-            <Settings className="size-4 group-hover:scale-120 text-textPrimary transition-all duration-200" />
+            <Settings className="size-4.5 group-hover:scale-120 text-textPrimary transition-all duration-200" />
             Settings
           </DropdownMenuItem>
         </Link>
         <DropdownMenuItem className="group flex items-center gap-3 px-4 py-3 text-textPrimary font-medium hover:bg-[#F9F5F0] cursor-pointer">
-          <LogOut className="size-4 group-hover:scale-120 text-textPrimary transition-all duration-200" />
+          <LogOut className="size-4.5 group-hover:scale-120 text-destructive transition-all duration-200" />
           Log out
         </DropdownMenuItem>
       </DropdownMenuContent>

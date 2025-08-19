@@ -23,6 +23,7 @@ import AddPostPage from "@/pages/public/AddPostPage";
 import ProfilePage from "@/pages/private/ProfilePage";
 import MyActivityPage from "@/pages/private/MyActivityPage";
 import SettingsPage from "@/pages/private/SettingsPage";
+import ChangePasswordPage from "@/pages/private/ChangePasswordPage";
 
 export const routes = createBrowserRouter([
   {
@@ -96,6 +97,10 @@ export const routes = createBrowserRouter([
           {
             path: "settings",
             element: <SettingsPage />,
+          },
+          {
+            path: "change-password",
+            element: <ChangePasswordPage />,
           },
         ],
       },

@@ -22,6 +22,7 @@ const formSchema = z.object({
       z.instanceof(File, { message: "Please upload a valid image file" }),
       z.null(),
     ])
+    .refine((value) => value !== null, { message: "Image is required" })
     .refine(
       (value) => {
         if (value instanceof File) {
@@ -42,6 +43,7 @@ const formSchema = z.object({
       },
       { message: "File size must be less than 1MB" }
     ),
+
   name: z.string().min(1, "Name is required").min(2, {
     message: "Name must be at least 2 characters.",
   }),
@@ -72,12 +74,12 @@ const ProfileForm = () => {
     <div>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-          <div className="flex justify-center">
+          <div className="flex flex-col gap-2 justify-center items-center">
             <FormField
               control={form.control}
               name="avatar"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="flex flex-col items-center">
                   <FormControl>
                     <ProfileUpload
                       setValue={field.onChange}
@@ -92,6 +94,14 @@ const ProfileForm = () => {
                 </FormItem>
               )}
             />
+            <div className="text-center">
+              <h3 className="text-lg font-semibold">
+                {profileData?.name || "Sara Johnson"}
+              </h3>
+              <p className="">
+                {profileData?.email || "Sarajohnson@gmail.com"}
+              </p>
+            </div>
           </div>
           <div className="bg-[#FBF7F0] p-14 rounded-xl space-y-12">
             <FormField
