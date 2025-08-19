@@ -41,13 +41,13 @@ const UserProfileDropdown = ({ className }) => {
             Profile
           </DropdownMenuItem>
         </Link>
-        <Link to="/profile" className="group">
+        <Link to="/profile/my-activity" className="group">
           <DropdownMenuItem className="flex items-center gap-3 px-4 py-3 text-textPrimary font-medium hover:bg-[#F9F5F0] cursor-pointer">
             <Activity className="size-4 group-hover:scale-120 text-textPrimary transition-all duration-200" />
             My Activity
           </DropdownMenuItem>
         </Link>
-        <Link to="/profile" className="group">
+        <Link to="/profile/settings" className="group">
           <DropdownMenuItem className="flex items-center gap-3 px-4 py-3 text-textPrimary font-medium hover:bg-[#F9F5F0] cursor-pointer">
             <Settings className="size-4 group-hover:scale-120 text-textPrimary transition-all duration-200" />
             Settings

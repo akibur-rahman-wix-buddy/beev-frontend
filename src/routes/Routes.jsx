@@ -20,6 +20,9 @@ import ForgotPasswordPage from "@/pages/auth/ForgotPasswordPage";
 import ResetPasswordPage from "@/pages/auth/ResetPasswordPage";
 import VerifyOtpPage from "@/pages/auth/VerifyOtpPage";
 import AddPostPage from "@/pages/public/AddPostPage";
+import ProfilePage from "@/pages/private/ProfilePage";
+import MyActivityPage from "@/pages/private/MyActivityPage";
+import SettingsPage from "@/pages/private/SettingsPage";
 
 export const routes = createBrowserRouter([
   {
@@ -78,6 +81,23 @@ export const routes = createBrowserRouter([
       {
         path: "/faqs",
         element: <FaqsPage />,
+      },
+      {
+        path: "/profile",
+        children: [
+          {
+            index: true,
+            element: <ProfilePage />,
+          },
+          {
+            path: "my-activity",
+            element: <MyActivityPage />,
+          },
+          {
+            path: "settings",
+            element: <SettingsPage />,
+          },
+        ],
       },
     ],
   },
