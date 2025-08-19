@@ -9,7 +9,7 @@ const BannerSec = () => {
     <section className="relative pt-52 pb-44">
       <Container className="text-center flex flex-col items-center justify-center gap-8 text-white relative z-10">
         <h1 className="text-[54px] leading-[140%] font-bold max-w-[900px]">
-          When Life <span className="text-primary">Feels Heavy</span>, We Hold
+          When Life <span className="text-primary">Feels Heavy</span> We Hold
           You Here
         </h1>
         <div className="text-xl max-w-[1050px] space-y-6">

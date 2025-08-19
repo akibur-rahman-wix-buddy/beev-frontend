@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Heart, MessageCircle, Send } from "lucide-react";
+import { useState } from "react";
+import { Heart, MessageCircle } from "lucide-react";
 import postPlaceholder from "@/assets/images/post-placeholder.png";
 import { ForwardMailIcon, LoveFillIcon, LoveIcon } from "@/assets/icons/icons";
 
@@ -7,7 +7,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -23,8 +22,9 @@ const formSchema = z.object({
   }),
 });
 
-const Post = ({ post }) => {
-  const [isCommentSectionOpen, setIsCommentSectionOpen] = useState(false);
+const Post = ({ post, commentEnabled = false }) => {
+  const [isCommentSectionOpen, setIsCommentSectionOpen] =
+    useState(commentEnabled);
   const [isLoved, setIsLoved] = useState(false);
 
   const form = useForm({

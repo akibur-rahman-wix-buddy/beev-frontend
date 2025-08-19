@@ -3,7 +3,7 @@ import ErrorPage from "@/pages/Error/ErrorPage";
 import NotFoundError from "@/pages/Error/NotFoundError";
 import MainLayout from "@/layouts/MainLayout";
 import Home from "@/pages/home/Home";
-// import TheHeartWallPage from "@/pages/public/TheHeartWallPage";
+import TheHeartWallPage from "@/pages/public/TheHeartWallPage";
 import HaveANeedPage from "@/pages/public/HaveANeedPage";
 import JoinTheCirclePage from "@/pages/public/JoinTheCirclePage";
 import OurMissionPage from "@/pages/public/OurMissionPage";
@@ -24,6 +24,7 @@ import ProfilePage from "@/pages/private/ProfilePage";
 import MyActivityPage from "@/pages/private/MyActivityPage";
 import SettingsPage from "@/pages/private/SettingsPage";
 import ChangePasswordPage from "@/pages/private/ChangePasswordPage";
+import PostDetailsPage from "@/pages/public/PostDetailsPage";
 
 export const routes = createBrowserRouter([
   {
@@ -35,10 +36,10 @@ export const routes = createBrowserRouter([
         index: true,
         element: <Home />,
       },
-      // {
-      //   path: "/the-heart-wall",
-      //   element: <TheHeartWallPage />,
-      // },
+      {
+        path: "/the-heart-wall",
+        element: <TheHeartWallPage />,
+      },
       {
         path: "/have-a-need",
         element: <HaveANeedPage />,
@@ -74,6 +75,10 @@ export const routes = createBrowserRouter([
       {
         path: "/add-post",
         element: <AddPostPage />,
+      },
+      {
+        path: "/post/:id",
+        element: <PostDetailsPage />,
       },
       {
         path: "/contact-us",
