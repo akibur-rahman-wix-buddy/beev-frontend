@@ -14,11 +14,17 @@ const SettingsPage = () => {
             Personal Preferences
           </h2>
           <div className="space-y-5">
-            <Link to="/profile" className="bg-[#F3EDE5] rounded-lg flex justify-between items-center px-8 py-6">
+            <Link
+              to="/profile"
+              className="bg-[#F3EDE5] rounded-lg flex justify-between items-center px-8 py-6"
+            >
               Edit Profile
               <ForwardIcon2 className="" />
             </Link>
-            <Link to="/profile/change-password" className="bg-[#F3EDE5] rounded-lg flex justify-between items-center px-8 py-6">
+            <Link
+              to="/profile/change-password"
+              className="bg-[#F3EDE5] rounded-lg flex justify-between items-center px-8 py-6"
+            >
               Change Password
               <ForwardIcon2 className="" />
             </Link>

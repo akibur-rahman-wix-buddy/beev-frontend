@@ -7,7 +7,7 @@ import { Link } from "react-router";
 
 const ImpactOfYourSupportPage = () => {
   return (
-    <section className="pt-5">
+    <section className="pt-8">
       <Container>
         <div className="flex">
           <Link to="/want-to-help" className="">
