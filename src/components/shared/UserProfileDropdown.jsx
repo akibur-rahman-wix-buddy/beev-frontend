@@ -8,6 +8,7 @@ import {
 import { cn } from "@/lib/utils";
 import { ChevronDown, User, Activity, Settings, LogOut } from "lucide-react";
 import profile from "@/assets/images/profile2.png";
+import { Link } from "react-router";
 
 const UserProfileDropdown = ({ className }) => {
   return (
@@ -34,20 +35,26 @@ const UserProfileDropdown = ({ className }) => {
         align="end"
         sideOffset={8}
       >
-        <DropdownMenuItem className="flex items-center gap-3 px-4 py-3 text-textPrimary font-medium hover:bg-[#F9F5F0] cursor-pointer">
-          <User className="size-4 text-textPrimary" />
-          Profile
-        </DropdownMenuItem>
-        <DropdownMenuItem className="flex items-center gap-3 px-4 py-3 text-textPrimary font-medium hover:bg-[#F9F5F0] cursor-pointer">
-          <Activity className="size-4 text-textPrimary" />
-          My Activity
-        </DropdownMenuItem>
-        <DropdownMenuItem className="flex items-center gap-3 px-4 py-3 text-textPrimary font-medium hover:bg-[#F9F5F0] cursor-pointer">
-          <Settings className="size-4 text-textPrimary" />
-          Settings
-        </DropdownMenuItem>
-        <DropdownMenuItem className="flex items-center gap-3 px-4 py-3 text-textPrimary font-medium hover:bg-[#F9F5F0] cursor-pointer">
-          <LogOut className="size-4 text-textPrimary" />
+        <Link to="/profile" className="group">
+          <DropdownMenuItem className="flex items-center gap-3 px-4 py-3 text-textPrimary font-medium hover:bg-[#F9F5F0] cursor-pointer">
+            <User className="size-4 group-hover:scale-120 text-textPrimary transition-all duration-200" />
+            Profile
+          </DropdownMenuItem>
+        </Link>
+        <Link to="/profile" className="group">
+          <DropdownMenuItem className="flex items-center gap-3 px-4 py-3 text-textPrimary font-medium hover:bg-[#F9F5F0] cursor-pointer">
+            <Activity className="size-4 group-hover:scale-120 text-textPrimary transition-all duration-200" />
+            My Activity
+          </DropdownMenuItem>
+        </Link>
+        <Link to="/profile" className="group">
+          <DropdownMenuItem className="flex items-center gap-3 px-4 py-3 text-textPrimary font-medium hover:bg-[#F9F5F0] cursor-pointer">
+            <Settings className="size-4 group-hover:scale-120 text-textPrimary transition-all duration-200" />
+            Settings
+          </DropdownMenuItem>
+        </Link>
+        <DropdownMenuItem className="group flex items-center gap-3 px-4 py-3 text-textPrimary font-medium hover:bg-[#F9F5F0] cursor-pointer">
+          <LogOut className="size-4 group-hover:scale-120 text-textPrimary transition-all duration-200" />
           Log out
         </DropdownMenuItem>
       </DropdownMenuContent>
