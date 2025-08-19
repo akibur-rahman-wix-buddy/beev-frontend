@@ -1,0 +1,58 @@
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { cn } from "@/lib/utils";
+import { ChevronDown, User, Activity, Settings, LogOut } from "lucide-react";
+import profile from "@/assets/images/profile2.png";
+
+const UserProfileDropdown = ({ className }) => {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger
+        className={cn(
+          "flex items-center gap-4 hover:opacity-80 transition-opacity outline-none cursor-pointer text-textPrimary",
+          className
+        )}
+      >
+        <Avatar className="size-12">
+          <AvatarImage src={profile} alt="Sara" />
+          <AvatarFallback className="text-textPrimary border">
+            SA
+          </AvatarFallback>
+        </Avatar>
+        <div className="flex items-center gap-2">
+          <span className="font-medium text-lg">Sara</span>
+          <ChevronDown className="size-5" />
+        </div>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent
+        className="w-48 bg-[#F3EDE5] border-stone-200"
+        align="end"
+        sideOffset={8}
+      >
+        <DropdownMenuItem className="flex items-center gap-3 px-4 py-3 text-textPrimary font-medium hover:bg-[#F9F5F0] cursor-pointer">
+          <User className="size-4 text-textPrimary" />
+          Profile
+        </DropdownMenuItem>
+        <DropdownMenuItem className="flex items-center gap-3 px-4 py-3 text-textPrimary font-medium hover:bg-[#F9F5F0] cursor-pointer">
+          <Activity className="size-4 text-textPrimary" />
+          My Activity
+        </DropdownMenuItem>
+        <DropdownMenuItem className="flex items-center gap-3 px-4 py-3 text-textPrimary font-medium hover:bg-[#F9F5F0] cursor-pointer">
+          <Settings className="size-4 text-textPrimary" />
+          Settings
+        </DropdownMenuItem>
+        <DropdownMenuItem className="flex items-center gap-3 px-4 py-3 text-textPrimary font-medium hover:bg-[#F9F5F0] cursor-pointer">
+          <LogOut className="size-4 text-textPrimary" />
+          Log out
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+};
+
+export default UserProfileDropdown;

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Link, NavLink } from "react-router";
 import { useState, useEffect } from "react";
+import UserProfileDropdown from "@/components/shared/UserProfileDropdown";
 
 const Navbar = ({ className, istrue = false, onHomePage = false }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -79,31 +80,38 @@ const Navbar = ({ className, istrue = false, onHomePage = false }) => {
         </div>
 
         <div className="flex-1 flex justify-end gap-2">
-          <Button
-            variant="ghost"
-            className={cn(
-              "transition-colors duration-300 ease-in-out py-3.5 px-6 text-textPrimary hover:bg-primary hover:text-white",
-              {
-                "text-white hover:bg-primary hover:text-white":
-                  onHomePage && !isScrolled,
-              }
-            )}
-            asChild
-          >
-            <Link to="/login">Login</Link>
-          </Button>
-          <Button
-            className={cn(
-              "transition-colors duration-300 ease-in-out py-3.5 px-6 bg-primary text-white hover:bg-primary",
-              {
-                "bg-white text-accent-foreground hover:bg-primary hover:text-white":
-                  onHomePage && !isScrolled,
-              }
-            )}
-            asChild
-          >
-            <Link to="/register">Sign Up</Link>
-          </Button>
+          {/* <>
+            <Button
+              variant="ghost"
+              className={cn(
+                "transition-colors duration-300 ease-in-out py-3.5 px-6 text-textPrimary hover:bg-primary hover:text-white",
+                {
+                  "text-white hover:bg-primary hover:text-white":
+                    onHomePage && !isScrolled,
+                }
+              )}
+              asChild
+            >
+              <Link to="/login">Login</Link>
+            </Button>
+            <Button
+              className={cn(
+                "transition-colors duration-300 ease-in-out py-3.5 px-6 bg-primary text-white hover:bg-primary",
+                {
+                  "bg-white text-accent-foreground hover:bg-primary hover:text-white":
+                    onHomePage && !isScrolled,
+                }
+              )}
+              asChild
+            >
+              <Link to="/register">Sign Up</Link>
+            </Button>
+          </> */}
+          <UserProfileDropdown
+            className={cn("", {
+              "text-white": onHomePage && !isScrolled,
+            })}
+          />
         </div>
       </Container>
     </header>
