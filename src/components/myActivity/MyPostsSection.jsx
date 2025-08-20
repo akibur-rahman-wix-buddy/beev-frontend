@@ -6,31 +6,31 @@ import { Link } from "react-router";
 const MyPostsSection = () => {
   const posts = [
     {
-      title: "Support needed for single mom with 3 kids...",
+      title: "This platform gives emotional support when I need it most",
       postedDate: "May 15, 2023",
       status: "Pending",
       responses: 0,
     },
     {
-      title: "Support needed for single mom with 3 kids...",
+      title: "I had a great experience on here",
       postedDate: "May 15, 2023",
       status: "Active",
       responses: 2,
     },
     {
-      title: "Support needed for single mom with 3 kids...",
+      title: "Thank you for the support",
       postedDate: "May 15, 2023",
       status: "Active",
       responses: 2,
     },
     {
-      title: "Support needed for single mom with 3 kids...",
+      title: "Once I joined, this platform gave me hope",
       postedDate: "May 15, 2023",
       status: "Active",
       responses: 2,
     },
     {
-      title: "Support needed for single mom with 3 kids...",
+      title: "This platform is amazing",
       postedDate: "May 15, 2023",
       status: "Active",
       responses: 2,
@@ -47,7 +47,9 @@ const MyPostsSection = () => {
         >
           <div className="space-y-2">
             <h3 className="text-xl font-medium">{post.title}</h3>
-            <p className="text-[16px] text-[#827D77]">Posted on: {post.postedDate}</p>
+            <p className="text-[16px] text-[#827D77]">
+              Posted on: {post.postedDate}
+            </p>
           </div>
           <div className="flex flex-col items-end gap-2">
             <div

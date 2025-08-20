@@ -6,7 +6,7 @@ import React, { useState } from "react";
 
 const MyActivityPage = () => {
   const [activeTab, setActiveTab] = useState(0);
-  const tabs = ["My Posts", "Donations"];
+  const tabs = ["My Posts", "Contributions"];
 
   const handleTabChange = (index) => {
     console.log("Active tab:", tabs[index]);

@@ -24,7 +24,7 @@ const JoinTheCircleDetailsSec = ({ className }) => {
             <p>
               Your presence helps us meet delicate needs with care, create
               moments of genuine connection, and remind people that they matter.
-              When you Join the Circle, you become part of a living network of
+              When you Join The Circle, you become part of a living network of
               hearts committed to looking out for one another.
             </p>
             <p>

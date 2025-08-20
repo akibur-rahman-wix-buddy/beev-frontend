@@ -31,7 +31,7 @@ const DonationsSection = () => {
     <div className="p-12 border border-[#E4DDD2] rounded-lg space-y-6">
       <div className="bg-[#F3EDE5] p-6 rounded-[10px] flex justify-between items-center mb-8">
         <div className="space-y-2">
-          <h3 className="text-xl font-medium">Total Support Amount</h3>
+          <h3 className="text-xl font-medium">Support Amount</h3>
           <p className="text-3xl font-semibold">$200.00</p>
         </div>
         <div className="flex flex-col items-end gap-2">
