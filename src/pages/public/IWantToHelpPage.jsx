@@ -16,11 +16,12 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Textarea } from "@/components/ui/textarea";
 import { BiDollar } from "react-icons/bi";
-import HaveNeedDialog from "@/components/dialog/HaveNeedDialog";
+import { LuHash } from "react-icons/lu";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import IWantToHelpDialog from "@/components/dialog/IWantToHelpDialog";
 
 const formSchema = z
   .object({
@@ -31,52 +32,31 @@ const formSchema = z
       .string()
       .min(1, "Email is required")
       .pipe(z.email("Please enter a valid email address")),
-    typeOfSupport: z.string().min(1, "Please select a type of support"),
-    descriptionAboutYourNeed: z
-      .string()
-      .min(1, "Please tell us more about your need"),
-    howCanWeSupportYou: z.string().optional(),
+    typeOfPayment: z.string().min(1, "Please select a type of payment"),
+    specificHelp: z.string().min(1, "Please select an option"),
+    specificHelpHeartId: z.string().optional(),
+    inspireDetails: z.string().optional(),
     amountOfSupport: z
       .string()
       .min(1, "Amount is required")
       .refine((val) => {
         const num = parseFloat(val);
-        return !isNaN(num) && num > 0 && num <= 100;
-      }, "Please enter a valid amount between $1 and $100"),
-    supportMethod: z.string().min(1, "Please select a support method"),
-    supportCashAppHandle: z.string().optional(),
-    supportPayPalHandle: z.string().optional(),
+        return !isNaN(num) && num > 0;
+      }, "Please enter a valid amount greater than zero"),
   })
   .superRefine((data, ctx) => {
-    // Cash App validation
-    if (data.supportMethod === "Cash App" && !data.supportCashAppHandle) {
+    // If specificHelp is "Yes", then specificHelpHeartId is required
+    if (data.specificHelp === "Yes" && !data.specificHelpHeartId?.trim()) {
       ctx.addIssue({
-        path: ["supportCashAppHandle"], // ✅ attaches error to this field
-        message: "Cash App handle is required",
+        path: ["specificHelpHeartId"],
+        message: "Heart ID is required when you want to give a specific one",
         code: "custom",
       });
     }
-
-    // PayPal validation
-    if (data.supportMethod === "PayPal") {
-      if (!data.supportPayPalHandle) {
-        ctx.addIssue({
-          path: ["supportPayPalHandle"],
-          message: "PayPal email address is required",
-          code: "custom",
-        });
-      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.supportPayPalHandle)) {
-        ctx.addIssue({
-          path: ["supportPayPalHandle"],
-          message: "Please enter a valid PayPal email address",
-          code: "custom",
-        });
-      }
-    }
   });
 
-const WantToHelp = () => {
-  const [isHaveNeedDialogOpen, setIsHaveNeedDialogOpen] = useState(false);
+const IWantToHelpPage = () => {
+  const [isIWantToHelpDialogOpen, setIsIWantToHelpDialogOpen] = useState(false);
   const [paymentType, setPaymentType] = useState("One Time");
   const [selectedAmount, setSelectedAmount] = useState(0);
 
@@ -86,6 +66,10 @@ const WantToHelp = () => {
       name: "",
       email: "",
       typeOfPayment: "One Time",
+      specificHelp: "No",
+      specificHelpHeartId: "",
+      inspireDetails: "",
+      amountOfSupport: "",
     },
   });
 
@@ -95,7 +79,7 @@ const WantToHelp = () => {
 
   function onSubmit(values) {
     console.log(values);
-    setIsHaveNeedDialogOpen(true);
+    setIsIWantToHelpDialogOpen(true);
   }
   return (
     <Container as="section" className="pt-8">
@@ -262,7 +246,7 @@ const WantToHelp = () => {
                 />
                 <FormField
                   control={form.control}
-                  name="supportMethod"
+                  name="specificHelp"
                   render={({ field }) => (
                     <FormItem className="space-y-3">
                       <FormLabel className="text-lg font-medium">
@@ -298,22 +282,34 @@ const WantToHelp = () => {
                           {field.value === "Yes" && (
                             <FormField
                               control={form.control}
-                              name="supportPayPalHandle"
+                              name="specificHelpHeartId"
                               render={({ field }) => (
                                 <FormItem className="space-y-1">
-                                  <FormLabel className="font-medium text-[15px]">
-                                    Who or what do you remember? (Support is not
-                                    guaranteed for specific requests)
+                                  <FormLabel className="font-medium text-base">
+                                    What do you remember?{" "}
+                                    <span className="text-[#7E7971] text-sm font-normal">
+                                      (Support is not guaranteed for specific
+                                      requests)
+                                    </span>
                                   </FormLabel>
-                                  <FormControl>
+                                  <div className="relative">
+                                    <FormControl>
+                                      <Input
+                                        placeholder="Enter Featured Needs Heart ID, for example #105"
+                                        className="bg-[#F3EDE5] border-[#F3EDE5] px-6 py-4 pl-12 h-[60px] rounded-[10px] !text-base"
+                                        {...field}
+                                      />
+                                    </FormControl>
+                                    <LuHash className="absolute size-6 left-4 top-1/2 transform -translate-y-1/2" />
+                                  </div>
+                                  {/* <FormControl>
                                     <Input
-                                      placeholder="Enter Featured Needs Number or Name..."
+                                      placeholder="Enter Featured Needs Heart ID, for example #102"
                                       className="bg-[#F3EDE5] border-[#F3EDE5] px-6 py-4 h-[60px] rounded-[10px] !text-base"
                                       {...field}
                                     />
-                                  </FormControl>
-                                  <FormMessage />{" "}
-                                  {/* ✅ Shows error under input */}
+                                  </FormControl> */}
+                                  <FormMessage />
                                 </FormItem>
                               )}
                             />
@@ -326,7 +322,7 @@ const WantToHelp = () => {
                 />
                 <FormField
                   control={form.control}
-                  name="howCanWeSupportYou"
+                  name="inspireDetails"
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="text-lg font-medium">
@@ -368,7 +364,7 @@ const WantToHelp = () => {
                             ${item.amount}
                             <span
                               className={cn(
-                                "transition-all duration-300",
+                                "text-[22px] transition-all duration-300",
                                 paymentType === "Monthly"
                                   ? "opacity-100"
                                   : "opacity-0"
@@ -427,12 +423,12 @@ const WantToHelp = () => {
           </div>
         </div>
       </section>
-      <HaveNeedDialog
-        open={isHaveNeedDialogOpen}
-        onOpenChange={setIsHaveNeedDialogOpen}
+      <IWantToHelpDialog
+        open={isIWantToHelpDialogOpen}
+        onOpenChange={setIsIWantToHelpDialogOpen}
       />
     </Container>
   );
 };
 
-export default WantToHelp;
+export default IWantToHelpPage;

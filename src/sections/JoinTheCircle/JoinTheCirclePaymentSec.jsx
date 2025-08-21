@@ -68,7 +68,7 @@ const JoinTheCirclePaymentSec = ({ className }) => {
                   ${item.amount}
                   <span
                     className={cn(
-                      "transition-all duration-300",
+                      "text-[22px] transition-all duration-300",
                       paymentType === "Monthly" ? "opacity-100" : "opacity-0"
                     )}
                   >

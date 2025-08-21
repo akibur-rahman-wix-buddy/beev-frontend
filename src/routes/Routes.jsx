@@ -10,7 +10,7 @@ import OurMissionPage from "@/pages/public/OurMissionPage";
 import PrivacyPolicyPage from "@/pages/public/PrivacyPolicyPage";
 import TermsConditionsPage from "@/pages/public/TermsConditionsPage";
 import OneHeartSanctuaryPage from "@/pages/public/OneHeartSanctuaryPage";
-import WantToHelp from "@/pages/public/WantToHelp";
+import IWantToHelpPage from "@/pages/public/IWantToHelpPage";
 import ImpactOfYourSupportPage from "@/pages/public/ImpactOfYourSupportPage";
 import FaqsPage from "@/pages/public/FaqsPage";
 import ContactUsPage from "@/pages/public/ContactUsPage";
@@ -46,7 +46,7 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/want-to-help",
-        element: <WantToHelp />,
+        element: <IWantToHelpPage />,
       },
       {
         path: "/impact-of-your-support",
