@@ -3,7 +3,7 @@ import useSyncLocalProject from "@/hooks/useSyncLocalProject";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const MainProvider = ({ children }) => {
-  useSyncLocalProject("demo-project-name"); // Please replace with your actual project name
+  useSyncLocalProject("beev-frontend"); // Please replace with your actual project name
   const queryClient = new QueryClient();
 
   return (

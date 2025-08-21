@@ -51,7 +51,7 @@ const JoinTheCirclePaymentSec = ({ className }) => {
     <section className={cn("bg-[#F3EDE5]", className)}>
       <Container className="py-20">
         <SectionTitle description="Choose Your Contribution" center>
-          Join the Circle of Care
+          Join The Circle of Care
         </SectionTitle>
         <div className="grid grid-cols-3 gap-8">
           {[

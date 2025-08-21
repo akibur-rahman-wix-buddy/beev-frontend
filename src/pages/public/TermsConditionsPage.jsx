@@ -133,9 +133,9 @@ const TermsConditionsPage = () => {
         <div className="space-y-6">
           <p className="font-semibold text-2xl">8. Limitation of Liability</p>
           <p>
-            You agree not to hold One Heart Society, its founder, team, or
-            affiliates responsible for any personal, emotional, or financial
-            outcomes resulting from use of the platform.
+            You agree not to hold One Heart Society, One Heart Sanctuary, its
+            founder, team, or affiliates responsible for any personal,
+            emotional, or financial outcomes resulting from use of our services.
           </p>
           <ul className="list-disc pl-5 space-y-0.5">
             <li>

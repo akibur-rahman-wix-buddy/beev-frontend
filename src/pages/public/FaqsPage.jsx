@@ -38,7 +38,7 @@ const FaqsPage = ({ className }) => {
       {
         question: "How can I give?",
         answer:
-          "One Heart Society exists because of your support, and we are deeply grateful. Use the “I Want to Help” form or “Join the Circle” section to share how you’d like to contribute. Every act of giving fuels moments of real care, connection, and encouragement.",
+          "One Heart Society exists because of your support, and we are deeply grateful. Use the “I Want to Help” form or “Join The Circle” section to share how you’d like to contribute. Every act of giving fuels moments of real care, connection, and encouragement.",
       },
       {
         question: "How is the money used?",
@@ -66,14 +66,14 @@ const FaqsPage = ({ className }) => {
           "No. All contributions are pooled so we can respond to needs as they arise, ensuring fairness and timeliness.",
       },
       {
-        question: "Is my contribution tax deductible?",
+        question: "Is my contribution tax-deductible?",
         answer:
-          "No. One Heart Society is not a charity or nonprofit organization. All contributions are considered voluntary gifts and are not tax deductible.",
+          "No. One Heart Society is not a charity or nonprofit organization. All contributions are considered voluntary gifts and are not tax-deductible.",
       },
       {
         question: "What if I need more help than you can give?",
         answer:
-          "While we can’t guarantee support nor promise to always meet every need completely when we do offer support; we try our best to offer what we can and surround you with care through One Heart Sanctuary.",
+          "We can’t guarantee support nor promise to always meet every need completely when we do offer support; we do try our best to offer what we can and surround you with care through One Heart Sanctuary.",
       },
       {
         question: "Can I remain anonymous?",
@@ -127,7 +127,7 @@ const FaqsPage = ({ className }) => {
       {
         question: "What happens if a request isn’t funded?",
         answer:
-          "While we cannot promise nor guarantee help to any individual(s). We’ll do our best to offer partial help or revisit it when resources become available.",
+          "We’ll do our best to offer partial help or revisit it when resources become available.", // "While we cannot promise nor guarantee help to any individual(s). We’ll do our best to offer partial help or revisit it when resources become available."
       },
       {
         question: "Is this for emergencies?",
@@ -147,7 +147,7 @@ const FaqsPage = ({ className }) => {
       {
         question: "What if I’m unsure whether my need is “big enough”?",
         answer:
-          "If it matters to you, it matters to us. Share it, and we’ll let you know if we can help.",
+          "If it matters to you, it matters to us. Share it, and we’ll do our best to respond with care.",
       },
       {
         question: "How are needs shared with supporters?",

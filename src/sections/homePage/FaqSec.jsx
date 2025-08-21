@@ -36,7 +36,7 @@ const FaqSec = ({ className }) => {
     {
       question: "How can I give?",
       answer:
-        "One Heart Society exists because of your support, and we are deeply grateful. Use the “I Want to Help” form or “Join the Circle” section to share how you’d like to contribute. Every act of giving fuels moments of real care, connection, and encouragement.",
+        "One Heart Society exists because of your support, and we are deeply grateful. Use the “I Want to Help” form or “Join The Circle” section to share how you’d like to contribute. Every act of giving fuels moments of real care, connection, and encouragement.",
     },
     {
       question: "How is the money used?",

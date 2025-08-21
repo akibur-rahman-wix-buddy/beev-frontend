@@ -14,7 +14,7 @@ const RegistrationSuccessDialog = ({ open, onOpenChange }) => {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
         showCloseButton={false}
-        className="border-0 rounded-4xl w-full !max-w-[800px] bg-[#F9F5F0]"
+        className="border-0 rounded-2xl w-full !max-w-[800px] bg-[#F9F5F0]"
       >
         <DialogHeader>
           <DialogDescription

@@ -32,7 +32,7 @@ const OurVisionSec = ({ className }) => {
           <div className="space-y-1 text-primary w-fit mx-auto">
             <p>Step Inside the Sanctuary</p>
             <p>If You’re in Need, This Space Is for You</p>
-            <p>Give with Heart. <Link to="/join-the-circle" className="hover:underline">Join the Circle.</Link></p>
+            <p>Give with Heart. <Link to="/join-the-circle" className="hover:underline">Join The Circle.</Link></p>
           </div>
         </div>
       </Container>
