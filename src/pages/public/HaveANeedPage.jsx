@@ -19,6 +19,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { BiDollar } from "react-icons/bi";
 import HaveNeedDialog from "@/components/dialog/HaveNeedDialog";
 import { useState } from "react";
+import { Checkbox } from "@/components/custom/checkbox";
 
 const formSchema = z
   .object({
@@ -32,42 +33,92 @@ const formSchema = z
       .string()
       .min(1, "Please tell us more about your need"),
     howCanWeSupportYou: z.string().optional(),
-    amountOfSupport: z
-      .string()
-      .min(1, "Amount is required")
-      .refine((val) => {
-        const num = parseFloat(val);
-        return !isNaN(num) && num > 0 && num <= 100;
-      }, "Please enter a valid amount between $1 and $100"),
-    supportMethod: z.string().min(1, "Please select a support method"),
+    // Financial support specific fields
+    amountOfSupport: z.string().optional(),
+    supportMethod: z.string().optional(),
     supportCashAppHandle: z.string().optional(),
     supportPayPalHandle: z.string().optional(),
+    typesofCareYouNeeded: z.array(z.string()).optional(),
+    interestedToJoin: z.string().optional(),
+    postOnHeartWall: z.string().optional(),
+    whenWantToPost: z.string().optional(),
   })
   .superRefine((data, ctx) => {
-    // Cash App validation
-    if (data.supportMethod === "Cash App" && !data.supportCashAppHandle) {
-      ctx.addIssue({
-        path: ["supportCashAppHandle"], // ✅ attaches error to this field
-        message: "Cash App handle is required",
-        code: "custom",
-      });
-    }
-
-    // PayPal validation
-    if (data.supportMethod === "PayPal") {
-      if (!data.supportPayPalHandle) {
+    // Financial support validation
+    if (data.typeOfSupport === "Financial") {
+      // Amount validation
+      if (!data.amountOfSupport) {
         ctx.addIssue({
-          path: ["supportPayPalHandle"],
-          message: "PayPal email address is required",
+          path: ["amountOfSupport"],
+          message: "Amount is required",
           code: "custom",
         });
-      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.supportPayPalHandle)) {
+      } else {
+        const num = parseFloat(data.amountOfSupport);
+        if (isNaN(num) || num <= 0 || num > 100) {
+          ctx.addIssue({
+            path: ["amountOfSupport"],
+            message: "Please enter a valid amount between $1 and $100",
+            code: "custom",
+          });
+        }
+      }
+
+      // Support method validation
+      if (!data.supportMethod) {
         ctx.addIssue({
-          path: ["supportPayPalHandle"],
-          message: "Please enter a valid PayPal email address",
+          path: ["supportMethod"],
+          message: "Please select a method to send support",
           code: "custom",
         });
       }
+
+      // Cash App validation
+      if (data.supportMethod === "Cash App" && !data.supportCashAppHandle) {
+        ctx.addIssue({
+          path: ["supportCashAppHandle"],
+          message: "Cash App handle is required",
+          code: "custom",
+        });
+      }
+
+      // PayPal validation
+      if (data.supportMethod === "PayPal") {
+        if (!data.supportPayPalHandle) {
+          ctx.addIssue({
+            path: ["supportPayPalHandle"],
+            message: "PayPal email address is required",
+            code: "custom",
+          });
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.supportPayPalHandle)) {
+          ctx.addIssue({
+            path: ["supportPayPalHandle"],
+            message: "Please enter a valid PayPal email address",
+            code: "custom",
+          });
+        }
+      }
+    }
+
+    // Emotional support validation
+    if (data.typeOfSupport === "Emotional") {
+      // Types of care validation
+      if (!data.typesofCareYouNeeded || data.typesofCareYouNeeded.length < 1) {
+        ctx.addIssue({
+          path: ["typesofCareYouNeeded"],
+          message: "Please select at least one type of care you need",
+          code: "custom",
+        });
+      }
+    }
+
+    // Heart Wall validation
+    if (data.postOnHeartWall === "Yes" && !data.whenWantToPost) {
+      ctx.addIssue({
+        path: ["whenWantToPost"],
+        message: "Please select when you’d like this post shared",
+        code: "custom",
+      });
     }
   });
 
@@ -86,8 +137,14 @@ const HaveANeedPage = () => {
       supportMethod: "",
       supportCashAppHandle: "",
       supportPayPalHandle: "",
+      typesofCareYouNeeded: [],
+      interestedToJoin: "",
+      postOnHeartWall: "",
+      whenWantToPost: "",
     },
   });
+
+  const typeOfSupport = form.watch("typeOfSupport");
 
   function onSubmit(values) {
     console.log(values);
@@ -225,167 +282,433 @@ const HaveANeedPage = () => {
                     </FormItem>
                   )}
                 />
-                <FormField
-                  control={form.control}
-                  name="descriptionAboutYourNeed"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-lg font-medium">
-                        Tell us more about your need <span className="">*</span>
-                      </FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder="Please share as openly and honestly as you feel comfortable. The more we understand, the better we can respond with care..."
-                          className="bg-[#FBF7F0] px-6 py-4 rounded-[10px] h-[240px] !text-base"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="howCanWeSupportYou"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-lg font-medium">
-                        How would you feel most supported right now?{" "}
-                        <span className="text-[#7E7971] text-sm font-normal">
-                          (Optional)
-                        </span>
-                      </FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder="Share how we could best show up for you right now..."
-                          className="bg-[#FBF7F0] px-6 py-4 rounded-[10px] h-[280px] !text-base"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="amountOfSupport"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-lg leading-[120%] font-medium inline">
-                        How much support are you requesting?{" "}
-                        <span className="">*</span>{" "}
-                        <span className="text-sm text-[#7E7971] font-normal">
-                          (If your request is selected for financial assistance,
-                          support will be provided directly by One Heart
-                          Society)
-                        </span>
-                      </FormLabel>
-                      <div className="relative">
-                        <FormControl>
-                          <Input
-                            type="number"
-                            placeholder="Enter amount (max $100)"
-                            className="bg-[#FBF7F0] px-6 py-4 pl-12 h-[60px] rounded-[10px] !text-base"
-                            {...field}
-                          />
-                        </FormControl>
-                        <BiDollar className="absolute size-6 left-4 top-1/2 transform -translate-y-1/2" />
-                      </div>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="supportMethod"
-                  render={({ field }) => (
-                    <FormItem className="space-y-3">
-                      <FormLabel className="text-lg leading-[120%] font-medium inline">
-                        If we’re able to respond to your need, what’s the best
-                        way to send support? <span className="">*</span>{" "}
-                        <span className="text-sm text-[#7E7971] font-normal">
-                          (Payment details are collected only so we can send
-                          support if we’re able to respond. They are never
-                          shared publicly or with other members)
-                        </span>
-                      </FormLabel>
-                      <FormControl>
-                        <RadioGroup
-                          onValueChange={field.onChange}
-                          defaultValue={field.value}
-                          className="flex flex-col gap-5 bg-[#FBF7F0] p-8 rounded-lg"
-                        >
-                          {/* Cash App Option */}
-                          <FormItem className="flex items-center gap-3">
-                            <FormControl>
-                              <RadioGroupItem value="Cash App" />
-                            </FormControl>
-                            <FormLabel className="font-normal text-lg cursor-pointer">
-                              Cash App
-                            </FormLabel>
-                          </FormItem>
-                          {field.value === "Cash App" && (
-                            <FormField
-                              control={form.control}
-                              name="supportCashAppHandle"
-                              render={({ field }) => (
-                                <FormItem>
-                                  <FormLabel className="text-[15px] font-medium">
-                                    Enter Your Cash App Handle{" "}
-                                    <span className="">*</span>
-                                  </FormLabel>
-                                  <FormControl>
-                                    <Input
-                                      placeholder="Enter $YourHandle"
-                                      className="bg-[#F3EDE5] border-[#F3EDE5] px-6 py-4 h-[60px] rounded-[10px] !text-base"
-                                      {...field}
-                                    />
-                                  </FormControl>
-                                  <FormMessage />{" "}
-                                  {/* ✅ Shows error under input */}
-                                </FormItem>
-                              )}
+                {typeOfSupport === "Financial" && (
+                  <>
+                    <FormField
+                      control={form.control}
+                      name="descriptionAboutYourNeed"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-lg font-medium">
+                            Tell us more about your need{" "}
+                            <span className="">*</span>
+                          </FormLabel>
+                          <FormControl>
+                            <Textarea
+                              placeholder="Please share as openly and honestly as you feel comfortable. The more we understand, the better we can respond with care..."
+                              className="bg-[#FBF7F0] px-6 py-4 rounded-[10px] h-[240px] !text-base"
+                              {...field}
                             />
-                          )}
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="howCanWeSupportYou"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-lg font-medium">
+                            How would you feel most supported right now?{" "}
+                            <span className="text-[#7E7971] text-sm font-normal">
+                              (Optional)
+                            </span>
+                          </FormLabel>
+                          <FormControl>
+                            <Textarea
+                              placeholder="Share how we could best show up for you right now..."
+                              className="bg-[#FBF7F0] px-6 py-4 rounded-[10px] h-[280px] !text-base"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="amountOfSupport"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-lg leading-[120%] font-medium inline">
+                            How much support are you requesting?{" "}
+                            <span className="">*</span>{" "}
+                            <span className="text-sm text-[#7E7971] font-normal">
+                              (If your request is selected for financial
+                              assistance, support will be provided directly by
+                              One Heart Society)
+                            </span>
+                          </FormLabel>
+                          <div className="relative">
+                            <FormControl>
+                              <Input
+                                type="number"
+                                placeholder="Enter amount (max $100)"
+                                className="bg-[#FBF7F0] px-6 py-4 pl-12 h-[60px] rounded-[10px] !text-base"
+                                {...field}
+                              />
+                            </FormControl>
+                            <BiDollar className="absolute size-6 left-4 top-1/2 transform -translate-y-1/2" />
+                          </div>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="supportMethod"
+                      render={({ field }) => (
+                        <FormItem className="space-y-3">
+                          <FormLabel className="text-lg leading-[120%] font-medium inline">
+                            If we’re able to respond to your need, what’s the
+                            best way to send support?{" "}
+                            <span className="">*</span>{" "}
+                            <span className="text-sm text-[#7E7971] font-normal">
+                              (Payment details are collected only so we can send
+                              support if we’re able to respond. They are never
+                              shared publicly or with other members)
+                            </span>
+                          </FormLabel>
+                          <FormControl>
+                            <RadioGroup
+                              onValueChange={field.onChange}
+                              defaultValue={field.value}
+                              className="flex flex-col gap-5 bg-[#FBF7F0] p-8 rounded-lg"
+                            >
+                              {/* Cash App Option */}
+                              <FormItem className="flex items-center gap-3">
+                                <FormControl>
+                                  <RadioGroupItem value="Cash App" />
+                                </FormControl>
+                                <FormLabel className="font-normal text-lg cursor-pointer">
+                                  Cash App
+                                </FormLabel>
+                              </FormItem>
+                              {field.value === "Cash App" && (
+                                <FormField
+                                  control={form.control}
+                                  name="supportCashAppHandle"
+                                  render={({ field }) => (
+                                    <FormItem>
+                                      <FormLabel className="text-[15px] font-medium">
+                                        Enter Your Cash App Handle{" "}
+                                        <span className="">*</span>
+                                      </FormLabel>
+                                      <FormControl>
+                                        <Input
+                                          placeholder="Enter $YourHandle"
+                                          className="bg-[#F3EDE5] border-[#F3EDE5] px-6 py-4 h-[60px] rounded-[10px] !text-base"
+                                          {...field}
+                                        />
+                                      </FormControl>
+                                      <FormMessage />{" "}
+                                      {/* ✅ Shows error under input */}
+                                    </FormItem>
+                                  )}
+                                />
+                              )}
 
-                          {/* PayPal Option */}
-                          <FormItem className="flex items-center gap-3">
-                            <FormControl>
-                              <RadioGroupItem value="PayPal" />
-                            </FormControl>
-                            <FormLabel className="font-normal text-lg cursor-pointer">
-                              PayPal
-                            </FormLabel>
-                          </FormItem>
-                          {field.value === "PayPal" && (
-                            <FormField
-                              control={form.control}
-                              name="supportPayPalHandle"
-                              render={({ field }) => (
-                                <FormItem>
-                                  <FormLabel className="text-[15px] font-medium">
-                                    Enter Your PayPal Email Address{" "}
-                                    <span className="">*</span>
-                                  </FormLabel>
-                                  <FormControl>
-                                    <Input
-                                      placeholder="Enter email"
-                                      className="bg-[#F3EDE5] border-[#F3EDE5] px-6 py-4 h-[60px] rounded-[10px] !text-base"
-                                      {...field}
-                                    />
-                                  </FormControl>
-                                  <FormMessage />{" "}
-                                  {/* ✅ Shows error under input */}
-                                </FormItem>
+                              {/* PayPal Option */}
+                              <FormItem className="flex items-center gap-3">
+                                <FormControl>
+                                  <RadioGroupItem value="PayPal" />
+                                </FormControl>
+                                <FormLabel className="font-normal text-lg cursor-pointer">
+                                  PayPal
+                                </FormLabel>
+                              </FormItem>
+                              {field.value === "PayPal" && (
+                                <FormField
+                                  control={form.control}
+                                  name="supportPayPalHandle"
+                                  render={({ field }) => (
+                                    <FormItem>
+                                      <FormLabel className="text-[15px] font-medium">
+                                        Enter Your PayPal Email Address{" "}
+                                        <span className="">*</span>
+                                      </FormLabel>
+                                      <FormControl>
+                                        <Input
+                                          placeholder="Enter email"
+                                          className="bg-[#F3EDE5] border-[#F3EDE5] px-6 py-4 h-[60px] rounded-[10px] !text-base"
+                                          {...field}
+                                        />
+                                      </FormControl>
+                                      <FormMessage />{" "}
+                                      {/* ✅ Shows error under input */}
+                                    </FormItem>
+                                  )}
+                                />
                               )}
+                            </RadioGroup>
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </>
+                )}
+                {typeOfSupport === "Emotional" && (
+                  <>
+                    <FormField
+                      control={form.control}
+                      name="descriptionAboutYourNeed"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-lg font-medium">
+                            Tell us more about your need{" "}
+                            <span className="">*</span>
+                          </FormLabel>
+                          <FormControl>
+                            <Textarea
+                              placeholder="Please share as openly and honestly as you feel comfortable. The more we understand, the better we can respond with care..."
+                              className="bg-[#FBF7F0] px-6 py-4 rounded-[10px] h-[240px] !text-base"
+                              {...field}
                             />
-                          )}
-                        </RadioGroup>
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="howCanWeSupportYou"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-lg font-medium">
+                            How would you feel most supported right now?{" "}
+                            <span className="text-[#7E7971] text-sm font-normal">
+                              (Optional)
+                            </span>
+                          </FormLabel>
+                          <FormControl>
+                            <Textarea
+                              placeholder="Optional, but helpful for offering the kind of support your heart needs..."
+                              className="bg-[#FBF7F0] px-6 py-4 rounded-[10px] h-[280px] !text-base"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="typesofCareYouNeeded"
+                      render={() => (
+                        <FormItem className="space-y-3">
+                          <FormLabel className="text-lg font-medium">
+                            What kind of care are you open to receiving?
+                          </FormLabel>
+                          <div className="flex flex-col gap-5 bg-[#FBF7F0] p-8 rounded-lg">
+                            {[
+                              "Kind messages or words of encouragement",
+                              "Spiritual or guided journal prompts",
+                              "A resource or suggestion",
+                              "A listening presence",
+                            ].map((option) => (
+                              <FormField
+                                key={option}
+                                control={form.control}
+                                name="typesofCareYouNeeded"
+                                render={({ field }) => {
+                                  return (
+                                    <FormItem
+                                      key={option}
+                                      className="flex items-center gap-3"
+                                    >
+                                      <FormControl>
+                                        <Checkbox
+                                          checked={field.value?.includes(
+                                            option
+                                          )}
+                                          onCheckedChange={(checked) => {
+                                            return checked
+                                              ? field.onChange([
+                                                  ...(field.value || []),
+                                                  option,
+                                                ])
+                                              : field.onChange(
+                                                  field.value?.filter(
+                                                    (value) => value !== option
+                                                  )
+                                                );
+                                          }}
+                                        />
+                                      </FormControl>
+                                      <FormLabel className="font-normal text-lg cursor-pointer">
+                                        {option}
+                                      </FormLabel>
+                                    </FormItem>
+                                  );
+                                }}
+                              />
+                            ))}
+                          </div>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="interestedToJoin"
+                      render={({ field }) => (
+                        <FormItem className="space-y-3">
+                          <FormLabel className="text-lg font-medium">
+                            Are you interested in joining One Heart Sanctuary?
+                          </FormLabel>
+                          <FormControl>
+                            <RadioGroup
+                              onValueChange={field.onChange}
+                              defaultValue={field.value}
+                              className="flex flex-col gap-5 bg-[#FBF7F0] p-8 rounded-lg"
+                            >
+                              <FormItem className="flex items-center gap-3">
+                                <FormControl>
+                                  <RadioGroupItem value="Yes" />
+                                </FormControl>
+                                <FormLabel className="font-normal text-lg cursor-pointer">
+                                  Yes
+                                </FormLabel>
+                              </FormItem>
+                              <FormItem className="flex items-center gap-3">
+                                <FormControl>
+                                  <RadioGroupItem value="No" />
+                                </FormControl>
+                                <FormLabel className="font-normal text-lg cursor-pointer">
+                                  No
+                                </FormLabel>
+                              </FormItem>
+                            </RadioGroup>
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </>
+                )}
+                {typeOfSupport === "Thoughtful" && (
+                  <>
+                    <FormField
+                      control={form.control}
+                      name="descriptionAboutYourNeed"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-lg font-medium">
+                            Tell us more about your need{" "}
+                            <span className="">*</span>
+                          </FormLabel>
+                          <FormControl>
+                            <Textarea
+                              placeholder=" Please share as openly as you'd like. What would feel meaningful to receive from the community..."
+                              className="bg-[#FBF7F0] px-6 py-4 rounded-[10px] h-[240px] !text-base"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="howCanWeSupportYou"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-lg font-medium">
+                            How would you feel most supported right now?{" "}
+                            <span className="text-[#7E7971] text-sm font-normal">
+                              (Optional)
+                            </span>
+                          </FormLabel>
+                          <FormControl>
+                            <Textarea
+                              placeholder=" i.e “I’d love to receive kind words on my birthday,” or “I’m just hoping to feel seen.”"
+                              className="bg-[#FBF7F0] px-6 py-4 rounded-[10px] h-[280px] !text-base"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="postOnHeartWall"
+                      render={({ field }) => (
+                        <FormItem className="space-y-3">
+                          <FormLabel className="text-lg font-medium">
+                            Could we post this request (anonymously) on The
+                            Heart Wall on your behalf?
+                          </FormLabel>
+                          <FormControl>
+                            <RadioGroup
+                              onValueChange={field.onChange}
+                              defaultValue={field.value}
+                              className="flex flex-col gap-5 bg-[#FBF7F0] p-8 rounded-lg"
+                            >
+                              <FormItem className="flex items-center gap-3">
+                                <FormControl>
+                                  <RadioGroupItem value="Yes" />
+                                </FormControl>
+                                <FormLabel className="font-normal text-lg cursor-pointer">
+                                  Yes, please
+                                </FormLabel>
+                              </FormItem>
+                              <FormItem className="flex items-center gap-3">
+                                <FormControl>
+                                  <RadioGroupItem value="No" />
+                                </FormControl>
+                                <FormLabel className="font-normal text-lg cursor-pointer">
+                                  No, I’d prefer to keep this private
+                                </FormLabel>
+                              </FormItem>
+                            </RadioGroup>
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    {form.watch("postOnHeartWall") === "Yes" && (
+                      <FormField
+                        control={form.control}
+                        name="whenWantToPost"
+                        render={({ field }) => (
+                          <FormItem className="space-y-3">
+                            <FormLabel className="text-lg font-medium">
+                              When would you like this post shared?
+                            </FormLabel>
+                            <FormControl>
+                              <RadioGroup
+                                onValueChange={field.onChange}
+                                defaultValue={field.value}
+                                className="flex flex-col gap-5 bg-[#FBF7F0] p-8 rounded-lg"
+                              >
+                                <FormItem className="flex items-center gap-3">
+                                  <FormControl>
+                                    <RadioGroupItem value="Now" />
+                                  </FormControl>
+                                  <FormLabel className="font-normal text-lg cursor-pointer">
+                                    Now
+                                  </FormLabel>
+                                </FormItem>
+                                <FormItem className="flex items-center gap-3">
+                                  <FormControl>
+                                    <RadioGroupItem value="Any Time" />
+                                  </FormControl>
+                                  <FormLabel className="font-normal text-lg cursor-pointer">
+                                    Whenever the team feels it's right
+                                  </FormLabel>
+                                </FormItem>
+                              </RadioGroup>
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    )}
+                  </>
+                )}
 
                 <Button type="submit" className="w-full">
                   Submit Request
