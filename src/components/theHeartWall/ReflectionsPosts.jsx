@@ -3,23 +3,24 @@ import { Button } from "../ui/button";
 import { FilterIcon, PlusIcon } from "@/assets/icons/icons";
 import Post from "../cards/Post";
 import Pagination from "../shared/Pagination";
+import { Link } from "react-router";
 
 const ReflectionsPosts = () => {
   const posts = [
     {
-      id: 2,
+      id: 1,
       type: "with_comments",
       author: {
-        name: "Tony Mcious",
-        avatar: "https://i.ibb.co.com/d018P7Sf/image.png",
+        name: "Anonymous",
+        avatar: "",
       },
-      timestamp: "Posted 2 hours ago",
-      title: "Unexpected medical expenses",
+      timestamp: "Posted 2 hour ago",
+      title: "A space that reminded me I wasn’t alone",
       content:
-        "My daughter was recently diagnosed with a rare condition that requires specialized treatment. Our insurance covers some, but we're facing significant out-of-pocket expenses that we hadn't prepared for. Any support or guidance would mean the world to us.",
-      likes: 10,
-      comments: 10,
-      tag: "1",
+        "I found One Heart Society during a really heavy season of my life. What I discovered was more than words, it was small acts of care that made a huge difference: groceries when I didn’t know how I’d eat, a ride when I felt stranded, and thoughtful messages that eased the loneliness. This community reminded me that kindness is still real and gave me space to breathe and believe in people again.",
+      likes: 20,
+      comments: 7,
+      tag: "Heart Wall #1",
       commentsList: [
         {
           id: 1,
@@ -27,33 +28,32 @@ const ReflectionsPosts = () => {
             name: "Ciara C",
             avatar: "https://i.ibb.co.com/Pr9hpG0/paris2.png",
           },
-          content:
-            "My daughter was recently diagnosed with a rare condition that requires specialized treatment. Our insurance covers some",
+          content: "So glad to hear things are moving in the right direction!",
         },
         {
           id: 2,
           author: {
-            name: "Ciara C",
+            name: "Mark D",
             avatar: "https://i.ibb.co.com/Lg0HdnS/doctor-profile.png",
           },
           content:
-            "My daughter was recently diagnosed with a rare condition that requires specialized treatment. Our insurance covers some",
+            "Your strength is inspiring. Wishing your daughter the best.",
         },
       ],
     },
     {
-      id: 4,
+      id: 2,
       type: "with_comments",
       author: {
         name: "Mike R",
         avatar: "https://i.ibb.co.com/fYcPSK0y/profile-2.png",
       },
-      timestamp: "Posted 6 hours ago",
-      title: "Supporting elderly parents",
+      timestamp: "Posted 3 hours ago",
+      title: "Appreciating the resources shared",
       content:
-        "My parents are getting older and need more care. I'm trying to balance work, my own family, and taking care of them. It's emotionally and financially draining. Any resources or support groups would be helpful.",
-      likes: 8,
-      comments: 5,
+        "I was feeling overwhelmed caring for my parents, but the advice and resources shared by this group gave me direction. I feel less alone and more hopeful now.",
+      likes: 14,
+      comments: 4,
       tag: "Heart Wall #2",
       commentsList: [
         {
@@ -62,24 +62,23 @@ const ReflectionsPosts = () => {
             name: "Lisa K",
             avatar: "https://i.ibb.co.com/d018P7Sf/image.png",
           },
-          content:
-            "I'm going through something similar. Have you looked into local senior care resources?",
+          content: "Happy to hear that! We're all here to support one another.",
         },
       ],
     },
     {
-      id: 6,
+      id: 3,
       type: "with_comments",
       author: {
         name: "David K",
         avatar: "https://i.ibb.co.com/V7XRPhM/image-6-1.png",
       },
-      timestamp: "Posted 10 hours ago",
-      title: "Small business struggling",
+      timestamp: "Posted 7 hours ago",
+      title: "Encouragement made a difference",
       content:
-        "My small restaurant has been struggling since the pandemic. We're behind on rent and I'm not sure how much longer we can keep the doors open. This business is my life's work and I don't want to give up.",
-      likes: 18,
-      comments: 12,
+        "Running my restaurant has been tough, but hearing your stories and encouragement gave me the motivation to keep pushing forward. I’ve started applying new strategies shared here.",
+      likes: 22,
+      comments: 9,
       tag: "Heart Wall #3",
       commentsList: [
         {
@@ -88,8 +87,7 @@ const ReflectionsPosts = () => {
             name: "Maria S",
             avatar: "https://i.ibb.co.com/Pr9hpG0/paris2.png",
           },
-          content:
-            "Have you applied for any small business relief programs? There might be grants available.",
+          content: "That’s wonderful! Wishing your restaurant great success.",
         },
         {
           id: 2,
@@ -98,23 +96,23 @@ const ReflectionsPosts = () => {
             avatar: "https://i.ibb.co.com/V7XRPhM/image-6-1.png",
           },
           content:
-            "I know how hard it is. My bakery went through similar struggles. Happy to share what worked for us.",
+            "Proud of you for not giving up. Keep going, you’ve got this!",
         },
       ],
     },
     {
-      id: 8,
+      id: 4,
       type: "with_comments",
       author: {
         name: "Anonymous",
         avatar: "",
       },
-      timestamp: "Posted 14 hours ago",
-      title: "Housing crisis",
+      timestamp: "Posted 12 hours ago",
+      title: "Thankful for the housing tips",
       content:
-        "My landlord is selling the property and I have 30 days to find a new place. Rent prices have skyrocketed and I can't find anything affordable. I'm scared my family might end up homeless.",
-      likes: 25,
-      comments: 8,
+        "I was terrified about finding a place after my landlord sold our building, but the advice here led me to a local program that helped me secure temporary housing. I’m beyond grateful.",
+      likes: 28,
+      comments: 6,
       tag: "Heart Wall #4",
       commentsList: [
         {
@@ -123,24 +121,23 @@ const ReflectionsPosts = () => {
             name: "Alex M",
             avatar: "https://i.ibb.co.com/Pr9hpG0/paris2.png",
           },
-          content:
-            "Check with local housing assistance programs. They might have emergency rental assistance available.",
+          content: "That’s amazing news! So glad the program could help.",
         },
       ],
     },
     {
-      id: 10,
+      id: 5,
       type: "with_comments",
       author: {
         name: "Emma T",
         avatar: "https://i.ibb.co.com/Pr9hpG0/paris2.png",
       },
-      timestamp: "Posted 18 hours ago",
-      title: "Single mom struggling",
+      timestamp: "Posted 15 hours ago",
+      title: "Support means everything",
       content:
-        "I'm a single mom of two young kids and I'm barely keeping my head above water. Childcare costs are eating up most of my paycheck and I'm constantly stressed about money. Looking for any resources or support for single parents.",
-      likes: 42,
-      comments: 15,
+        "Being a single mom is overwhelming, but the encouragement and resources from this group helped me find affordable childcare. I feel lighter knowing I have a community behind me.",
+      likes: 40,
+      comments: 13,
       tag: "Heart Wall #5",
       commentsList: [
         {
@@ -149,8 +146,7 @@ const ReflectionsPosts = () => {
             name: "Sophie R",
             avatar: "https://i.ibb.co.com/V7XRPhM/image-6-1.png",
           },
-          content:
-            "There are some great single parent support groups in the area. I can share some resources with you.",
+          content: "So proud of you! You’re doing an amazing job.",
         },
         {
           id: 2,
@@ -158,13 +154,45 @@ const ReflectionsPosts = () => {
             name: "Hannah L",
             avatar: "https://i.ibb.co.com/fYcPSK0y/profile-2.png",
           },
+          content: "Happy you found support. You deserve the best!",
+        },
+      ],
+    },
+    {
+      id: 6,
+      type: "with_comments",
+      author: {
+        name: "Tony Mcious",
+        avatar: "https://i.ibb.co.com/d018P7Sf/image.png",
+      },
+      timestamp: "Posted 1 hour ago",
+      title: "Grateful for the guidance",
+      content:
+        "Thanks to the suggestions shared here, I found a specialist who could help with my daughter's condition. The emotional support I received from this community has been incredible.",
+      likes: 20,
+      comments: 7,
+      tag: "Heart Wall #1",
+      commentsList: [
+        {
+          id: 1,
+          author: {
+            name: "Ciara C",
+            avatar: "https://i.ibb.co.com/Pr9hpG0/paris2.png",
+          },
+          content: "So glad to hear things are moving in the right direction!",
+        },
+        {
+          id: 2,
+          author: {
+            name: "Mark D",
+            avatar: "https://i.ibb.co.com/Lg0HdnS/doctor-profile.png",
+          },
           content:
-            "I've been there. It gets better. Have you looked into childcare assistance programs?",
+            "Your strength is inspiring. Wishing your daughter the best.",
         },
       ],
     },
   ];
-
   return (
     <div className="space-y-8">
       <div className="flex items-center justify-between">
@@ -174,9 +202,11 @@ const ReflectionsPosts = () => {
             <FilterIcon className="size-5 shrink-0" />
             Filter
           </Button>
-          <Button className="rounded-full">
-            <PlusIcon className="size-5 shrink-0" />
-            Add Post
+          <Button className="rounded-full" asChild>
+            <Link to="/add-post">
+              <PlusIcon className="size-5 shrink-0" />
+              Add Post
+            </Link>
           </Button>
         </div>
       </div>

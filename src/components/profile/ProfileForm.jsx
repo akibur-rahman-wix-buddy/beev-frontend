@@ -18,7 +18,7 @@ import { MAX_PROFILE_IMAGE_SIZE } from "@/lib/staticData";
 const formSchema = z.object({
   avatar: z
     .union([
-      z.string().url("Please provide a valid image URL"),
+      z.string("Please provide a valid image URL"),
       z.instanceof(File, { message: "Please upload a valid image file" }),
       z.null(),
     ])

@@ -9,34 +9,24 @@ const PostDetailsPage = () => {
     id: 2,
     type: "with_comments",
     author: {
-      name: "Tony Mcious",
-      avatar: "https://i.ibb.co.com/d018P7Sf/image.png",
+      name: "Mike R",
+      avatar: "https://i.ibb.co.com/fYcPSK0y/profile-2.png",
     },
-    timestamp: "Posted 2 hours ago",
-    title: "Unexpected medical expenses",
+    timestamp: "Posted 3 hours ago",
+    title: "Appreciating the resources shared",
     content:
-      "My daughter was recently diagnosed with a rare condition that requires specialized treatment. Our insurance covers some, but we're facing significant out-of-pocket expenses that we hadn't prepared for. Any support or guidance would mean the world to us.",
-    likes: 10,
-    comments: 10,
-    tag: "1",
+      "I was feeling overwhelmed caring for my parents, but the advice and resources shared by this group gave me direction. I feel less alone and more hopeful now.",
+    likes: 14,
+    comments: 4,
+    tag: "Heart Wall #2",
     commentsList: [
       {
         id: 1,
         author: {
-          name: "Ciara C",
-          avatar: "https://i.ibb.co.com/Pr9hpG0/paris2.png",
+          name: "Lisa K",
+          avatar: "https://i.ibb.co.com/d018P7Sf/image.png",
         },
-        content:
-          "My daughter was recently diagnosed with a rare condition that requires specialized treatment. Our insurance covers some",
-      },
-      {
-        id: 2,
-        author: {
-          name: "Ciara C",
-          avatar: "https://i.ibb.co.com/Lg0HdnS/doctor-profile.png",
-        },
-        content:
-          "My daughter was recently diagnosed with a rare condition that requires specialized treatment. Our insurance covers some",
+        content: "Happy to hear that! We're all here to support one another.",
       },
     ],
   };

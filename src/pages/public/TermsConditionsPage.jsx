@@ -1,10 +1,11 @@
 import Container from "@/components/shared/Container";
 import React from "react";
+import { Link } from "react-router";
 
 const TermsConditionsPage = () => {
   return (
-    <Container as="section" className="pt-8 pb-20">
-      <h1 className="text-[40px] font-semibold mb-8">Terms & Conditions</h1>
+    <Container as="section" className="pt-8 pb-20 space-y-8">
+      <h1 className="text-[40px] font-semibold">Terms & Conditions</h1>
       <div className="text-lg space-y-12">
         <div className="space-y-6">
           <p>Effective Date: May 1, 2025</p>
@@ -52,9 +53,9 @@ const TermsConditionsPage = () => {
           <p>
             You can review, update, or remove your request anytime by emailing:
             <br />
-            <span className="text-primary font-medium">
+            <Link to="mailto:info@oneheartsociety.org" className="text-primary font-medium">
               info@oneheartsociety.org
-            </span>
+            </Link>
           </p>
         </div>
         <div className="space-y-6">
@@ -178,6 +179,10 @@ const TermsConditionsPage = () => {
             all support is used with care, integrity, and direct impact.
           </p>
         </div>
+      </div>
+      <div className="space-y-2 pt-8">
+        <p className="text-2xl font-semibold">Questions or concerns?</p>
+        <p className="text-xl font-semibold">Reach out anytime: <Link to="mailto:info@oneheartsociety.org" className="text-primary hover:underline cursor-pointer">info@oneheartsociety.org</Link></p>
       </div>
     </Container>
   );

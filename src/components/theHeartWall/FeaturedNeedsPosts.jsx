@@ -8,6 +8,7 @@ const FeaturedNeedsPosts = () => {
   const posts = [
     {
       id: 1,
+      heartId: 27,
       type: "simple",
       author: {
         name: "Admin",
@@ -21,6 +22,7 @@ const FeaturedNeedsPosts = () => {
     },
     {
       id: 3,
+      heartId: 26,
       type: "simple",
       author: {
         name: "Admin",
@@ -34,6 +36,7 @@ const FeaturedNeedsPosts = () => {
     },
     {
       id: 5,
+      heartId: 25,
       type: "simple",
       author: {
         name: "Admin",
@@ -47,6 +50,7 @@ const FeaturedNeedsPosts = () => {
     },
     {
       id: 7,
+      heartId: 24,
       type: "simple",
       author: {
         name: "Admin",
@@ -60,6 +64,7 @@ const FeaturedNeedsPosts = () => {
     },
     {
       id: 9,
+      heartId: 23,
       type: "simple",
       author: {
         name: "Admin",

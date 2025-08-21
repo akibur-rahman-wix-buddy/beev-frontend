@@ -193,7 +193,7 @@ const ContactUsPage = () => {
                   Submit
                 </Button>
 
-                <p className="max-w-[70%] mx-auto text-center text-[17px] text-[#8F8D8D]">
+                <p className="max-w-[70%] mx-auto text-center text-[17px] leading-[160%] text-[#8F8D8D]">
                   This form is not for financial, emotional, or thoughtful care
                   needs. If your message relates to any of the above, please
                   visit the{" "}

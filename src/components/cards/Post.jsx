@@ -54,10 +54,10 @@ const Post = ({ post, commentEnabled = false }) => {
             <p className="text-[#8F8D8D]">{post.timestamp}</p>
           </div>
         </div>
-        {post.type === "with_comments" && (
+        {post.heartId && (
           <div className="flex items-center gap-2 text-xl text-primary">
             <Heart className="size-5 fill-current" />
-            <span className="font-medium">Heart Wall #{post.id}</span>
+            <span className="font-medium">Heart #{post.heartId}</span>
           </div>
         )}
       </div>
@@ -82,7 +82,7 @@ const Post = ({ post, commentEnabled = false }) => {
                 <LoveIcon className="size-6" />
               )}
             </button>
-            <span className="text-lg font-medium">{post.likes} Likes</span>
+            <span className="text-lg font-medium">{isLoved ? post.likes + 1 : post.likes} Likes</span>
           </div>
           {post.type === "with_comments" && (
             <div

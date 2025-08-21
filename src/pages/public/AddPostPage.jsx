@@ -165,7 +165,7 @@ const AddPostPage = () => {
                   Share on The Heart Wall
                 </Button>
 
-                <p className="max-w-[70%] mx-auto text-center text-[17px] text-[#8F8D8D]">
+                <p className="max-w-[70%] mx-auto text-center leading-[160%] text-[17px] text-[#8F8D8D]">
                   Your post will be reviewed before it goes live to help keep
                   this a safe and supportive space
                 </p>

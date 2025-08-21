@@ -1,5 +1,6 @@
 import Container from "@/components/shared/Container";
 import React from "react";
+import { Link } from "react-router";
 
 const PrivacyPolicyPage = () => {
   return (
@@ -110,9 +111,12 @@ const PrivacyPolicyPage = () => {
           <p>
             You may request to review, update, or delete your information at any
             time by contacting us: <br />
-            <span className="text-primary font-medium">
+            <Link
+              to="mailto:info@oneheartsociety.org"
+              className="text-primary font-medium"
+            >
               info@oneheartsociety.org
-            </span>
+            </Link>
           </p>
         </div>
         <div className="space-y-6">
