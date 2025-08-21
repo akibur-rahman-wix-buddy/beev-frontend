@@ -267,7 +267,7 @@ const WantToHelp = () => {
                     <FormItem className="space-y-3">
                       <FormLabel className="text-lg font-medium">
                         Is there a featured need that you felt called to answer?
-                        <span className="text-[#9D9A96] text-sm font-normal">
+                        <span className="text-[#7E7971] text-sm font-normal">
                           (Optional)
                         </span>
                       </FormLabel>
@@ -331,7 +331,7 @@ const WantToHelp = () => {
                     <FormItem>
                       <FormLabel className="text-lg font-medium">
                         What inspires you to give?{" "}
-                        <span className="text-[#9D9A96] text-sm font-normal">
+                        <span className="text-[#7E7971] text-sm font-normal">
                           (Optional)
                         </span>
                       </FormLabel>
@@ -398,7 +398,7 @@ const WantToHelp = () => {
                     <FormItem className="bg-[#FBF7F0] p-8 rounded-lg">
                       <FormLabel className="text-lg font-medium">
                         Custom Amount{" "}
-                        <span className="text-[#9D9A96] text-sm font-normal">
+                        <span className="text-[#7E7971] text-sm font-normal">
                           (Any amount big or small makes a difference)
                         </span>
                       </FormLabel>

@@ -4,6 +4,7 @@ import React from "react";
 import founderImg from "@/assets/images/community.png";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router";
 
 const CommunitySec = ({ className }) => {
   return (
@@ -18,8 +19,11 @@ const CommunitySec = ({ className }) => {
             speak from the heart. Leave your own heartfelt comment if you feel
             called to share.
           </p>
-          <Button className="hover:bg-primary relative hover:after:content-[''] hover:after:absolute hover:after:left-0 hover:after:-right-2 hover:after:top-full hover:after:mt-2 hover:after:-translate-y-[70%] hover:after:h-6 hover:after:bg-[rgba(255,131,123,0.4)] hover:after:blur-[15px] hover:after:rounded-full hover:after:z-[-1] transition-all duration-300">
-            Explore The Heart Wall
+          <Button
+            asChild
+            className="hover:bg-primary relative hover:after:content-[''] hover:after:absolute hover:after:left-0 hover:after:-right-2 hover:after:top-full hover:after:mt-2 hover:after:-translate-y-[70%] hover:after:h-6 hover:after:bg-[rgba(255,131,123,0.4)] hover:after:blur-[15px] hover:after:rounded-full hover:after:z-[-1] transition-all duration-300"
+          >
+            <Link to="/the-heart-wall">Explore The Heart Wall</Link>
           </Button>
         </div>
         <figure className="flex-[45%] rounded-xl overflow-hidden">

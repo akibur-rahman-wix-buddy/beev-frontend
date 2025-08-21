@@ -251,7 +251,7 @@ const HaveANeedPage = () => {
                     <FormItem>
                       <FormLabel className="text-lg font-medium">
                         How would you feel most supported right now?{" "}
-                        <span className="text-[#726968]">(Optional)</span>
+                        <span className="text-[#7E7971] text-sm font-normal">(Optional)</span>
                       </FormLabel>
                       <FormControl>
                         <Textarea
@@ -269,13 +269,13 @@ const HaveANeedPage = () => {
                   name="amountOfSupport"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-lg leading-[100%] font-medium inline">
+                      <FormLabel className="text-lg leading-[120%] font-medium inline">
                         How much support are you requesting?{" "}
                         <span className="">*</span>{" "}
-                        <span className="text-[13px] text-[#7E7971] font-normal">
+                        <span className="text-sm text-[#7E7971] font-normal">
                           (If your request is selected for financial assistance,
-                          support will be provided directly by One Heart Society
-                          as resources allow)
+                          support will be provided directly by One Heart
+                          Society)
                         </span>
                       </FormLabel>
                       <div className="relative">
@@ -297,10 +297,10 @@ const HaveANeedPage = () => {
                   name="supportMethod"
                   render={({ field }) => (
                     <FormItem className="space-y-3">
-                      <FormLabel className="text-lg leading-[100%] font-medium inline">
+                      <FormLabel className="text-lg leading-[120%] font-medium inline">
                         If we’re able to respond to your need, what’s the best
                         way to send support? <span className="">*</span>{" "}
-                        <span className="text-[13px] text-[#7E7971] font-normal">
+                        <span className="text-sm text-[#7E7971] font-normal">
                           (Payment details are collected only so we can send
                           support if we’re able to respond. They are never
                           shared publicly or with other members)
