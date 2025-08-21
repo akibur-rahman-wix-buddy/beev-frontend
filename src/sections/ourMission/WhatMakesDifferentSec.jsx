@@ -18,10 +18,8 @@ const WhatMakesDifferentSec = ({ className }) => {
             <div className="">
               <li>There are no campaigns to run.</li>
               <li>No sad stories to perform.</li>
-              <li>No need to convince others of your worth.</li>
-              <li>
-                But we do ask that you share your truth - honestly and clearly.
-              </li>
+              <li>No need to prove your worth.</li>
+              <li>Just an honest space to share your truth.</li>
             </div>
             <p>
               Every request is reviewed and held with care, and we do our best

@@ -14,16 +14,13 @@ import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import StaticSupportTypeDetails from "@/components/cards/StaticSupportTypeDetails";
 import { Textarea } from "@/components/ui/textarea";
 import { BiDollar } from "react-icons/bi";
 import HaveNeedDialog from "@/components/dialog/HaveNeedDialog";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { ArrowRight } from "lucide-react";
-import { InfoIcon } from "@/assets/icons/icons";
 import { cn } from "@/lib/utils";
-import SectionTitle from "@/components/shared/SectionTitle";
 
 const formSchema = z
   .object({
@@ -270,7 +267,9 @@ const WantToHelp = () => {
                     <FormItem className="space-y-3">
                       <FormLabel className="text-lg font-medium">
                         Is there a featured need that you felt called to answer?
-                        (Optional)
+                        <span className="text-[#9D9A96] text-sm font-normal">
+                          (Optional)
+                        </span>
                       </FormLabel>
                       <FormControl>
                         <RadioGroup
@@ -332,7 +331,9 @@ const WantToHelp = () => {
                     <FormItem>
                       <FormLabel className="text-lg font-medium">
                         What inspires you to give?{" "}
-                        <span className="text-[#726968]">(Optional)</span>
+                        <span className="text-[#9D9A96] text-sm font-normal">
+                          (Optional)
+                        </span>
                       </FormLabel>
                       <FormControl>
                         <Textarea
@@ -397,7 +398,7 @@ const WantToHelp = () => {
                     <FormItem className="bg-[#FBF7F0] p-8 rounded-lg">
                       <FormLabel className="text-lg font-medium">
                         Custom Amount{" "}
-                        <span className="text-[#9D9A96] text-base font-normal">
+                        <span className="text-[#9D9A96] text-sm font-normal">
                           (Any amount big or small makes a difference)
                         </span>
                       </FormLabel>

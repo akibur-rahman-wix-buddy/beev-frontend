@@ -40,7 +40,7 @@ const SettingsPage = () => {
               <Switch className="scale-160 origin-right cursor-pointer" />
             </div>
             <div className="bg-[#F3EDE5] rounded-lg flex justify-between items-center px-8 py-6">
-              Receive email when someone admin post on The Heart Wall
+              Receive email when someone posts on The Heart Wall
               <Switch className="scale-160 origin-right cursor-pointer" />
             </div>
           </div>

@@ -53,9 +53,8 @@ const JoinTheCirclePaymentSec = ({ className }) => {
         <SectionTitle description="Choose Your Contribution" center>
           Join the Circle of Care
         </SectionTitle>
-        <div className="grid grid-cols-4 gap-6">
+        <div className="grid grid-cols-3 gap-8">
           {[
-            { amount: "10", label: "Seed Supporter" },
             { amount: "25", label: "Heart Holder" },
             { amount: "50", label: "Circle Sustainer" },
             { amount: "100", label: "Founding Heart" },
@@ -121,7 +120,7 @@ const JoinTheCirclePaymentSec = ({ className }) => {
                 <FormItem className="bg-[#FBF7F0] p-8 rounded-lg">
                   <FormLabel className="text-lg font-medium">
                     Custom Amount{" "}
-                    <span className="text-[#9D9A96] text-base font-normal">
+                    <span className="text-[#9D9A96] text-sm font-normal">
                       (Any amount big or small makes a difference)
                     </span>
                   </FormLabel>

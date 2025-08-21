@@ -1,6 +1,7 @@
 import Container from "@/components/shared/Container";
 import SectionTitle from "@/components/shared/SectionTitle";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router";
 
 const OurVisionSec = ({ className }) => {
   return (
@@ -28,10 +29,10 @@ const OurVisionSec = ({ className }) => {
               To hold you, just as you once held someone else.
             </p>
           </div>
-          <div className="space-y-1 text-primary hover:underline cursor-pointer w-fit mx-auto">
+          <div className="space-y-1 text-primary w-fit mx-auto">
             <p>Step Inside the Sanctuary</p>
             <p>If You’re in Need, This Space Is for You</p>
-            <p>Give with Heart. Join the Circle.</p>
+            <p>Give with Heart. <Link to="/join-the-circle" className="hover:underline">Join the Circle.</Link></p>
           </div>
         </div>
       </Container>
