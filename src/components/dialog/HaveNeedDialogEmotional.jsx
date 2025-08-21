@@ -8,7 +8,7 @@ import {
 import { Button } from "../ui/button";
 import { Link } from "react-router";
 
-const HaveNeedDialog = ({ open, onOpenChange }) => {
+const HaveNeedDialogEmotional = ({ open, onOpenChange }) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
@@ -18,22 +18,22 @@ const HaveNeedDialog = ({ open, onOpenChange }) => {
         <DialogHeader>
           <DialogDescription
             className={
-              "flex flex-col items-center gap-6 text-center p-12 text-lg font-medium"
+              "flex flex-col items-center gap-6 text-center p-12 text-lg"
             }
           >
             <HeartIcon />
-            <div className="">
-              <p>Thank you for trusting us with your story.</p>
+            <div className="space-y-2">
+              <p>Thank you for sharing what’s on your heart.</p>
+              <p>Your request has been received with compassion.</p>
               <p>
-                One Heart Society is still growing. While we can’t promise help
-                for every request, each one is received with care. As support
-                becomes available, we do our best to respond.
+                When support is possible, it may come through kind words,
+                check-ins, or resources shared via <span className="font-semibold">One Heart Sanctuary.</span>
               </p>
+              <p>You’re not alone here.</p>
             </div>
-            <p>You are not alone. You are seen. You are safe here.</p>
             <div className="pt-4">
-              <Button asChild>
-                <Link to="/">Go Home</Link>
+              <Button className="rounded-full px-20" asChild>
+                <Link to="/">Back to home</Link>
               </Button>
             </div>
           </DialogDescription>
@@ -43,4 +43,4 @@ const HaveNeedDialog = ({ open, onOpenChange }) => {
   );
 };
 
-export default HaveNeedDialog;
+export default HaveNeedDialogEmotional;

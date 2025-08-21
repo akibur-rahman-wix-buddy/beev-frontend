@@ -17,9 +17,11 @@ import { z } from "zod";
 import StaticSupportTypeDetails from "@/components/cards/StaticSupportTypeDetails";
 import { Textarea } from "@/components/ui/textarea";
 import { BiDollar } from "react-icons/bi";
-import HaveNeedDialog from "@/components/dialog/HaveNeedDialog";
+import HaveNeedDialogFinancial from "@/components/dialog/HaveNeedDialogFinancial";
 import { useState } from "react";
 import { Checkbox } from "@/components/custom/checkbox";
+import HaveNeedDialogEmotional from "@/components/dialog/HaveNeedDialogEmotional";
+import HaveNeedDialogThoughtful from "@/components/dialog/HaveNeedDialogThoughtful";
 
 const formSchema = z
   .object({
@@ -90,7 +92,9 @@ const formSchema = z
             message: "PayPal email address is required",
             code: "custom",
           });
-        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.supportPayPalHandle)) {
+        } else if (
+          !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.supportPayPalHandle)
+        ) {
           ctx.addIssue({
             path: ["supportPayPalHandle"],
             message: "Please enter a valid PayPal email address",
@@ -123,7 +127,12 @@ const formSchema = z
   });
 
 const HaveANeedPage = () => {
-  const [isHaveNeedDialogOpen, setIsHaveNeedDialogOpen] = useState(false);
+  const [isHaveNeedDialogFinancialOpen, setIsHaveNeedDialogFinancialOpen] =
+    useState(false);
+  const [isHaveNeedDialogEmotionalOpen, setIsHaveNeedDialogEmotionalOpen] =
+    useState(false);
+  const [isHaveNeedDialogThoughtfulOpen, setIsHaveNeedDialogThoughtfulOpen] =
+    useState(false);
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -148,7 +157,13 @@ const HaveANeedPage = () => {
 
   function onSubmit(values) {
     console.log(values);
-    setIsHaveNeedDialogOpen(true);
+    if (typeOfSupport === "Financial") {
+      setIsHaveNeedDialogFinancialOpen(true);
+    } else if (typeOfSupport === "Thoughtful") {
+      setIsHaveNeedDialogThoughtfulOpen(true);
+    } else {
+      setIsHaveNeedDialogEmotionalOpen(true);
+    }
   }
   return (
     <Container as="section" className="pt-8">
@@ -718,9 +733,17 @@ const HaveANeedPage = () => {
           </div>
         </div>
       </section>
-      <HaveNeedDialog
-        open={isHaveNeedDialogOpen}
-        onOpenChange={setIsHaveNeedDialogOpen}
+      <HaveNeedDialogFinancial
+        open={isHaveNeedDialogFinancialOpen}
+        onOpenChange={setIsHaveNeedDialogFinancialOpen}
+      />
+      <HaveNeedDialogEmotional
+        open={isHaveNeedDialogEmotionalOpen}
+        onOpenChange={setIsHaveNeedDialogEmotionalOpen}
+      />
+      <HaveNeedDialogThoughtful
+        open={isHaveNeedDialogThoughtfulOpen}
+        onOpenChange={setIsHaveNeedDialogThoughtfulOpen}
       />
     </Container>
   );
