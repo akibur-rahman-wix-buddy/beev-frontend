@@ -251,7 +251,9 @@ const HaveANeedPage = () => {
                     <FormItem>
                       <FormLabel className="text-lg font-medium">
                         How would you feel most supported right now?{" "}
-                        <span className="text-[#7E7971] text-sm font-normal">(Optional)</span>
+                        <span className="text-[#7E7971] text-sm font-normal">
+                          (Optional)
+                        </span>
                       </FormLabel>
                       <FormControl>
                         <Textarea
@@ -281,6 +283,7 @@ const HaveANeedPage = () => {
                       <div className="relative">
                         <FormControl>
                           <Input
+                            type="number"
                             placeholder="Enter amount (max $100)"
                             className="bg-[#FBF7F0] px-6 py-4 pl-12 h-[60px] rounded-[10px] !text-base"
                             {...field}
