@@ -40,9 +40,9 @@ const WhatWeOfferSec = ({ className }) => {
               Beyond the Sanctuary, we hold space for financial and thoughtful
               needs as well; from help with food and essentials to gentle
               support on a painful anniversary or the loss of a loved one. Every
-              request is personally reviewed with care and honor. With the help
-              of monthly and one-time supporters, we are able to support urgent
-              and sensitive needs with care and dignity.
+              request is carefully reviewed by our team. Thanks to the
+              generosity of one-time and monthly supporters, we're able to
+              respond to urgent and sensitive needs with care and dignity.
             </p>
           </div>
         </div>

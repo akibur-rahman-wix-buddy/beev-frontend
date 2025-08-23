@@ -740,6 +740,7 @@ const HaveANeedPage = () => {
       <HaveNeedDialogEmotional
         open={isHaveNeedDialogEmotionalOpen}
         onOpenChange={setIsHaveNeedDialogEmotionalOpen}
+        interestedToJoin={form.watch("interestedToJoin") !== "No"}
       />
       <HaveNeedDialogThoughtful
         open={isHaveNeedDialogThoughtfulOpen}

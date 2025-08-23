@@ -1,7 +1,10 @@
 import Container from "@/components/shared/Container";
 import bg from "@/assets/images/footer-bg.jpg";
 import Logo from "@/components/shared/Logo";
-import { FaFacebookSquare, FaInstagramSquare, FaTwitterSquare } from "react-icons/fa";
+import {
+  FaFacebookSquare,
+  FaInstagramSquare,
+} from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { Link } from "react-router";
 import { IoMdMail } from "react-icons/io";
@@ -9,7 +12,7 @@ import { IoMdMail } from "react-icons/io";
 const Footer = () => {
   const pages = [
     { name: "Return to Home", link: "/" },
-    // { name: "The Heart Wall", link: "/the-heart-wall" },
+    { name: "The Heart Wall", link: "/the-heart-wall" },
     { name: "One Heart Sanctuary", link: "/one-heart-sanctuary" },
     { name: "Join The Circle", link: "/join-the-circle" },
     { name: "Our Mission", link: "/our-mission" },
