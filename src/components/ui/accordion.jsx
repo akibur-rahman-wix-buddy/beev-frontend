@@ -12,7 +12,10 @@ function AccordionItem({ className, ...props }) {
   return (
     <AccordionPrimitive.Item
       data-slot="accordion-item"
-      className={cn("bg-[#F3EDE5] px-7 rounded-lg", className)}
+      className={cn(
+        "bg-[#F3EDE5] px-4 sm:px-5 lg:px-6 xl:px-7 rounded-md md:rounded-lg",
+        className
+      )}
       {...props}
     />
   );
@@ -24,14 +27,14 @@ function AccordionTrigger({ className, children, ...props }) {
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          "focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-center justify-between gap-4 rounded-md py-6 text-left text-lg font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 cursor-pointer group",
+          "focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-center justify-between gap-2.5 md:gap-4 rounded-md py-4 sm:py-4.5 lg:py-5 xl:py-6 text-left text-base md:text-[17px] lg:text-lg font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 cursor-pointer group",
           className
         )}
         {...props}
       >
         {children}
-        <Plus className="text-muted-foreground pointer-events-none size-6 shrink-0 translate-y-0.5 transition-transform duration-200 group-data-[state=open]:hidden [animation:spinOnce_0.4s_ease-out]" />
-        <Minus className="text-muted-foreground pointer-events-none size-6 shrink-0 translate-y-0.5 transition-transform duration-200 group-data-[state=closed]:hidden [animation:spinOnce_0.4s_ease-out]" />
+        <Plus className="text-muted-foreground pointer-events-none size-5 md:size-6 shrink-0 translate-y-0.5 transition-transform duration-200 group-data-[state=open]:hidden [animation:spinOnce_0.4s_ease-out]" />
+        <Minus className="text-muted-foreground pointer-events-none size-5 md:size-6 shrink-0 translate-y-0.5 transition-transform duration-200 group-data-[state=closed]:hidden [animation:spinOnce_0.4s_ease-out]" />
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   );
@@ -41,10 +44,12 @@ function AccordionContent({ className, children, ...props }) {
   return (
     <AccordionPrimitive.Content
       data-slot="accordion-content"
-      className="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden  text-[#7C7772]"
+      className="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden  text-[#7C7772] text-sm md:text-[15px] lg:text-base"
       {...props}
     >
-      <div className={cn("pt-0 pb-6", className)}>{children}</div>
+      <div className={cn("pt-0 pb-4 sm:pb-4.5 lg:pb-5 xl:pb-6", className)}>
+        {children}
+      </div>
     </AccordionPrimitive.Content>
   );
 }

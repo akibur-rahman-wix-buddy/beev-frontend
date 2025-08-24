@@ -39,24 +39,22 @@ const HowWorksSec = ({ className }) => {
 
   return (
     <section className={cn("bg-[#F3EDE5]", className)}>
-      <Container className="py-20">
-        <div className="">
-          <SectionTitle
-            description="One request. One act of care. One moment at a time."
-            center
-          >
-            How It Works
-          </SectionTitle>
-          <div className="grid grid-cols-4 gap-5">
-            {cardsData.map((card, index) => (
-              <Card
-                key={index}
-                icon={card.icon}
-                title={card.title}
-                description={card.description}
-              />
-            ))}
-          </div>
+      <Container className="py-10 sm:py-12 md:py-14 lg:py-16 xl:py-20">
+        <SectionTitle
+          description="One request. One act of care. One moment at a time."
+          center
+        >
+          How It Works
+        </SectionTitle>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {cardsData.map((card, index) => (
+            <Card
+              key={index}
+              icon={card.icon}
+              title={card.title}
+              description={card.description}
+            />
+          ))}
         </div>
       </Container>
     </section>
@@ -67,11 +65,13 @@ export default HowWorksSec;
 
 const Card = ({ icon: Icon, title, description }) => {
   return (
-    <div className="card p-5 rounded-2xl bg-[#F3EDE5] space-y-5 flex flex-col items-center text-center">
-      <Icon />
-      <div className="space-y-3.5">
-        <h3 className="text-xl font-medium">{title}</h3>
-        <p className="text-primaryDescription">{description}</p>
+    <div className="card p-3 md:p-4 lg:px-0 xl:p-5 flex flex-col items-center text-center space-y-3 md:space-y-4 xl:space-y-5">
+      <Icon className="size-14 md:size-16 xl:size-[76px]" />
+      <div className="space-y-2.5 md:space-y-3 xl:space-y-3.5">
+        <h3 className="text-lg xl:text-xl font-medium">{title}</h3>
+        <p className="text-sm xl:text-base text-primaryDescription">
+          {description}
+        </p>
       </div>
     </div>
   );

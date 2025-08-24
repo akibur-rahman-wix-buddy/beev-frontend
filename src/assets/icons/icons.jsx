@@ -716,3 +716,23 @@ export const ForwardIcon3 = ({ className, ...props }) => (
     />
   </svg>
 );
+
+export const SearchIcon1 = ({ className, ...props }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="33"
+    height="32"
+    viewBox="0 0 33 32"
+    fill="none"
+    className={cn("", className)}
+    {...props}
+  >
+    <path
+      d="M23.1667 22.6667L28.5 28M4.5 14.6667C4.5 17.4956 5.62381 20.2088 7.62419 22.2091C9.62458 24.2095 12.3377 25.3333 15.1667 25.3333C17.9956 25.3333 20.7088 24.2095 22.7091 22.2091C24.7095 20.2088 25.8333 17.4956 25.8333 14.6667C25.8333 11.8377 24.7095 9.12458 22.7091 7.12419C20.7088 5.12381 17.9956 4 15.1667 4C12.3377 4 9.62458 5.12381 7.62419 7.12419C5.62381 9.12458 4.5 11.8377 4.5 14.6667Z"
+      stroke="#8C8782"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+);

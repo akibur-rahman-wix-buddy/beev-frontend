@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
+import { SearchIcon1 } from "@/assets/icons/icons";
 
 const FaqsPage = ({ className }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -202,15 +203,18 @@ const FaqsPage = ({ className }) => {
         <SectionTitle className="my-6" center>
           Frequently Asked Questions
         </SectionTitle>
-        <Input
-          placeholder="Search FAQ's"
-          className="w-full max-w-[950px] px-8 py-5 bg-[#F3EDE5] rounded-full h-auto !text-base mb-10"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
+        <div className="relative max-w-[80%] lg:max-w-[750px] xl:max-w-[950px] w-full mb-6 md:mb-8 xl:mb-10">
+          <Input
+            placeholder="Search FAQ's"
+            className="w-full px-8 pl-10 sm:pl-12 lg:pl-14 py-3 sm:py-4 xl:py-5 bg-[#F3EDE5] rounded-full h-auto !text-base"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <SearchIcon1 className="size-5 sm:size-6 lg:size-7 absolute top-1/2 -translate-y-1/2 left-4 sm:left-5" />
+        </div>
         {filteredFaqs.length === 0 ? (
           <div className="text-center py-10">
-            <p className="text-lg text-gray-600">
+            <p className="md:text-lg text-gray-600">
               No FAQs found matching your search.
             </p>
           </div>
@@ -218,7 +222,7 @@ const FaqsPage = ({ className }) => {
           <Accordion
             type="single"
             collapsible
-            className="w-full space-y-5 mb-20"
+            className="w-full space-y-3 sm:space-y-4 lg:space-y-5 mb-10 sm:mb-12 md:mb-14 lg:mb-16 xl:mb-20"
             defaultValue="item-1"
           >
             {filteredFaqs.map((faq, index) => (

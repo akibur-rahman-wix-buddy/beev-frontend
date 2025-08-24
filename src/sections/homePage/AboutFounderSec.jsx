@@ -6,8 +6,8 @@ import { cn } from "@/lib/utils";
 
 const AboutFounderSec = ({ className }) => {
   return (
-    <section className={cn("py-20 relative", className)}>
-      <Container className="flex gap-16 relative z-10">
+    <section className={cn("lg:py-16 xl:py-20 relative", className)}>
+      <Container className="flex flex-col lg:flex-row items-center gap-8 xl:gap-16 relative z-10">
         <figure className="flex-[45%] rounded-xl overflow-hidden">
           <img
             src={founderImg}
@@ -15,8 +15,8 @@ const AboutFounderSec = ({ className }) => {
             className="h-full w-full object-cover object-center"
           />
         </figure>
-        <div className="flex-[55%] text-primaryDescription text-[17px] space-y-6">
-          <SectionTitle className="text-textPrimary mb-8">
+        <div className="flex-[55%] text-primaryDescription text-sm sm:text-[15px] xl:text-[17px] space-y-3 xl:space-y-6">
+          <SectionTitle className="text-textPrimary !mb-4 xl:mb-8">
             About The Founder
           </SectionTitle>
           <p>
@@ -50,9 +50,9 @@ const AboutFounderSec = ({ className }) => {
           </p>
         </div>
       </Container>
-      <div className="absolute inset-0 flex">
-        <div className="left flex-[calc(50%-350px)] bg-[#F3EDE5] rounded-r-2xl"></div>
-        <div className="right flex-[calc(50%+350px)]"></div>
+      <div className="absolute inset-0 hidden lg:flex">
+        <div className="left flex-[calc(50%-260px)] xl:flex-[calc(50%-350px)] bg-[#F3EDE5] rounded-r-2xl"></div>
+        <div className="right flex-[calc(50%+260px)] xl:flex-[calc(50%+350px)]"></div>
       </div>
     </section>
   );

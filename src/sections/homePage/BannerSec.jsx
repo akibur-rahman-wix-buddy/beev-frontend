@@ -7,12 +7,12 @@ import homeBanner from "@/assets/images/home-banner.png";
 const BannerSec = () => {
   return (
     <section className="relative pt-52 pb-44">
-      <Container className="text-center flex flex-col items-center justify-center gap-8 text-white relative z-10">
-        <h1 className="text-[54px] leading-[140%] font-bold max-w-[900px]">
+      <Container className="text-center flex flex-col items-center justify-center gap-4.5 sm:gap-6 xl:gap-8 text-white relative z-10">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-[54px] lg:leading-[140%] font-bold max-w-[600px] xl:max-w-[900px]">
           When Life <span className="text-primary">Feels Heavy</span> We Hold
           You Here
         </h1>
-        <div className="text-xl max-w-[1050px] space-y-6">
+        <div className="sm:text-lg xl:text-xl max-w-[1050px] space-y-4 sm:space-y-5 xl:space-y-6">
           <p>
             <span className="text-2xl font-bold">One Heart Society</span> is a
             soft-landing place for those who carry real needs but don't know how
@@ -29,9 +29,9 @@ const BannerSec = () => {
             carries their burdens alone.
           </p>
         </div>
-        <div className="text-xl gap-6 flex flex-col items-center">
+        <div className="sm:text-lg xl:text-xl gap-6 flex flex-col items-center">
           <p>Here, support isn’t loud. It’s soft. It’s kind. It’s real.</p>
-          <div className="flex gap-5">
+          <div className="flex flex-wrap justify-center gap-5">
             <Button className="py-4 px-10" variant="secondary" asChild>
               <Link to="/have-a-need">I Have a Need</Link>
             </Button>

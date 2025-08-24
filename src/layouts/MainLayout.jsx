@@ -10,7 +10,7 @@ const MainLayout = () => {
   return (
     <div className="font-inter text-textPrimary flex flex-col min-h-screen bg-[#F9F5F0]">
       <ScrollRestoration />
-      <Navbar className="sticky top-0 z-50" onHomePage={location === "/"} />
+      {/* <Navbar className="sticky top-0 z-50" onHomePage={location === "/"} /> */}
       <main
         className={cn("flex-grow", {
           "-mt-[102px]": location === "/",
@@ -18,7 +18,7 @@ const MainLayout = () => {
       >
         <Outlet />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
