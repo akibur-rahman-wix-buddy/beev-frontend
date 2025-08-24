@@ -46,19 +46,22 @@ const LoginPage = () => {
   }
 
   return (
-    <main className="bg-[#F9F5F0] text-textPrimary">
+    <main className="bg-[#F9F5F0] text-textPrimary relative">
       <Container className="">
         <header className="relative">
-          <nav className="absolute top-8 left-0">
-            <Logo className="h-[70px]" />
+          <nav className="absolute top-4 md:top-8 left-0">
+            <Logo className="h-14 md:h-16 lg:h-[70px]" />
           </nav>
         </header>
-        <section className="min-h-screen flex flex-col justify-center text-center gap-8 max-w-[500px] mx-auto py-10">
+        <section className="min-h-screen flex flex-col justify-center text-center gap-5 sm:gap-6 lg:gap-8 max-w-[500px] mx-auto py-10 sm:py-12 md:py-14 lg:py-16 xl:py-20">
           <div className="">
-            <SectionTitle className="mb-0">Welcome Back</SectionTitle>
-            <h2 className="text-[#707070] text-lg mt-2">
-              Please login to continue to your account.
-            </h2>
+            <SectionTitle
+              className="!mb-0"
+              description="Please login to continue to your account."
+              center
+            >
+              Welcome Back
+            </SectionTitle>
           </div>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
@@ -96,7 +99,7 @@ const LoginPage = () => {
                     control={form.control}
                     name="keepme"
                     render={({ field }) => (
-                      <FormItem className="flex items-center gap-2 space-y-0">
+                      <FormItem className="flex items-center gap-1 md:gap-2 space-y-0">
                         <FormControl>
                           <Checkbox
                             checked={field.value}
@@ -114,7 +117,7 @@ const LoginPage = () => {
 
                   <Link
                     to="/forgot-password"
-                    className="text-primary font-medium"
+                    className="text-primary font-medium text-sm sm:text-base"
                   >
                     Forgot Password?
                   </Link>
@@ -128,13 +131,13 @@ const LoginPage = () => {
                 <p className="text-[#6E6E6E] font-medium pb-1">or</p>
                 <hr className="border-t border-[#E9E0D7] flex-1" />
               </div>
-              <div className="bg-[#E3DCD5] p-4 h-[60px] rounded-[10px] flex items-center justify-center gap-3 cursor-pointer text-lg font-medium">
-                <GoogleIcon />
+              <div className="bg-[#E3DCD5] p-4 h-11 sm:h-[50px] md:h-[54px] lg:h-[60px] sm:text-[17px] lg:text-lg rounded-md flex items-center justify-center gap-3 cursor-pointer font-medium">
+                <GoogleIcon className="size-5 md:size-6" />
                 <p>Start with Google</p>
               </div>
             </form>
           </Form>
-          <p className="text-[17px] font-medium text-[#727272]">
+          <p className="text-[15px] md:text-[17px] font-medium text-[#727272]">
             Don’t have an account?{" "}
             <Link to="/register" className="text-primary hover:underline">
               Sign up for free

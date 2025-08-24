@@ -12,9 +12,9 @@ const BannerSec = () => {
           When Life <span className="text-primary">Feels Heavy</span> We Hold
           You Here
         </h1>
-        <div className="sm:text-lg xl:text-xl max-w-[1050px] space-y-4 sm:space-y-5 xl:space-y-6">
+        <div className="sm:text-lg xl:text-xl lg:max-w-[1050px] space-y-4 sm:space-y-5 xl:space-y-6">
           <p>
-            <span className="text-2xl font-bold">One Heart Society</span> is a
+            <span className="text-lg sm:text-xl xl:text-2xl font-bold">One Heart Society</span> is a
             soft-landing place for those who carry real needs but don't know how
             to ask for help. For those who don’t want to be publicly exposed in
             their tender moments.
@@ -31,11 +31,11 @@ const BannerSec = () => {
         </div>
         <div className="sm:text-lg xl:text-xl gap-6 flex flex-col items-center">
           <p>Here, support isn’t loud. It’s soft. It’s kind. It’s real.</p>
-          <div className="flex flex-wrap justify-center gap-5">
-            <Button className="py-4 px-10" variant="secondary" asChild>
+          <div className="flex flex-wrap justify-center gap-2.5  md:gap-x-5">
+            <Button className="py-4 lg:px-10" variant="secondary" asChild>
               <Link to="/have-a-need">I Have a Need</Link>
             </Button>
-            <Button className="py-4 px-10" asChild>
+            <Button className="py-4 lg:px-10" asChild>
               <Link to="/want-to-help">I Want to Help</Link>
             </Button>
           </div>

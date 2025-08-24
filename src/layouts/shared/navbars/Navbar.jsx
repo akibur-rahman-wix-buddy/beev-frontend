@@ -80,7 +80,7 @@ const Navbar = ({ className, istrue = false, onHomePage = false }) => {
         </div>
 
         <div className="flex-1 flex justify-end gap-2">
-          {/* <>
+          <>
             <Button
               variant="ghost"
               className={cn(
@@ -106,12 +106,12 @@ const Navbar = ({ className, istrue = false, onHomePage = false }) => {
             >
               <Link to="/register">Sign Up</Link>
             </Button>
-          </> */}
-          <UserProfileDropdown
+          </>
+          {/* <UserProfileDropdown
             className={cn("", {
               "text-white": onHomePage && !isScrolled,
             })}
-          />
+          /> */}
         </div>
       </Container>
     </header>
