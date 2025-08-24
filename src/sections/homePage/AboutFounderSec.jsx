@@ -7,15 +7,15 @@ import { cn } from "@/lib/utils";
 const AboutFounderSec = ({ className }) => {
   return (
     <section className={cn("lg:py-16 xl:py-20 relative", className)}>
-      <Container className="flex flex-col lg:flex-row items-center gap-8 xl:gap-16 relative z-10">
-        <figure className="flex-[45%] rounded-xl overflow-hidden">
+      <Container className="flex flex-col-reverse lg:flex-row lg:items-center gap-8 xl:gap-16 relative z-10">
+        <figure className="lg:flex-[45%] rounded-xl overflow-hidden">
           <img
             src={founderImg}
             alt=""
             className="h-full w-full object-cover object-center"
           />
         </figure>
-        <div className="flex-[55%] text-primaryDescription text-sm sm:text-[15px] xl:text-[17px] space-y-3 xl:space-y-6">
+        <div className="lg:flex-[55%] text-primaryDescription text-sm sm:text-[15px] xl:text-[17px] space-y-3 xl:space-y-6">
           <SectionTitle className="text-textPrimary !mb-4 xl:mb-8">
             About The Founder
           </SectionTitle>

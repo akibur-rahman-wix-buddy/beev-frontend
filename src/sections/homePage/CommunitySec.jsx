@@ -1,6 +1,5 @@
 import Container from "@/components/shared/Container";
 import SectionTitle from "@/components/shared/SectionTitle";
-import React from "react";
 import founderImg from "@/assets/images/community.png";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -9,12 +8,12 @@ import { Link } from "react-router";
 const CommunitySec = ({ className }) => {
   return (
     <section className={cn("lg:py-16 xl:py-20 relative", className)}>
-      <Container className="flex flex-col-reverse lg:flex-row items-center gap-8 xl:gap-16 relative z-10">
-        <div className="flex-[55%] text-sm sm:text-[15px] xl:text-[17px]">
-          <SectionTitle className="mb-9">
+      <Container className="flex flex-col lg:flex-row lg:items-center gap-8 xl:gap-16 relative z-10">
+        <div className="lg:flex-[55%] text-sm sm:text-[15px] xl:text-[17px]">
+          <SectionTitle className="">
             The Heart of Our Community
           </SectionTitle>
-          <p className="max-w-[550px] mb-12">
+          <p className="max-w-[550px] mb-4 sm:mb-6 lg:mb-8 xl:mb-12">
             Visit our Heart Wall to read real reflections from those moved to
             speak from the heart. Leave your own heartfelt comment if you feel
             called to share.
@@ -26,7 +25,7 @@ const CommunitySec = ({ className }) => {
             <Link to="/the-heart-wall">Explore The Heart Wall</Link>
           </Button>
         </div>
-        <figure className="flex-[45%] rounded-xl overflow-hidden">
+        <figure className="lg:flex-[45%] rounded-xl overflow-hidden">
           <img
             src={founderImg}
             alt=""

@@ -52,7 +52,7 @@ const FaqSec = ({ className }) => {
         <Accordion
           type="single"
           collapsible
-          className="w-full space-y-3 sm:space-y-4 lg:space-y-5 mb-10"
+          className="w-full space-y-3 sm:space-y-4 lg:space-y-5 mb-6 md:mb-8 xl:mb-10"
           defaultValue="item-1"
         >
           {faqData.map((faq, index) => (
