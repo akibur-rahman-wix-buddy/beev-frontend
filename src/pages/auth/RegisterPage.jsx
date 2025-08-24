@@ -17,7 +17,6 @@ import {
 import TextInput from "@/components/custom/TextInput";
 import PasswordInput from "@/components/custom/PasswordInput";
 import { Link } from "react-router";
-import { Checkbox } from "@/components/ui/checkbox";
 import { GoogleIcon } from "@/assets/icons/icons";
 import RegistrationSuccessDialog from "@/components/dialog/RegistrationSuccessDialog";
 import { useState } from "react";
@@ -57,20 +56,22 @@ const RegisterPage = () => {
   }
 
   return (
-    <main className="bg-[#F9F5F0] text-textPrimary">
+    <main className="bg-[#F9F5F0] text-textPrimary relative">
       <Container className="">
         <header className="relative">
-          <nav className="absolute top-8 left-0">
-            <Logo className="h-[70px]" />
+          <nav className="absolute top-4 md:top-8 left-0">
+            <Logo className="h-14 md:h-16 lg:h-[70px]" />
           </nav>
         </header>
-        <section className="min-h-screen flex flex-col justify-center text-center gap-8 max-w-[500px] mx-auto py-10">
-          <div className="">
-            <SectionTitle className="mb-0">Create your account</SectionTitle>
-            <h2 className="text-[#707070] text-lg mt-2 max-w-[80%] mx-auto">
-              WeIcome! Let's get you started.
-            </h2>
-          </div>
+        <section className="min-h-screen flex flex-col justify-center text-center gap-5 sm:gap-6 lg:gap-8 max-w-[500px] mx-auto py-24">
+          <SectionTitle
+            className="!mb-0"
+            description="Welcome! Let's get you started."
+            fromauth
+            center
+          >
+            Create your account
+          </SectionTitle>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
               <FormField
@@ -133,13 +134,13 @@ const RegisterPage = () => {
                 <p className="text-[#6E6E6E] font-medium pb-1">or</p>
                 <hr className="border-t border-[#E9E0D7] flex-1" />
               </div>
-              <div className="bg-[#E3DCD5] p-4 h-[60px] rounded-[10px] flex items-center justify-center gap-3 cursor-pointer text-lg font-medium">
+              <div className="bg-[#E3DCD5] p-4 h-11 sm:h-[50px] md:h-[54px] lg:h-[60px] sm:text-[17px] lg:text-lg rounded-md flex items-center justify-center gap-3 cursor-pointer font-medium">
                 <GoogleIcon />
                 <p>Start with Google</p>
               </div>
             </form>
           </Form>
-          <p className="text-[17px] font-medium text-[#727272]">
+          <p className="text-[15px] md:text-[17px] font-medium text-[#727272]">
             Already have an account?{" "}
             <Link to="/login" className="text-primary hover:underline">
               Log in

@@ -12,7 +12,7 @@ function InputOTP({
   return (
     (<OTPInput
       data-slot="input-otp"
-      containerClassName={cn("grid grid-cols-6 gap-5", containerClassName)}
+      containerClassName={cn("grid grid-cols-6 gap-2 md:gap-5", containerClassName)}
       className={cn("disabled:cursor-not-allowed", className)}
       {...props} />)
   );
@@ -43,7 +43,7 @@ function InputOTPSlot({
       data-slot="input-otp-slot"
       data-active={isActive}
       className={cn(
-        "data-[active=true]:border-ring data-[active=true]:ring-primary/50 data-[active=true]:aria-invalid:ring-destructive/20 dark:data-[active=true]:aria-invalid:ring-destructive/40 aria-invalid:border-destructive data-[active=true]:aria-invalid:border-destructive dark:bg-input/30 border-[#D8D1CD] relative flex items-center justify-center border-y border-r shadow-xs transition-all outline-none first:rounded-l-md first:border-l last:rounded-r-md data-[active=true]:z-10 data-[active=true]:ring-[3px] w-full !aspect-square !rounded-[13px] data-[active=true]:border-primary text-xl font-medium",
+        "data-[active=true]:border-ring data-[active=true]:ring-primary/50 data-[active=true]:aria-invalid:ring-destructive/20 dark:data-[active=true]:aria-invalid:ring-destructive/40 aria-invalid:border-destructive data-[active=true]:aria-invalid:border-destructive dark:bg-input/30 border-[#D8D1CD] relative flex items-center justify-center border-y border-r shadow-xs transition-all outline-none first:rounded-l-md first:border-l last:rounded-r-md data-[active=true]:z-10 data-[active=true]:ring-[3px] w-full !aspect-square rounded-md md:!rounded-[10px] lg:!rounded-[13px] data-[active=true]:border-primary md:text-lg lg:text-xl font-medium",
         className
       )}
       {...props}>

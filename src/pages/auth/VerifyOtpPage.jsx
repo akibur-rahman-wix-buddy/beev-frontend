@@ -29,20 +29,22 @@ const VerifyOtpPage = () => {
   };
 
   return (
-    <main className="bg-[#F9F5F0] text-textPrimary">
+    <main className="bg-[#F9F5F0] text-textPrimary relative">
       <Container className="">
         <header className="relative">
-          <nav className="absolute top-8 left-0">
-            <Logo className="h-[70px]" />
+          <nav className="absolute top-4 md:top-8 left-0">
+            <Logo className="h-14 md:h-16 lg:h-[70px]" />
           </nav>
         </header>
-        <section className="min-h-screen flex flex-col justify-center text-center gap-8 max-w-[500px] mx-auto py-10">
-          <div className="">
-            <SectionTitle className="mb-0">Verify</SectionTitle>
-            <h2 className="text-[#707070] text-lg mt-2">
-              Enter the verification code we just sent to {email}.
-            </h2>
-          </div>
+        <section className="min-h-screen flex flex-col justify-center text-center gap-5 sm:gap-6 lg:gap-8 max-w-[500px] mx-auto py-24">
+          <SectionTitle
+            className="!mb-0"
+            description={`Enter the verification code we just sent to ${email}.`}
+            fromauth
+            center
+          >
+            Verify
+          </SectionTitle>
           <div className="w-full space-y-4 sm:space-y-6">
             <InputOTP
               maxLength={6}
@@ -78,7 +80,7 @@ const VerifyOtpPage = () => {
               Verify
             </Button>
           </div>
-          <p className="text-[17px] font-medium text-[#727272]">
+          <p className="text-[15px] md:text-[17px] font-medium text-[#727272]">
             Didn’t receive code?{" "}
             <button
               type="button"

@@ -5,6 +5,7 @@ const SectionTitle = ({
   children,
   description = "",
   center = false,
+  fromauth = false,
   className = "",
 }) => {
   return (
@@ -19,7 +20,7 @@ const SectionTitle = ({
         {children}
       </h2>
       {description && (
-        <p className="md:text-lg leading-[150%] md:leading-[170%]">
+        <p className={cn("md:text-lg leading-[150%] md:leading-[170%]", { "text-[#707070] font-medium": fromauth })}>
           {description}
         </p>
       )}

@@ -53,16 +53,15 @@ const LoginPage = () => {
             <Logo className="h-14 md:h-16 lg:h-[70px]" />
           </nav>
         </header>
-        <section className="min-h-screen flex flex-col justify-center text-center gap-5 sm:gap-6 lg:gap-8 max-w-[500px] mx-auto py-10 sm:py-12 md:py-14 lg:py-16 xl:py-20">
-          <div className="">
-            <SectionTitle
-              className="!mb-0"
-              description="Please login to continue to your account."
-              center
-            >
-              Welcome Back
-            </SectionTitle>
-          </div>
+        <section className="min-h-screen flex flex-col justify-center text-center gap-5 sm:gap-6 lg:gap-8 max-w-[500px] mx-auto py-24">
+          <SectionTitle
+            className="!mb-0"
+            description="Please login to continue to your account."
+            fromauth
+            center
+          >
+            Welcome Back
+          </SectionTitle>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
               <FormField

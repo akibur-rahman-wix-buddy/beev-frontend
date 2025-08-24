@@ -45,17 +45,19 @@ const ForgotPasswordPage = () => {
     <main className="bg-[#F9F5F0] text-textPrimary">
       <Container className="">
         <header className="relative">
-          <nav className="absolute top-8 left-0">
-            <Logo className="h-[70px]" />
+          <nav className="absolute top-4 md:top-8 left-0">
+            <Logo className="h-14 md:h-16 lg:h-[70px]" />
           </nav>
         </header>
-        <section className="min-h-screen flex flex-col justify-center text-center gap-8 max-w-[500px] mx-auto py-10">
-          <div className="">
-            <SectionTitle className="mb-0">Forgot Password?</SectionTitle>
-            <h2 className="text-[#707070] text-lg mt-2">
-              Enter your email and we’ll send you a reset link.
-            </h2>
-          </div>
+        <section className="min-h-screen flex flex-col justify-center text-center gap-5 sm:gap-6 lg:gap-8 max-w-[500px] mx-auto py-24">
+          <SectionTitle
+            className="!mb-0"
+            description="Enter your email and we’ll send you a reset link."
+            fromauth
+            center
+          >
+            Forgot Password?
+          </SectionTitle>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
               <FormField
@@ -75,7 +77,7 @@ const ForgotPasswordPage = () => {
               </Button>
             </form>
           </Form>
-          <p className="text-[17px] font-medium text-[#727272]">
+          <p className="text-[15px] md:text-[17px] font-medium text-[#727272]">
             Remember Password?{" "}
             <Link to="/register" className="text-primary hover:underline">
               Return to login
