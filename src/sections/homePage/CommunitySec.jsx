@@ -25,11 +25,11 @@ const CommunitySec = ({ className }) => {
             <Link to="/the-heart-wall">Explore The Heart Wall</Link>
           </Button>
         </div>
-        <figure className="lg:flex-[45%] rounded-xl overflow-hidden">
+        <figure className="lg:flex-[45%] sm:aspect-video lg:aspect-auto rounded-xl overflow-hidden">
           <img
             src={founderImg}
             alt=""
-            className="h-full w-full object-cover object-center"
+            className="h-full w-full object-cover object-top"
           />
         </figure>
       </Container>
