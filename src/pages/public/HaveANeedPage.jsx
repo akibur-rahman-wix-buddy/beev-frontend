@@ -247,7 +247,7 @@ const HaveANeedPage = () => {
                         <RadioGroup
                           onValueChange={field.onChange}
                           defaultValue={field.value}
-                          className="flex flex-col gap-5 bg-[#FBF7F0] p-4.5 sm:p-7 lg:p-8 rounded-lg md:rounded-[10px] border border-input"
+                          className="flex flex-col gap-4 sm:gap-5 bg-[#FBF7F0] p-4.5 sm:p-7 lg:p-8 rounded-lg md:rounded-[10px] border border-input"
                         >
                           <FormItem className="flex md:items-center lg:gap-3">
                             <FormControl>
@@ -393,7 +393,7 @@ const HaveANeedPage = () => {
                             <RadioGroup
                               onValueChange={field.onChange}
                               defaultValue={field.value}
-                              className="flex flex-col gap-5 bg-[#FBF7F0] p-4.5 sm:p-7 lg:p-8 rounded-lg md:rounded-[10px] border border-input"
+                              className="flex flex-col gap-4 sm:gap-5 bg-[#FBF7F0] p-4.5 sm:p-7 lg:p-8 rounded-lg md:rounded-[10px] border border-input"
                             >
                               {/* Cash App Option */}
                               <FormItem className="flex md:items-center lg:gap-3">
@@ -475,14 +475,14 @@ const HaveANeedPage = () => {
                       name="descriptionAboutYourNeed"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-lg font-medium">
+                          <FormLabel className="text-[17px] sm:text-lg font-medium inline">
                             Tell us more about your need{" "}
                             <span className="">*</span>
                           </FormLabel>
                           <FormControl>
                             <Textarea
                               placeholder="Please share as openly and honestly as you feel comfortable. The more we understand, the better we can respond with care..."
-                              className="bg-[#FBF7F0] px-6 py-4 rounded-[10px] h-[240px] !text-base"
+                              className="bg-[#FBF7F0] px-4 sm:px-6 py-3 sm:py-4 rounded-lg md:rounded-[10px] !text-sm sm:!text-base h-[200px] sm:h-[240px]"
                               {...field}
                             />
                           </FormControl>
@@ -495,7 +495,7 @@ const HaveANeedPage = () => {
                       name="howCanWeSupportYou"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-lg font-medium">
+                          <FormLabel className="text-[17px] sm:text-lg font-medium inline">
                             How would you feel most supported right now?{" "}
                             <span className="text-[#7E7971] text-sm font-normal">
                               (Optional)
@@ -504,7 +504,7 @@ const HaveANeedPage = () => {
                           <FormControl>
                             <Textarea
                               placeholder="Optional, but helpful for offering the kind of support your heart needs..."
-                              className="bg-[#FBF7F0] px-6 py-4 rounded-[10px] h-[280px] !text-base"
+                              className="bg-[#FBF7F0] px-4 sm:px-6 py-3 sm:py-4 rounded-lg md:rounded-[10px] !text-sm sm:!text-base h-[200px] sm:h-[240px]"
                               {...field}
                             />
                           </FormControl>
@@ -517,10 +517,10 @@ const HaveANeedPage = () => {
                       name="typesofCareYouNeeded"
                       render={() => (
                         <FormItem className="space-y-3">
-                          <FormLabel className="text-lg font-medium">
+                          <FormLabel className="text-[17px] sm:text-lg font-medium inline">
                             What kind of care are you open to receiving?
                           </FormLabel>
-                          <div className="flex flex-col gap-5 bg-[#FBF7F0] p-8 rounded-lg">
+                          <div className="flex flex-col gap-4 sm:gap-5 bg-[#FBF7F0] p-4.5 sm:p-7 lg:p-8 rounded-lg md:rounded-[10px] border border-input">
                             {[
                               "Kind messages or words of encouragement",
                               "Spiritual or guided journal prompts",
@@ -535,7 +535,7 @@ const HaveANeedPage = () => {
                                   return (
                                     <FormItem
                                       key={option}
-                                      className="flex items-center gap-3"
+                                      className="flex md:items-center lg:gap-3"
                                     >
                                       <FormControl>
                                         <Checkbox
@@ -556,7 +556,7 @@ const HaveANeedPage = () => {
                                           }}
                                         />
                                       </FormControl>
-                                      <FormLabel className="font-normal text-lg cursor-pointer">
+                                      <FormLabel className="font-normal text-[15px] sm:text-base xl:text-lg cursor-pointer">
                                         {option}
                                       </FormLabel>
                                     </FormItem>
@@ -574,28 +574,28 @@ const HaveANeedPage = () => {
                       name="interestedToJoin"
                       render={({ field }) => (
                         <FormItem className="space-y-3">
-                          <FormLabel className="text-lg font-medium">
+                          <FormLabel className="text-[17px] sm:text-lg font-medium inline">
                             Are you interested in joining One Heart Sanctuary?
                           </FormLabel>
                           <FormControl>
                             <RadioGroup
                               onValueChange={field.onChange}
                               defaultValue={field.value}
-                              className="flex flex-col gap-5 bg-[#FBF7F0] p-8 rounded-lg"
+                              className="flex flex-col gap-4 sm:gap-5 bg-[#FBF7F0] p-4.5 sm:p-7 lg:p-8 rounded-lg md:rounded-[10px] border border-input"
                             >
-                              <FormItem className="flex items-center gap-3">
+                              <FormItem className="flex md:items-center lg:gap-3">
                                 <FormControl>
                                   <RadioGroupItem value="Yes" />
                                 </FormControl>
-                                <FormLabel className="font-normal text-lg cursor-pointer">
+                                <FormLabel className="font-normal text-[15px] sm:text-base xl:text-lg cursor-pointer">
                                   Yes
                                 </FormLabel>
                               </FormItem>
-                              <FormItem className="flex items-center gap-3">
+                              <FormItem className="flex md:items-center lg:gap-3">
                                 <FormControl>
                                   <RadioGroupItem value="No" />
                                 </FormControl>
-                                <FormLabel className="font-normal text-lg cursor-pointer">
+                                <FormLabel className="font-normal text-[15px] sm:text-base xl:text-lg cursor-pointer">
                                   No
                                 </FormLabel>
                               </FormItem>
@@ -614,14 +614,14 @@ const HaveANeedPage = () => {
                       name="descriptionAboutYourNeed"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-lg font-medium">
+                          <FormLabel className="text-[17px] sm:text-lg font-medium inline">
                             Tell us more about your need{" "}
                             <span className="">*</span>
                           </FormLabel>
                           <FormControl>
                             <Textarea
                               placeholder=" Please share as openly as you'd like. What would feel meaningful to receive from the community..."
-                              className="bg-[#FBF7F0] px-6 py-4 rounded-[10px] h-[240px] !text-base"
+                              className="bg-[#FBF7F0] px-4 sm:px-6 py-3 sm:py-4 rounded-lg md:rounded-[10px] !text-sm sm:!text-base h-[200px] sm:h-[240px]"
                               {...field}
                             />
                           </FormControl>
@@ -634,7 +634,7 @@ const HaveANeedPage = () => {
                       name="howCanWeSupportYou"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-lg font-medium">
+                          <FormLabel className="text-[17px] sm:text-lg font-medium inline">
                             How would you feel most supported right now?{" "}
                             <span className="text-[#7E7971] text-sm font-normal">
                               (Optional)
@@ -643,7 +643,7 @@ const HaveANeedPage = () => {
                           <FormControl>
                             <Textarea
                               placeholder=" i.e “I’d love to receive kind words on my birthday,” or “I’m just hoping to feel seen.”"
-                              className="bg-[#FBF7F0] px-6 py-4 rounded-[10px] h-[280px] !text-base"
+                              className="bg-[#FBF7F0] px-4 sm:px-6 py-3 sm:py-4 rounded-lg md:rounded-[10px] !text-sm sm:!text-base h-[200px] sm:h-[240px]"
                               {...field}
                             />
                           </FormControl>
@@ -656,7 +656,7 @@ const HaveANeedPage = () => {
                       name="postOnHeartWall"
                       render={({ field }) => (
                         <FormItem className="space-y-3">
-                          <FormLabel className="text-lg font-medium">
+                          <FormLabel className="text-[17px] sm:text-lg font-medium inline">
                             Could we post this request (anonymously) on The
                             Heart Wall on your behalf?
                           </FormLabel>
@@ -664,21 +664,21 @@ const HaveANeedPage = () => {
                             <RadioGroup
                               onValueChange={field.onChange}
                               defaultValue={field.value}
-                              className="flex flex-col gap-5 bg-[#FBF7F0] p-8 rounded-lg"
+                              className="flex flex-col gap-4 sm:gap-5 bg-[#FBF7F0] p-4.5 sm:p-7 lg:p-8 rounded-lg md:rounded-[10px] border border-input"
                             >
-                              <FormItem className="flex items-center gap-3">
+                              <FormItem className="flex md:items-center lg:gap-3">
                                 <FormControl>
                                   <RadioGroupItem value="Yes" />
                                 </FormControl>
-                                <FormLabel className="font-normal text-lg cursor-pointer">
+                                <FormLabel className="font-normal text-[15px] sm:text-base xl:text-lg cursor-pointer">
                                   Yes, please
                                 </FormLabel>
                               </FormItem>
-                              <FormItem className="flex items-center gap-3">
+                              <FormItem className="flex md:items-center lg:gap-3">
                                 <FormControl>
                                   <RadioGroupItem value="No" />
                                 </FormControl>
-                                <FormLabel className="font-normal text-lg cursor-pointer">
+                                <FormLabel className="font-normal text-[15px] sm:text-base xl:text-lg cursor-pointer">
                                   No, I’d prefer to keep this private
                                 </FormLabel>
                               </FormItem>
@@ -694,28 +694,28 @@ const HaveANeedPage = () => {
                         name="whenWantToPost"
                         render={({ field }) => (
                           <FormItem className="space-y-3">
-                            <FormLabel className="text-lg font-medium">
+                            <FormLabel className="text-[17px] sm:text-lg font-medium inline">
                               When would you like this post shared?
                             </FormLabel>
                             <FormControl>
                               <RadioGroup
                                 onValueChange={field.onChange}
                                 defaultValue={field.value}
-                                className="flex flex-col gap-5 bg-[#FBF7F0] p-8 rounded-lg"
+                                className="flex flex-col gap-4 sm:gap-5 bg-[#FBF7F0] p-4.5 sm:p-7 lg:p-8 rounded-lg md:rounded-[10px] border border-input"
                               >
-                                <FormItem className="flex items-center gap-3">
+                                <FormItem className="flex md:items-center lg:gap-3">
                                   <FormControl>
                                     <RadioGroupItem value="Now" />
                                   </FormControl>
-                                  <FormLabel className="font-normal text-lg cursor-pointer">
+                                  <FormLabel className="font-normal text-[15px] sm:text-base xl:text-lg cursor-pointer">
                                     Now
                                   </FormLabel>
                                 </FormItem>
-                                <FormItem className="flex items-center gap-3">
+                                <FormItem className="flex md:items-center lg:gap-3">
                                   <FormControl>
                                     <RadioGroupItem value="Any Time" />
                                   </FormControl>
-                                  <FormLabel className="font-normal text-lg cursor-pointer">
+                                  <FormLabel className="font-normal text-[15px] sm:text-base xl:text-lg cursor-pointer">
                                     Whenever the team feels it's right
                                   </FormLabel>
                                 </FormItem>
