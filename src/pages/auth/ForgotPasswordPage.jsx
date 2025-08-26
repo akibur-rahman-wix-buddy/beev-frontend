@@ -79,7 +79,7 @@ const ForgotPasswordPage = () => {
           </Form>
           <p className="text-[15px] md:text-[17px] font-medium text-[#727272]">
             Remember Password?{" "}
-            <Link to="/register" className="text-primary hover:underline">
+            <Link to="/login" className="text-primary hover:underline">
               Return to login
             </Link>
           </p>
