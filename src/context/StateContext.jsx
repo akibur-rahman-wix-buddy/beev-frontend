@@ -9,7 +9,7 @@ const StateContextProvider = ({ children }) => {
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsSmall(window.innerWidth < 768);
+      setIsSmall(window.innerWidth < 1024);
     };
     checkScreenSize();
     window.addEventListener("resize", checkScreenSize);
