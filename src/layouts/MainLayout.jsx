@@ -13,12 +13,12 @@ const MainLayout = () => {
       <Navbar className="sticky top-0 z-50" onHomePage={location === "/"} />
       <main
         className={cn("flex-grow", {
-          "-mt-[102px]": location === "/",
+          "-mt-[82px] sm:-mt-[92px] xl:-mt-[102px]": location === "/",
         })}
       >
         <Outlet />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

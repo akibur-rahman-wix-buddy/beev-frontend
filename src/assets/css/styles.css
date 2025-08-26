@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 .footer-title {
-  @apply text-[22px] font-semibold;
+  @apply text-lg xl:text-[22px] font-semibold;
 }
 
 .footer-links {
-  @apply w-fit hover:underline;
+  @apply w-fit hover:underline transition-all duration-200 hover:scale-105 origin-left;
 }
 
 .dummy-text {
