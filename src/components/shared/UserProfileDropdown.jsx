@@ -34,7 +34,7 @@ const UserProfileDropdown = ({ className, onLogout }) => {
           </AvatarFallback>
         </Avatar>
         <div className="flex items-center gap-1 sm:gap-1.5">
-          <span className="font-medium md:text-lg">Sara</span>
+          <span className="font-medium md:text-lg lg:text-xl">Sara</span>
           <ChevronDown className="size-5 hidden sm:block" />
         </div>
       </DropdownMenuTrigger>

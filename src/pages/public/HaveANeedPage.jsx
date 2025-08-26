@@ -166,19 +166,19 @@ const HaveANeedPage = () => {
     }
   }
   return (
-    <Container as="section" className="pt-8">
+    <Container as="section" className="pt-3 sm:pt-4 md:pt-5 lg:pt-6 xl:pt-8">
       <Breadcrumb
         breadcrumbs={[
           { label: "Home", url: "/" },
           { label: "I Have A Need", url: "#" },
         ]}
       />
-      <section className="pt-10 space-y-10 pb-20">
+      <section className="pt-5 sm:pt-6 md:pt-7 lg:pt-8 xl:pt-10 pb-10 sm:pb-12 md:pb-14 lg:pb-16 xl:pb-20 space-y-5 sm:space-y-6 md:space-y-7 lg:space-y-8 xl:space-y-10">
         <div className="text-center">
-          <h2 className="text-4xl font-semibold mb-5">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold mb-2.5 sm:mb-3.5 lg:mb-5">
             What’s Weighing on Your Heart Right Now?
           </h2>
-          <div className="max-w-[680px] mx-auto text-lg">
+          <div className="max-w-[680px] mx-auto text-[15px] sm:text-base lg:text-lg">
             <p>
               One Heart Society is here to honor what you're going through. If
               you’re in need, you are welcome to share your story with us.
@@ -189,8 +189,8 @@ const HaveANeedPage = () => {
             </p>
           </div>
         </div>
-        <div className="bg-[#F3EDE5] py-20 rounded-lg">
-          <div className="max-w-[950px] mx-auto">
+        <div className="sm:bg-[#F3EDE5] py-0 sm:py-10 md:pb-12 lg:pb-16 xl:pb-20 rounded-lg">
+          <div className="max-w-[1000px] mx-auto sm:px-8 lg:px-12">
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
@@ -201,13 +201,13 @@ const HaveANeedPage = () => {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-lg font-medium">
+                      <FormLabel className="text-[17px] sm:text-lg font-medium inline">
                         Name <span className="">*</span>
                       </FormLabel>
                       <FormControl>
                         <Input
                           placeholder="Your Name"
-                          className="bg-[#FBF7F0] px-6 py-4 h-[60px] rounded-[10px] !text-base"
+                          className="bg-[#FBF7F0] px-4 sm:px-6 py-3 sm:py-4 h-12 sm:h-[60px] rounded-lg md:rounded-[10px] !text-sm sm:!text-base"
                           {...field}
                         />
                       </FormControl>
@@ -220,13 +220,13 @@ const HaveANeedPage = () => {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-lg font-medium">
+                      <FormLabel className="text-[17px] sm:text-lg font-medium inline">
                         Email <span className="">*</span>
                       </FormLabel>
                       <FormControl>
                         <Input
                           placeholder="Your Email"
-                          className="bg-[#FBF7F0] px-6 py-4 h-[60px] rounded-[10px] !text-base"
+                          className="bg-[#FBF7F0] px-4 sm:px-6 py-3 sm:py-4 h-12 sm:h-[60px] rounded-lg md:rounded-[10px] !text-sm sm:!text-base"
                           {...field}
                         />
                       </FormControl>
@@ -239,45 +239,49 @@ const HaveANeedPage = () => {
                   name="typeOfSupport"
                   render={({ field }) => (
                     <FormItem className="space-y-3">
-                      <FormLabel className="text-lg font-medium">
+                      <FormLabel className="text-[17px] sm:text-lg font-medium inline mb-0">
                         Select the type of support that best fits your current
-                        need *
+                        need <span className="">*</span>
                       </FormLabel>
                       <FormControl>
                         <RadioGroup
                           onValueChange={field.onChange}
                           defaultValue={field.value}
-                          className="flex flex-col gap-5 bg-[#FBF7F0] p-8 rounded-lg"
+                          className="flex flex-col gap-5 bg-[#FBF7F0] p-4.5 sm:p-7 lg:p-8 rounded-lg md:rounded-[10px] border border-input"
                         >
-                          <FormItem className="flex items-center gap-3">
+                          <FormItem className="flex md:items-center lg:gap-3">
                             <FormControl>
                               <RadioGroupItem value="Financial" />
                             </FormControl>
-                            <FormLabel className="font-normal text-lg cursor-pointer">
-                              Financial -{" "}
-                              <span className="text-[#898682]">
-                                Support with small but urgent needs like meals,
-                                personal items, or transit fare, etc
-                              </span>
+                            <FormLabel className="font-normal text-[15px] sm:text-base xl:text-lg cursor-pointer">
+                              <p>
+                                Financial -{" "}
+                                <span className="text-[#898682]">
+                                  Support with small but urgent needs like
+                                  meals, personal items, or transit fare, etc
+                                </span>
+                              </p>
                             </FormLabel>
                           </FormItem>
-                          <FormItem className="flex items-center gap-3">
+                          <FormItem className="flex md:items-center lg:gap-3">
                             <FormControl>
                               <RadioGroupItem value="Emotional" />
                             </FormControl>
-                            <FormLabel className="font-normal text-lg cursor-pointer">
-                              Emotional -{" "}
-                              <span className="text-[#898682]">
-                                Support with grief, stress, or emotional
-                                heaviness
-                              </span>
+                            <FormLabel className="font-normal text-[15px] sm:text-base xl:text-lg cursor-pointer">
+                              <p>
+                                Emotional -{" "}
+                                <span className="text-[#898682]">
+                                  Support with grief, stress, or emotional
+                                  heaviness
+                                </span>
+                              </p>
                             </FormLabel>
                           </FormItem>
-                          <FormItem className="flex items-center gap-3">
+                          <FormItem className="flex md:items-center lg:gap-3">
                             <FormControl>
                               <RadioGroupItem value="Thoughtful" />
                             </FormControl>
-                            <FormLabel className="font-normal text-lg cursor-pointer">
+                            <FormLabel className="font-normal text-[15px] sm:text-base xl:text-lg cursor-pointer">
                               <p>
                                 Thoughtful -{" "}
                                 <span className="text-[#898682]">
@@ -304,14 +308,14 @@ const HaveANeedPage = () => {
                       name="descriptionAboutYourNeed"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-lg font-medium">
+                          <FormLabel className="text-[17px] sm:text-lg font-medium inline">
                             Tell us more about your need{" "}
                             <span className="">*</span>
                           </FormLabel>
                           <FormControl>
                             <Textarea
                               placeholder="Please share as openly and honestly as you feel comfortable. The more we understand, the better we can respond with care..."
-                              className="bg-[#FBF7F0] px-6 py-4 rounded-[10px] h-[240px] !text-base"
+                              className="bg-[#FBF7F0] px-4 sm:px-6 py-3 sm:py-4 rounded-lg md:rounded-[10px] !text-sm sm:!text-base h-[200px] sm:h-[240px]"
                               {...field}
                             />
                           </FormControl>
@@ -324,7 +328,7 @@ const HaveANeedPage = () => {
                       name="howCanWeSupportYou"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-lg font-medium">
+                          <FormLabel className="text-[17px] sm:text-lg font-medium inline">
                             How would you feel most supported right now?{" "}
                             <span className="text-[#7E7971] text-sm font-normal">
                               (Optional)
@@ -333,7 +337,7 @@ const HaveANeedPage = () => {
                           <FormControl>
                             <Textarea
                               placeholder="Share how we could best show up for you right now..."
-                              className="bg-[#FBF7F0] px-6 py-4 rounded-[10px] h-[280px] !text-base"
+                              className="bg-[#FBF7F0] px-4 sm:px-6 py-3 sm:py-4 rounded-lg md:rounded-[10px] !text-sm sm:!text-base h-[200px] sm:h-[240px]"
                               {...field}
                             />
                           </FormControl>
@@ -346,7 +350,7 @@ const HaveANeedPage = () => {
                       name="amountOfSupport"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-lg leading-[120%] font-medium inline">
+                          <FormLabel className="text-[17px] sm:text-lg leading-[120%] font-medium inline">
                             How much support are you requesting?{" "}
                             <span className="">*</span>{" "}
                             <span className="text-sm text-[#7E7971] font-normal">
@@ -360,11 +364,11 @@ const HaveANeedPage = () => {
                               <Input
                                 type="number"
                                 placeholder="Enter amount (max $100)"
-                                className="bg-[#FBF7F0] px-6 py-4 pl-12 h-[60px] rounded-[10px] !text-base"
+                                className="bg-[#FBF7F0] px-4 sm:px-6 pl-8 sm:pl-12 py-3 sm:py-4 h-12 sm:h-[60px] rounded-lg md:rounded-[10px] !text-sm sm:!text-base"
                                 {...field}
                               />
                             </FormControl>
-                            <BiDollar className="absolute size-6 left-4 top-1/2 transform -translate-y-1/2" />
+                            <BiDollar className="absolute size-5 sm:size-6 left-2 sm:left-4 top-1/2 transform -translate-y-1/2" />
                           </div>
                           <FormMessage />
                         </FormItem>
@@ -375,7 +379,7 @@ const HaveANeedPage = () => {
                       name="supportMethod"
                       render={({ field }) => (
                         <FormItem className="space-y-3">
-                          <FormLabel className="text-lg leading-[120%] font-medium inline">
+                          <FormLabel className="text-[17px] sm:text-lg leading-[120%] font-medium inline">
                             If we’re able to respond to your need, what’s the
                             best way to send support?{" "}
                             <span className="">*</span>{" "}
@@ -389,14 +393,14 @@ const HaveANeedPage = () => {
                             <RadioGroup
                               onValueChange={field.onChange}
                               defaultValue={field.value}
-                              className="flex flex-col gap-5 bg-[#FBF7F0] p-8 rounded-lg"
+                              className="flex flex-col gap-5 bg-[#FBF7F0] p-4.5 sm:p-7 lg:p-8 rounded-lg md:rounded-[10px] border border-input"
                             >
                               {/* Cash App Option */}
-                              <FormItem className="flex items-center gap-3">
+                              <FormItem className="flex md:items-center lg:gap-3">
                                 <FormControl>
                                   <RadioGroupItem value="Cash App" />
                                 </FormControl>
-                                <FormLabel className="font-normal text-lg cursor-pointer">
+                                <FormLabel className="font-normal text-[15px] sm:text-base xl:text-lg cursor-pointer">
                                   Cash App
                                 </FormLabel>
                               </FormItem>
@@ -406,14 +410,14 @@ const HaveANeedPage = () => {
                                   name="supportCashAppHandle"
                                   render={({ field }) => (
                                     <FormItem>
-                                      <FormLabel className="text-[15px] font-medium">
+                                      <FormLabel className="text-sm sm:text-[15px] font-medium inline">
                                         Enter Your Cash App Handle{" "}
                                         <span className="">*</span>
                                       </FormLabel>
                                       <FormControl>
                                         <Input
                                           placeholder="Enter $YourHandle"
-                                          className="bg-[#F3EDE5] border-[#F3EDE5] px-6 py-4 h-[60px] rounded-[10px] !text-base"
+                                          className="bg-[#F3EDE5] border-[#F3EDE5] px-4 sm:px-6 py-3 sm:py-4 h-12 sm:h-[60px] rounded-lg md:rounded-[10px] !text-sm sm:!text-base"
                                           {...field}
                                         />
                                       </FormControl>
@@ -425,11 +429,11 @@ const HaveANeedPage = () => {
                               )}
 
                               {/* PayPal Option */}
-                              <FormItem className="flex items-center gap-3">
+                              <FormItem className="flex md:items-center lg:gap-3">
                                 <FormControl>
                                   <RadioGroupItem value="PayPal" />
                                 </FormControl>
-                                <FormLabel className="font-normal text-lg cursor-pointer">
+                                <FormLabel className="font-normal text-[15px] sm:text-base xl:text-lg cursor-pointer">
                                   PayPal
                                 </FormLabel>
                               </FormItem>
@@ -439,14 +443,14 @@ const HaveANeedPage = () => {
                                   name="supportPayPalHandle"
                                   render={({ field }) => (
                                     <FormItem>
-                                      <FormLabel className="text-[15px] font-medium">
+                                      <FormLabel className="text-sm sm:text-[15px] font-medium inline">
                                         Enter Your PayPal Email Address{" "}
                                         <span className="">*</span>
                                       </FormLabel>
                                       <FormControl>
                                         <Input
                                           placeholder="Enter email"
-                                          className="bg-[#F3EDE5] border-[#F3EDE5] px-6 py-4 h-[60px] rounded-[10px] !text-base"
+                                          className="bg-[#F3EDE5] border-[#F3EDE5] px-4 sm:px-6 py-3 sm:py-4 h-12 sm:h-[60px] rounded-lg md:rounded-[10px] !text-sm sm:!text-base"
                                           {...field}
                                         />
                                       </FormControl>

@@ -5,20 +5,20 @@ import { useState } from "react";
 const StaticSupportTypeDetails = () => {
   const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);
   return (
-    <div className="space-y-5">
+    <div className="space-y-3 sm:space-y-5">
       <div
-        className="flex items-center gap-1 cursor-pointer select-none text-primary text-[17px]"
+        className="flex items-center gap-1 cursor-pointer select-none text-primary text-sm sm:text-base lg:text-lg"
         onClick={() => setIsDescriptionOpen((prev) => !prev)}
       >
         <span>What are these needs exactly?</span>
         <DropDownIcon
-          className={cn("transition-all duration-300", {
+          className={cn("transition-all duration-300 size-4 sm:size-5 lg:size-6", {
             "-rotate-180": isDescriptionOpen,
           })}
         />
       </div>
       {isDescriptionOpen && (
-        <div className="space-y-6 text-lg">
+        <div className="space-y-4 sm:space-y-6 text-sm sm:text-base lg:text-lg">
           <p>
             <span className="text-primary font-semibold">Financial Needs:</span>{" "}
             These are small but meaningful everyday circumstances like help with
