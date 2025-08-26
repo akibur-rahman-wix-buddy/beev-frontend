@@ -82,17 +82,19 @@ const IWantToHelpPage = () => {
     setIsIWantToHelpDialogOpen(true);
   }
   return (
-    <Container as="section" className="pt-8">
+    <Container as="section" className="pt-3 sm:pt-4 md:pt-5 lg:pt-6 xl:pt-8">
       <Breadcrumb
         breadcrumbs={[
           { label: "Home", url: "/" },
           { label: "I Want to Help", url: "#" },
         ]}
       />
-      <section className="pt-10 space-y-10 pb-20">
+      <section className="pt-5 sm:pt-6 md:pt-7 lg:pt-8 xl:pt-10 pb-10 sm:pb-12 md:pb-14 lg:pb-16 xl:pb-20 space-y-5 sm:space-y-6 md:space-y-7 lg:space-y-8 xl:space-y-10">
         <div className="text-center">
-          <h2 className="text-4xl font-semibold mb-5">I Want to Help</h2>
-          <div className="max-w-[680px] mx-auto text-lg">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold mb-2.5 sm:mb-3.5 lg:mb-5">
+            I Want to Help
+          </h2>
+          <div className="max-w-[680px] mx-auto text-[15px] sm:text-base lg:text-lg">
             <p>
               However you choose to give, it matters deeply. Your kindness
               becomes part of a gentle circle that carries what someone else
@@ -100,8 +102,8 @@ const IWantToHelpPage = () => {
             </p>
           </div>
         </div>
-        <div className="bg-[#F3EDE5] py-20 rounded-lg">
-          <div className="max-w-[950px] mx-auto">
+        <div className="sm:bg-[#F3EDE5] py-0 sm:py-10 md:pb-12 lg:pb-16 xl:pb-20 rounded-lg">
+          <div className="max-w-[1000px] mx-auto sm:px-8 lg:px-12">
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
@@ -112,13 +114,13 @@ const IWantToHelpPage = () => {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-lg font-medium">
+                      <FormLabel className="text-[17px] sm:text-lg font-medium inline">
                         Name <span className="">*</span>
                       </FormLabel>
                       <FormControl>
                         <Input
                           placeholder="Your Name"
-                          className="bg-[#FBF7F0] px-6 py-4 h-[60px] rounded-[10px] !text-base"
+                          className="bg-[#FBF7F0] px-4 sm:px-6 py-3 sm:py-4 h-12 sm:h-[60px] rounded-lg md:rounded-[10px] !text-sm sm:!text-base"
                           {...field}
                         />
                       </FormControl>
@@ -131,13 +133,13 @@ const IWantToHelpPage = () => {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-lg font-medium">
+                      <FormLabel className="text-[17px] sm:text-lg font-medium inline">
                         Email <span className="">*</span>
                       </FormLabel>
                       <FormControl>
                         <Input
                           placeholder="Your Email"
-                          className="bg-[#FBF7F0] px-6 py-4 h-[60px] rounded-[10px] !text-base"
+                          className="bg-[#FBF7F0] px-4 sm:px-6 py-3 sm:py-4 h-12 sm:h-[60px] rounded-lg md:rounded-[10px] !text-sm sm:!text-base"
                           {...field}
                         />
                       </FormControl>
@@ -150,7 +152,7 @@ const IWantToHelpPage = () => {
                   name="typeOfPayment"
                   render={({ field }) => (
                     <FormItem className="space-y-3">
-                      <FormLabel className="text-lg font-medium">
+                      <FormLabel className="text-[17px] sm:text-lg font-medium inline mb-0">
                         How often would you like to give? *
                       </FormLabel>
                       <FormControl>
@@ -160,9 +162,7 @@ const IWantToHelpPage = () => {
                             setPaymentType(value);
                           }}
                           defaultValue={field.value}
-                          className={cn(
-                            "flex flex-col gap-5 bg-[#FBF7F0] p-8 rounded-lg"
-                          )}
+                          className="flex flex-col gap-4 sm:gap-5 bg-[#FBF7F0] p-4.5 sm:p-7 lg:p-8 rounded-lg md:rounded-[10px] border border-input"
                         >
                           <FormItem
                             className={cn("flex gap-3 items-center")}
@@ -183,7 +183,7 @@ const IWantToHelpPage = () => {
                               />
                             </FormControl>
                             <div className="">
-                              <FormLabel className="font-normal text-lg cursor-pointer">
+                              <FormLabel className="font-normal text-[15px] sm:text-base xl:text-lg cursor-pointer">
                                 One Time Only
                               </FormLabel>
                               {/* {field.value == "One Time" && (
@@ -216,7 +216,7 @@ const IWantToHelpPage = () => {
                               />
                             </FormControl>
                             <div className="">
-                              <FormLabel className="font-normal text-lg cursor-pointer">
+                              <FormLabel className="font-normal text-[15px] sm:text-base xl:text-lg cursor-pointer">
                                 Regularly (monthly or ongoing)
                               </FormLabel>
                               {/* {field.value == "Monthly" && (
@@ -233,10 +233,10 @@ const IWantToHelpPage = () => {
                           <hr className="border-t border-[#EEE9E2]" />
                           <Link
                             to="/impact-of-your-support"
-                            className="text-primary flex items-center gap-1 hover:[&>svg]:-rotate-45 [&>svg]:transition-all [&>svg]:duration-300"
+                            className="text-primary text-sm sm:text-base lg:text-lg flex items-center gap-1 hover:[&>svg]:-rotate-45 [&>svg]:transition-all [&>svg]:duration-300"
                           >
                             Learn more about the impact of your support{" "}
-                            <ArrowRight className="size-5" />
+                            <ArrowRight className="size-4 sm:size-5 lg:size-6" />
                           </Link>
                         </RadioGroup>
                       </FormControl>
@@ -249,7 +249,7 @@ const IWantToHelpPage = () => {
                   name="specificHelp"
                   render={({ field }) => (
                     <FormItem className="space-y-3">
-                      <FormLabel className="text-lg font-medium">
+                      <FormLabel className="text-[17px] sm:text-lg font-medium inline mb-0">
                         Is there a featured need that you felt called to answer?
                         <span className="text-[#7E7971] text-sm font-normal">
                           (Optional)
@@ -259,22 +259,22 @@ const IWantToHelpPage = () => {
                         <RadioGroup
                           onValueChange={field.onChange}
                           defaultValue={field.value}
-                          className="flex flex-col gap-5 bg-[#FBF7F0] p-8 rounded-lg"
+                          className="flex flex-col gap-4 sm:gap-5 bg-[#FBF7F0] p-4.5 sm:p-7 lg:p-8 rounded-lg md:rounded-[10px] border border-input"
                         >
-                          <FormItem className="flex items-center gap-3">
+                          <FormItem className="flex md:items-center lg:gap-3">
                             <FormControl>
                               <RadioGroupItem value="Yes" />
                             </FormControl>
-                            <FormLabel className="font-normal text-lg cursor-pointer">
+                            <FormLabel className="font-normal text-[15px] sm:text-base xl:text-lg cursor-pointer">
                               Yes
                             </FormLabel>
                           </FormItem>
 
-                          <FormItem className="flex items-center gap-3">
+                          <FormItem className="flex md:items-center lg:gap-3">
                             <FormControl>
                               <RadioGroupItem value="No" />
                             </FormControl>
-                            <FormLabel className="font-normal text-lg cursor-pointer">
+                            <FormLabel className="font-normal text-[15px] sm:text-base xl:text-lg cursor-pointer">
                               No
                             </FormLabel>
                           </FormItem>
@@ -285,7 +285,7 @@ const IWantToHelpPage = () => {
                               name="specificHelpHeartId"
                               render={({ field }) => (
                                 <FormItem className="space-y-1">
-                                  <FormLabel className="font-medium text-base">
+                                  <FormLabel className="text-sm sm:text-[15px] font-medium inline">
                                     What do you remember?{" "}
                                     <span className="text-[#7E7971] text-sm font-normal">
                                       (Support is not guaranteed for specific
@@ -296,11 +296,11 @@ const IWantToHelpPage = () => {
                                     <FormControl>
                                       <Input
                                         placeholder="Enter Featured Needs Heart ID, for example #105"
-                                        className="bg-[#F3EDE5] border-[#F3EDE5] px-6 py-4 pl-12 h-[60px] rounded-[10px] !text-base"
+                                        className="bg-[#F3EDE5] border-[#F3EDE5] px-4 sm:px-6 pl-8 sm:pl-12 py-3 sm:py-4 h-12 sm:h-[60px] rounded-lg md:rounded-[10px] !text-sm sm:!text-base"
                                         {...field}
                                       />
                                     </FormControl>
-                                    <LuHash className="absolute size-6 left-4 top-1/2 transform -translate-y-1/2" />
+                                    <LuHash className="absolute size-4.5 sm:size-6 left-[9px] sm:left-4 top-1/2 transform -translate-y-1/2" />
                                   </div>
                                   {/* <FormControl>
                                     <Input
@@ -325,7 +325,7 @@ const IWantToHelpPage = () => {
                   name="inspireDetails"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-lg font-medium">
+                      <FormLabel className="text-[17px] sm:text-lg font-medium inline">
                         What inspires you to give?{" "}
                         <span className="text-[#7E7971] text-sm font-normal">
                           (Optional)
@@ -334,7 +334,7 @@ const IWantToHelpPage = () => {
                       <FormControl>
                         <Textarea
                           placeholder="Share your heart, story, or inspiration..."
-                          className="bg-[#FBF7F0] px-6 py-4 rounded-[10px] h-[250px] !text-base"
+                          className="bg-[#FBF7F0] px-4 sm:px-6 py-3 sm:py-4 rounded-lg md:rounded-[10px] !text-sm sm:!text-base h-[200px] sm:h-[240px]"
                           {...field}
                         />
                       </FormControl>
