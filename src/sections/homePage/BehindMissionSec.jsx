@@ -31,7 +31,7 @@ const BehindMissionSec = ({ className }) => {
   return (
     <Container className={cn("", className)}>
       <SectionTitle center>The Heart Behind the Mission</SectionTitle>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="flex flex-col sm:flex-row sm:flex-wrap lg:grid lg:grid-cols-3 gap-5 xl:gap-6">
         {cardsData.map((card, index) => (
           <Card
             key={index}
@@ -49,7 +49,7 @@ export default BehindMissionSec;
 
 const Card = ({ image, title, description }) => {
   return (
-    <div className="card p-3 md:p-4 xl:p-5 rounded-lg md:rounded-xl xl:rounded-2xl bg-[#F3EDE5] space-y-3 md:space-y-4 xl:space-y-5">
+    <div className="card p-3 md:p-4 xl:p-5 rounded-lg md:rounded-xl xl:rounded-2xl bg-[#F3EDE5] space-y-3 md:space-y-4 xl:space-y-5 flex-1 min-w-[280px]">
       <figure className="w-full aspect-[400/250] rounded-lg xl:rounded-xl overflow-hidden">
         <img
           src={image}
