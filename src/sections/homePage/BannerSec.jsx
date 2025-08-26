@@ -6,7 +6,7 @@ import homeBanner from "@/assets/images/home-banner.png";
 
 const BannerSec = () => {
   return (
-    <section className="relative pt-[120px] sm:pt-36 lg:pt-44 xl:pt-52 pb-20 sm:pb-24 lg:pb-32 xl:pb-40">
+    <section className="relative pt-[120px] sm:pt-36 lg:pt-44 xl:pt-52 pb-20 sm:pb-24 lg:pb-[120px] xl:pb-44">
       <Container className="text-center flex flex-col items-center justify-center gap-4.5 sm:gap-6 xl:gap-8 text-white relative z-10">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-[54px] lg:leading-[140%] font-bold max-w-[600px] xl:max-w-[900px]">
           When Life <span className="text-primary">Feels Heavy</span> We Hold
