@@ -77,9 +77,14 @@ const ChangePasswordPage = () => {
         </Link>
       </div>
       <div className="border border-[#E4DDD2] p-5 sm:p-7 md:p-8 lg:p-10 xl:p-12 rounded-lg sm:rounded-[10px] space-y-5 sm:space-y-6 md:space-y-7 lg:space-y-8 xl:space-y-10 mt-5 sm:mt-6 md:mt-7 lg:mt-8 xl:mt-10">
-        <h2 className="text-xl sm:text-2xl lg:text-[26px] font-semibold mb-5 sm:mb-6 lg:mb-8">Change Password</h2>
+        <h2 className="text-xl sm:text-2xl lg:text-[26px] font-semibold mb-5 sm:mb-6 lg:mb-8">
+          Change Password
+        </h2>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 sm:space-y-6 lg:space-y-8">
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="space-y-5 sm:space-y-6 lg:space-y-8"
+          >
             <div className="space-y-4 sm:space-y-5">
               {passwordFields.map(({ name, key, placeholder }) => (
                 <FormField
@@ -102,7 +107,11 @@ const ChangePasswordPage = () => {
                           className="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer select-none"
                           onClick={() => togglePassword(key)}
                         >
-                          {showPassword[key] ? <EyeOnIcon className="size-5 sm:size-6" /> : <EyeOffIcon className="size-5 sm:size-6" />}
+                          {showPassword[key] ? (
+                            <EyeOnIcon className="size-5 sm:size-6" />
+                          ) : (
+                            <EyeOffIcon className="size-5 sm:size-6" />
+                          )}
                         </button>
                       </div>
                       <FormMessage />

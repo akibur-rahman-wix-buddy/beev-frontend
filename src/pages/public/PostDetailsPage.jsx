@@ -32,15 +32,22 @@ const PostDetailsPage = () => {
   };
 
   return (
-    <Container as="section" className="pt-8 pb-20">
-      <div className="flex mb-8">
+    <Container
+      as="section"
+      className="pt-3 sm:pt-4 md:pt-5 lg:pt-6 xl:pt-8 pb-10 sm:pb-12 md:pb-14 lg:pb-16 xl:pb-20"
+    >
+      <div className="flex">
         <Link to={-1} className="">
-          <div className="bg-[#F3EDE5] size-14 flex justify-center items-center rounded-lg">
-            <BackIcon />
+          <div className="bg-[#F3EDE5] size-10 sm:size-12 xl:size-14 flex justify-center items-center rounded-md sm:rounded-lg hover:bg-[#E8DFD4] transition-colors">
+            <BackIcon className="size-7 sm:size-9 xl:size-11" />
           </div>
         </Link>
       </div>
-      <Post post={post} commentEnabled />
+      <Post
+        post={post}
+        className="mt-5 sm:mt-6 md:mt-7 lg:mt-8 xl:mt-10"
+        commentEnabled
+      />
     </Container>
   );
 };
