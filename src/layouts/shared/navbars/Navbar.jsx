@@ -106,7 +106,7 @@ const Navbar = ({ className, istrue = false, onHomePage = false }) => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex justify-center">
-            <ul className="flex gap-1.5 xl:gap-3 2xl:gap-6">
+            <ul className="flex gap-0.5 xl:gap-3 2xl:gap-6">
               {pages.map((page, index) => (
                 <li key={index}>
                   <NavLink
