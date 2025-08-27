@@ -72,11 +72,12 @@ const TabsComponent = ({ tabs, defaultTab = 0, onTabChange }) => {
       {showLeftScroll && (
         <button
           onClick={() => scroll("left")}
-          className="absolute left-0 top-0 z-20 h-full w-8 sm:w-10 md:w-12 
-                     bg-gradient-to-r from-background via-background/90 to-transparent 
-                     flex items-center justify-start pl-1 sm:pl-2 
-                     transition-all duration-200 hover:opacity-80 active:scale-95
-                     focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2"
+          className="absolute left-0 top-1/2 -translate-y-[calc(50%+4px)] z-20 h-fit aspect-square p-2
+                    rounded-full
+                     bg-gradient-to-r from-[#F3EDE5] to-white border border-muted-foreground
+                     flex items-center justify-center cursor-pointer
+                     transition-all duration-200 hover:opacity-90 active:scale-95
+                     focus:border-none focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2"
           aria-label="Scroll left"
           type="button"
         >
@@ -88,11 +89,12 @@ const TabsComponent = ({ tabs, defaultTab = 0, onTabChange }) => {
       {showRightScroll && (
         <button
           onClick={() => scroll("right")}
-          className="absolute right-0 top-0 z-20 h-full w-8 sm:w-10 md:w-12 
-                     bg-gradient-to-l from-background via-background/90 to-transparent 
-                     flex items-center justify-end pr-1 sm:pr-2 
-                     transition-all duration-200 hover:opacity-80 active:scale-95
-                     focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2"
+          className="absolute right-0 top-1/2 -translate-y-[calc(50%+4px)] z-20 h-fit aspect-square p-2
+                    rounded-full
+                     bg-gradient-to-l from-[#F3EDE5] to-white border border-muted-foreground
+                     flex items-center justify-center cursor-pointer
+                     transition-all duration-200 hover:opacity-90 active:scale-95
+                     focus:border-none focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2"
           aria-label="Scroll right"
           type="button"
         >
