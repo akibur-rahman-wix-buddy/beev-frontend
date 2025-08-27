@@ -358,7 +358,7 @@ const IWantToHelpPage = () => {
                     ].map((item, idx) => (
                       <div
                         key={idx}
-                        className="p-4.5 xl:p-6 rounded-lg md:rounded-[10px] bg-[#FBF7F0] border border-input text-primary w-full flex flex-row sm:flex-col items-center sm:items-start justify-between gap-3 sm:gap-6 lg:gap-8"
+                        className="p-4.5 xl:p-5 rounded-lg md:rounded-[10px] bg-[#FBF7F0] border border-input text-primary w-full flex flex-row sm:flex-col items-center sm:items-start justify-between gap-3 sm:gap-6 lg:gap-8"
                       >
                         <div className="space-y-1 sm:space-y-2">
                           <h4 className="text-2xl sm:text-3xl md:text-2xl lg:text-3xl font-semibold">
