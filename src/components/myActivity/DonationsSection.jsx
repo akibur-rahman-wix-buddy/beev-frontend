@@ -54,17 +54,19 @@ const DonationsSection = () => {
           >
             <div className="space-y-2">
               <h3 className="text-xl font-medium">{receipt.amount}</h3>
-              <p className="text-[#827D77]">
-                Posted on: {receipt.postedDate}
-              </p>
+              <p className="text-[#827D77]">Posted on: {receipt.postedDate}</p>
             </div>
             <p className="font-medium cursor-pointer">View Receipt</p>
           </div>
         ))}
       </div>
       <div className="mt-10 space-y-8">
-        <Button className="w-full text-destructive bg-[#F5E9E9] hover:bg-destructive/75 hover:text-white transition-all duration-300 ease-in-out">Cancel Monthly Giving</Button>
-        <Button className="w-full text-textPrimary bg-[#F3EDE5] hover:text-white transition-all duration-300 ease-in-out">Download Receipts</Button>
+        <Button className="w-full text-textPrimary bg-[#F3EDE5] hover:text-white transition-all duration-300 ease-in-out">
+          Download Receipts
+        </Button>
+        <Button className="w-full text-destructive bg-[#F5E9E9] hover:bg-destructive/75 hover:text-white transition-all duration-300 ease-in-out">
+          Cancel Monthly Giving
+        </Button>
       </div>
     </div>
   );

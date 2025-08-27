@@ -73,7 +73,10 @@ const ProfileForm = () => {
   return (
     <div>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="space-y-6 sm:space-y-8"
+        >
           <div className="flex flex-col gap-2 justify-center items-center">
             <FormField
               control={form.control}
@@ -95,24 +98,26 @@ const ProfileForm = () => {
               )}
             />
             <div className="text-center">
-              <h3 className="text-lg font-semibold">
+              <h3 className="text-base sm:text-lg font-semibold">
                 {profileData?.name || "Sara Johnson"}
               </h3>
-              <p className="">
+              <p className="text-sm sm:text-base">
                 {profileData?.email || "Sarajohnson@gmail.com"}
               </p>
             </div>
           </div>
-          <div className="bg-[#FBF7F0] p-14 rounded-xl space-y-12">
+          <div className="bg-[#FBF7F0] p-6 sm:p-8 lg:p-14 rounded-lg md:rounded-[10px] space-y-6 sm:space-y-8 lg:space-y-12">
             <FormField
               control={form.control}
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-lg font-medium">Name</FormLabel>
+                  <FormLabel className="text-[17px] sm:text-lg font-medium inline">
+                    Name
+                  </FormLabel>
                   <FormControl>
                     <Input
-                      className="bg-[#F3EDE5] px-6 py-4 h-[60px] rounded-[10px] !text-base border-0"
+                      className="bg-[#F3EDE5] px-4 py-3 sm:px-6 sm:py-4 h-12 sm:h-[60px] rounded-[10px] !text-sm sm:!text-base border-0"
                       {...field}
                     />
                   </FormControl>
@@ -125,10 +130,12 @@ const ProfileForm = () => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-lg font-medium">Email</FormLabel>
+                  <FormLabel className="text-[17px] sm:text-lg font-medium inline">
+                    Email
+                  </FormLabel>
                   <FormControl>
                     <Input
-                      className="bg-[#F3EDE5] px-6 py-4 h-[60px] rounded-[10px] !text-base border-0"
+                      className="bg-[#F3EDE5] px-4 py-3 sm:px-6 sm:py-4 h-12 sm:h-[60px] rounded-[10px] !text-sm sm:!text-base border-0"
                       {...field}
                     />
                   </FormControl>
@@ -137,8 +144,8 @@ const ProfileForm = () => {
               )}
             />
           </div>
-          <div className="flex justify-end">
-            <Button type="submit" className="">
+          <div className="flex justify-center sm:justify-end">
+            <Button type="submit" className="w-full sm:w-auto">
               Save Changes
             </Button>
           </div>
