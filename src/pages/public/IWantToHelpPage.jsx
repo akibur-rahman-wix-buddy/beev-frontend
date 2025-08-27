@@ -58,7 +58,7 @@ const formSchema = z
 const IWantToHelpPage = () => {
   const [isIWantToHelpDialogOpen, setIsIWantToHelpDialogOpen] = useState(false);
   const [paymentType, setPaymentType] = useState("One Time");
-  const [selectedAmount, setSelectedAmount] = useState(0);
+  const [selectedAmount, setSelectedAmount] = useState();
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -344,12 +344,13 @@ const IWantToHelpPage = () => {
                 />
 
                 <div className="space-y-4">
-                  <h3 className="text-lg font-medium">
+                  <h3 className="text-[17px] sm:text-lg font-medium">
                     Choose Your{" "}
                     {paymentType === "Monthly" ? "Monthly" : "One-Time"}{" "}
                     Contribution
                   </h3>
-                  <div className="grid grid-cols-3 gap-4">
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                     {[
                       { amount: "15", label: "A Kind Gesture" },
                       { amount: "30", label: "A Hand Reached Out" },
@@ -357,14 +358,14 @@ const IWantToHelpPage = () => {
                     ].map((item, idx) => (
                       <div
                         key={idx}
-                        className="p-5 rounded-lg bg-[#FBF7F0] text-primary w-full flex flex-col justify-between gap-8"
+                        className="p-4.5 xl:p-6 rounded-lg md:rounded-[10px] bg-[#FBF7F0] border border-input text-primary w-full flex flex-row sm:flex-col items-center sm:items-start justify-between gap-3 sm:gap-6 lg:gap-8"
                       >
-                        <div className="space-y-2">
-                          <h4 className="text-3xl font-semibold">
+                        <div className="space-y-1 sm:space-y-2">
+                          <h4 className="text-2xl sm:text-3xl md:text-2xl lg:text-3xl font-semibold">
                             ${item.amount}
                             <span
                               className={cn(
-                                "text-[22px] transition-all duration-300",
+                                "text-base sm:text-lg md:text-base lg:text-xl transition-all duration-300",
                                 paymentType === "Monthly"
                                   ? "opacity-100"
                                   : "opacity-0"
@@ -373,11 +374,13 @@ const IWantToHelpPage = () => {
                               /Month
                             </span>
                           </h4>
-                          <p className="text-xl">{item.label}</p>
+                          <p className="text-base sm:text-lg md:text-base lg:text-xl">
+                            {item.label}
+                          </p>
                         </div>
                         <Button
                           type="button"
-                          className={"w-full py-2.5"}
+                          className="sm:w-full"
                           onClick={() => setSelectedAmount(item.amount)}
                         >
                           Select
@@ -391,8 +394,8 @@ const IWantToHelpPage = () => {
                   control={form.control}
                   name="amountOfSupport"
                   render={({ field }) => (
-                    <FormItem className="bg-[#FBF7F0] p-8 rounded-lg">
-                      <FormLabel className="text-lg font-medium">
+                    <FormItem className="bg-[#FBF7F0] p-4.5 sm:p-7 lg:p-8 rounded-lg md:rounded-[10px] border border-input">
+                      <FormLabel className="text-[17px] sm:text-lg font-medium inline">
                         Custom Amount{" "}
                         <span className="text-[#7E7971] text-sm font-normal">
                           (Any amount big or small makes a difference)
@@ -403,12 +406,11 @@ const IWantToHelpPage = () => {
                           <Input
                             type="number"
                             placeholder="Enter amount"
+                            className="bg-[#F3EDE5] sm:bg-[#FBF7F0]  border-[#F3EDE5] px-4 sm:px-6 pl-8 sm:pl-12 py-3 sm:py-4 h-12 sm:h-[60px] rounded-lg md:rounded-[10px] !text-sm sm:!text-base"
                             {...field}
-                            value={field.value === 0 ? "" : field.value}
-                            className="bg-[#FBF7F0] px-6 py-4 pl-12 h-[60px] rounded-[10px] !text-base"
                           />
                         </FormControl>
-                        <BiDollar className="absolute size-6 left-4 top-1/2 transform -translate-y-1/2" />
+                        <BiDollar className="absolute size-5 sm:size-6 left-2 sm:left-4 top-1/2 transform -translate-y-1/2" />
                       </div>
                       <FormMessage />
                     </FormItem>
