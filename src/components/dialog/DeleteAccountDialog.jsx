@@ -1,4 +1,3 @@
-import { HeartIcon } from "@/assets/icons/icons";
 import {
   Dialog,
   DialogContent,

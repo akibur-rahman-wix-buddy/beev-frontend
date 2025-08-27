@@ -9,10 +9,8 @@ const SettingsPage = () => {
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
 
   const handleDeleteAccount = () => {
-    // TODO: Implement actual delete account logic
     console.log("Account deletion confirmed");
     setIsDeleteDialogOpen(false);
-    // You can add navigation or API call here
   };
 
   return (
