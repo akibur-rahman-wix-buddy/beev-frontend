@@ -14,11 +14,10 @@ const MyActivityPage = () => {
   };
 
   return (
-    <Container
-      as="section"
-      className="pt-3 sm:pt-4 md:pt-5 lg:pt-6 xl:pt-8 pb-10 sm:pb-12 md:pb-14 lg:pb-16 xl:pb-20"
-    >
-      <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-4 sm:mb-6 lg:mb-8">My Activity</h1>
+    <Container as="section" className="pt-3 sm:pt-4 md:pt-5 lg:pt-6 xl:pt-8">
+      <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-4 sm:mb-6 lg:mb-8">
+        My Activity
+      </h1>
       <section className="space-y-5 sm:space-y-6 md:space-y-7 lg:space-y-8 xl:space-y-10 pb-10 sm:pb-12 md:pb-14 lg:pb-16 xl:pb-20">
         <TabsComponent
           tabs={tabs}

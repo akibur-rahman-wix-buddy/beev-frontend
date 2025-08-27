@@ -14,11 +14,13 @@ const TabsComponent = ({ tabs, defaultTab = 0, onTabChange }) => {
 
     if (scrollContainerRef.current) {
       const tabElement = scrollContainerRef.current.children[index];
-      tabElement.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest",
-        inline: "center",
-      });
+      if (tabElement) {
+        tabElement.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+          inline: "center",
+        });
+      }
     }
   };
 
@@ -33,7 +35,7 @@ const TabsComponent = ({ tabs, defaultTab = 0, onTabChange }) => {
 
   const scroll = (direction) => {
     if (scrollContainerRef.current) {
-      const scrollAmount = 200;
+      const scrollAmount = window.innerWidth < 768 ? 150 : 200;
       scrollContainerRef.current.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
@@ -43,62 +45,100 @@ const TabsComponent = ({ tabs, defaultTab = 0, onTabChange }) => {
 
   useEffect(() => {
     checkScrollButtons();
-    const handleResize = () => checkScrollButtons();
+    const handleResize = () => {
+      checkScrollButtons();
+    };
+
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+
+    // Check scroll buttons when tabs change
+    const timeoutId = setTimeout(checkScrollButtons, 100);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      clearTimeout(timeoutId);
+    };
   }, [tabs]);
 
+  useEffect(() => {
+    // Update scroll buttons when active tab changes
+    const timeoutId = setTimeout(checkScrollButtons, 100);
+    return () => clearTimeout(timeoutId);
+  }, [activeTab]);
+
   return (
-    <div className="w-full relative animate-fade-in">
+    <div className="w-full relative">
+      {/* Left scroll button */}
       {showLeftScroll && (
         <button
           onClick={() => scroll("left")}
-          className="absolute left-0 top-0 z-10 h-full w-12 bg-gradient-to-r from-background to-transparent flex items-center justify-start pl-2 transition-opacity duration-200 hover:opacity-80"
+          className="absolute left-0 top-0 z-20 h-full w-8 sm:w-10 md:w-12 
+                     bg-gradient-to-r from-background via-background/90 to-transparent 
+                     flex items-center justify-start pl-1 sm:pl-2 
+                     transition-all duration-200 hover:opacity-80 active:scale-95
+                     focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2"
           aria-label="Scroll left"
+          type="button"
         >
-          <ChevronLeft className="w-5 h-5 text-muted-foreground" />
+          <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground hover:text-primary transition-colors" />
         </button>
       )}
 
+      {/* Right scroll button */}
       {showRightScroll && (
         <button
           onClick={() => scroll("right")}
-          className="absolute right-0 top-0 z-10 h-full w-12 bg-gradient-to-l from-background to-transparent flex items-center justify-end pr-2 transition-opacity duration-200 hover:opacity-80"
+          className="absolute right-0 top-0 z-20 h-full w-8 sm:w-10 md:w-12 
+                     bg-gradient-to-l from-background via-background/90 to-transparent 
+                     flex items-center justify-end pr-1 sm:pr-2 
+                     transition-all duration-200 hover:opacity-80 active:scale-95
+                     focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2"
           aria-label="Scroll right"
+          type="button"
         >
-          <ChevronRight className="w-5 h-5 text-muted-foreground" />
+          <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground hover:text-primary transition-colors" />
         </button>
       )}
 
-      <div className="border-b-2 border-[#E5E0D9]">
-        <div
-          ref={scrollContainerRef}
-          className="flex  scrollbar-hide scroll-smooth"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-          onScroll={checkScrollButtons}
-        >
+      {/* Tabs container */}
+
+      <div
+        ref={scrollContainerRef}
+        className="flex overflow-x-auto scrollbar-hide scroll-smooth"
+        style={{
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
+          WebkitScrollbar: { display: "none" },
+        }}
+        onScroll={checkScrollButtons}
+      >
+        <div className="border-b-2 border-[#E5E0D9] flex w-full min-w-fit mb-2">
           {tabs.map((tab, index) => (
             <button
               key={index}
               onClick={() => handleTabClick(index)}
               className={`
-                relative px-6 py-4 text-lg font-medium whitespace-nowrap flex-shrink-0
-                transition-all duration-300 transform min-w-48 cursor-pointer
+                relative px-3 sm:px-4 md:px-6 py-3 sm:py-4 
+                text-sm sm:text-base md:text-lg font-medium 
+                whitespace-nowrap flex-shrink-0
+                transition-all duration-300 transform 
+                min-w-[120px] sm:min-w-[140px] md:min-w-[180px] 
+                cursor-pointer border-0 bg-transparent
+                active:scale-95
                 ${
                   activeTab === index
-                    ? "text-primary scale-105 after:content-[''] after:absolute after:bottom-0 after:translate-y-1/2 after:left-0 after:right-0 after:h-1 after:rounded-full after:bg-primary after:z-10"
-                    : "text-[#898682] hover:scale-105"
+                    ? "text-primary after:content-[''] after:absolute after:-bottom-px after:translate-y-1/2 after:left-0 after:right-0 after:h-[4px] after:rounded-full after:bg-primary after:z-10"
+                    : "text-[#898682] hover:text-primary/80"
                 }
-                ${index === 0 ? "ml-0" : "ml-2"}
+                ${index === 0 ? "ml-0" : "ml-1 sm:ml-2"}
               `}
+              type="button"
+              role="tab"
+              aria-selected={activeTab === index}
+              aria-controls={`tabpanel-${index}`}
+              id={`tab-${index}`}
             >
-              <span className="animate-slide-in">{tab}</span>
-              {activeTab === index && (
-                <div
-                  className="absolute bottom-0 left-6 right-6 h-0.5 bg-tab-active animate-scale-in origin-center"
-                  style={{ animationDelay: "100ms" }}
-                />
-              )}
+              <span className="animate-slide-in block truncate">{tab}</span>
             </button>
           ))}
         </div>

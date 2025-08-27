@@ -38,23 +38,25 @@ const MyPostsSection = () => {
   ];
 
   return (
-    <div className="p-12 border border-[#E4DDD2] rounded-lg space-y-5">
+    <div className="p-4 sm:p-6 lg:p-8 xl:p-12 border border-[#E4DDD2] rounded-lg space-y-3 sm:space-y-4 lg:space-y-5">
       {posts.map((post, index) => (
         <Link
           key={index}
           to={`/post/${index}`}
-          className="bg-[#F3EDE5] p-6 rounded-[10px] flex justify-between items-center text-textPrimary"
+          className="bg-[#F3EDE5] p-4 sm:p-5 lg:p-6 rounded-[10px] flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 sm:gap-4 text-textPrimary"
         >
-          <div className="space-y-2">
-            <h3 className="text-xl font-medium">{post.title}</h3>
-            <p className="text-[16px] text-[#827D77]">
+          <div className="space-y-1 sm:space-y-2 flex-1">
+            <h3 className="text-lg sm:text-xl lg:text-xl xl:text-2xl font-medium leading-tight">
+              {post.title}
+            </h3>
+            <p className="text-sm sm:text-base lg:text-[16px] text-[#827D77]">
               Posted on: {post.postedDate}
             </p>
           </div>
-          <div className="flex flex-col items-end gap-2">
+          <div className="flex flex-row sm:flex-col items-center sm:items-end gap-2 sm:gap-2 lg:gap-3">
             <div
               className={cn(
-                "px-6 py-2 w-fit rounded-full font-medium",
+                "px-3 sm:px-4 lg:px-6 py-1.5 sm:py-2 w-fit rounded-full text-sm sm:text-base font-medium",
                 post.status === "Active"
                   ? "bg-[#D8EADD] text-[#4FC96F]"
                   : "bg-[#F4E3CC] text-[#F09C25]"
@@ -63,9 +65,11 @@ const MyPostsSection = () => {
               {post.status}
             </div>
             {post.responses > 0 && (
-              <div className="inline-flex">
-                <p className="text-[16px]">{post.responses} responses</p>
-                <ForwardIcon3 />
+              <div className="inline text-nowrap">
+                <p className="text-sm sm:text-base lg:text-[16px] inline">
+                  {post.responses} responses
+                </p>
+                <ForwardIcon3 className="inline" />
               </div>
             )}
           </div>
