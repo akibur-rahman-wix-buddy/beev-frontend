@@ -41,9 +41,14 @@ const Post = ({ post, className, commentEnabled = false }) => {
   }
 
   return (
-    <div className={cn("p-5 sm:p-6 lg:p-8 bg-[#F3EDE5] rounded-lg sm:rounded-[10px]", className)}>
+    <div
+      className={cn(
+        "p-5 sm:p-6 lg:p-8 bg-[#F3EDE5] rounded-lg sm:rounded-[10px]",
+        className
+      )}
+    >
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-4 gap-3 sm:gap-4">
+      <div className="flex flex-col-reverse sm:flex-row sm:items-start justify-between mb-4 gap-3 sm:gap-4">
         <div className="flex items-center gap-3 sm:gap-4">
           <img
             src={post.author.avatar || postPlaceholder} //src={post.author.avatar || postPlaceholder}
@@ -60,9 +65,9 @@ const Post = ({ post, className, commentEnabled = false }) => {
           </div>
         </div>
         {post.heartId && (
-          <div className="flex items-center gap-2 text-lg sm:text-xl text-primary ml-auto sm:ml-0">
-            <Heart className="size-4 sm:size-5 fill-current" />
-            <span className="font-medium text-sm sm:text-base">
+          <div className="flex items-center gap-2 text-lg sm:text-xl text-primary">
+            <Heart className="size-6 sm:size-7 fill-current" />
+            <span className="font-medium text-base sm:text-lg lg:text-xl">
               Heart #{post.heartId}
             </span>
           </div>

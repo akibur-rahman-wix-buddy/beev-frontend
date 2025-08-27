@@ -1,8 +1,8 @@
 import React from "react";
 import { Button } from "../ui/button";
 import { FilterIcon, PlusIcon } from "@/assets/icons/icons";
-import Post from "../cards/Post";
 import Pagination from "../shared/Pagination";
+import Post from "../cards/Post";
 
 const FeaturedNeedsPosts = () => {
   const posts = [
@@ -79,12 +79,15 @@ const FeaturedNeedsPosts = () => {
   ];
 
   return (
-    <div className="space-y-8">
-      <div className="flex items-center justify-between">
-        <h2 className="text-3xl font-semibold">Posts</h2>
+    <div className="space-y-4 sm:space-y-6 lg:space-y-8">
+      <div className="flex items-center justify-between gap-4">
+        <h2 className="text-lg sm:text-2xl lg:text-3xl font-semibold">Posts</h2>
         <div className="flex gap-2">
-          <Button variant="outlineSecondary">
-            <FilterIcon className="size-5 shrink-0" />
+          <Button
+            variant="outlineSecondary"
+            className="flex items-center gap-2 text-sm sm:text-base lg:text-lg px-4 py-2 sm:px-6 lg:px-8"
+          >
+            <FilterIcon className="size-4 sm:size-5 lg:size-6" />
             Filter
           </Button>
         </div>

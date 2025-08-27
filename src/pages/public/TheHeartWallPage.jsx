@@ -15,14 +15,14 @@ const TheHeartWallPage = () => {
   };
 
   return (
-    <Container as="section" className="pt-8">
+    <Container as="section" className="pt-3 sm:pt-4 md:pt-5 lg:pt-6 xl:pt-8">
       <Breadcrumb
         breadcrumbs={[
           { label: "Home", url: "/" },
           { label: "The Heart Wall", url: "#" },
         ]}
       />
-      <section className="pt-10 space-y-14 pb-20">
+      <section className="mt-4 sm:mt-6 lg:mt-8 space-y-5 sm:space-y-6 md:space-y-7 lg:space-y-8 xl:space-y-10 pb-10 sm:pb-12 md:pb-14 lg:pb-16 xl:pb-20">
         <TabsComponent
           tabs={tabs}
           defaultTab={0}
