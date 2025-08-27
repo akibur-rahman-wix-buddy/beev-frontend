@@ -58,7 +58,7 @@ const formSchema = z
 const IWantToHelpPage = () => {
   const [isIWantToHelpDialogOpen, setIsIWantToHelpDialogOpen] = useState(false);
   const [paymentType, setPaymentType] = useState("One Time");
-  const [selectedAmount, setSelectedAmount] = useState();
+  const [selectedAmount, setSelectedAmount] = useState("");
 
   const form = useForm({
     resolver: zodResolver(formSchema),

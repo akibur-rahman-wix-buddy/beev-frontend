@@ -2,10 +2,7 @@ import Container from "@/components/shared/Container";
 import SectionTitle from "@/components/shared/SectionTitle";
 import React from "react";
 import {
-  FeatherIcon,
   HandWithLoveIcon,
-  HeartIcon3,
-  MoonIcon,
 } from "@/assets/icons/icons";
 import { cn } from "@/lib/utils";
 
