@@ -7,16 +7,18 @@ const OurVisionSec = ({ className }) => {
   return (
     <section className={cn("", className)}>
       <Container as="section" className="text-center">
-        <SectionTitle>Our Vision</SectionTitle>
-        <div className="text-xl">
-          <h2 className="mb-5">
+        <SectionTitle className="" center>
+          Our Vision
+        </SectionTitle>
+        <div className="sm:text-lg lg:text-xl">
+          <h2 className="mb-3 sm:mb-5">
             We imagine a world where no one suffers silently. A world where
             emotional and financial needs are both honored with tenderness.
             Where care is offered without ego, expectation, or shame. Where
             kindness shines through dark moments, and people feel a little more
             valued by one another.
           </h2>
-          <div className="space-y-1 mb-8">
+          <div className="space-y-0.5 sm:space-y-1 mb-4 sm:mb-6 lg:mb-8">
             <p>
               We are building that world through quiet care and meaningful
               connection.
@@ -29,10 +31,15 @@ const OurVisionSec = ({ className }) => {
               To hold you, just as you once held someone else.
             </p>
           </div>
-          <div className="space-y-1 text-primary w-fit mx-auto">
+          <div className="space-y-0.5 sm:space-y-1 text-primary w-fit mx-auto">
             <p>Step Inside the Sanctuary</p>
             <p>If You’re in Need, This Space Is for You</p>
-            <p>Give with Heart. <Link to="/join-the-circle" className="hover:underline">Join The Circle.</Link></p>
+            <p>
+              Give with Heart.{" "}
+              <Link to="/join-the-circle" className="hover:underline">
+                Join The Circle.
+              </Link>
+            </p>
           </div>
         </div>
       </Container>
