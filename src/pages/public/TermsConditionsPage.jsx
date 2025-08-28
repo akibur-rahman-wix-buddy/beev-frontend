@@ -41,7 +41,7 @@ const TermsConditionsPage = () => {
               for every single request or any one request in particular. All
               submissions are reviewed as time, resources, and capacity allow.
             </p>
-            <ul className="list-disc pl-4 sm:pl-5 lg:pl-6 space-y-1 sm:space-y-1.5">
+            <ul className="list-disc pl-4.5 space-y-1 sm:space-y-1.5">
               <li>
                 All submissions are treated with sensitivity and compassion.
               </li>
@@ -79,7 +79,7 @@ const TermsConditionsPage = () => {
               Participation in the telegram space One Heart Sanctuary is always
               your choice.
             </p>
-            <ul className="list-disc pl-5 space-y-0.5">
+            <ul className="list-disc pl-4.5 space-y-1 sm:space-y-1.5">
               <li>
                 You’re welcome to engage with any features that feel supportive
                 to you - including, but not limited to, the One Heart Companion
@@ -106,7 +106,7 @@ const TermsConditionsPage = () => {
           <p className="font-semibold text-lg sm:text-xl lg:text-2xl">
             4. Platform Fees
           </p>
-          <ul className="list-disc pl-4 sm:pl-5 lg:pl-6 space-y-3 sm:space-y-4">
+          <ul className="list-disc pl-4.5 space-y-3 sm:space-y-4">
             <li>
               <b>30% of monthly support</b> keeps One Heart Society running and
               may also be used to meet urgent or sensitive needs of support
@@ -160,7 +160,7 @@ const TermsConditionsPage = () => {
             founder, team, or affiliates responsible for any personal,
             emotional, or financial outcomes resulting from use of our services.
           </p>
-          <ul className="list-disc pl-4 sm:pl-5 lg:pl-6 space-y-1 sm:space-y-1.5">
+          <ul className="list-disc pl-4.5 space-y-1 sm:space-y-1.5">
             <li>
               You assume full responsibility for your decisions, participation,
               and experiences.

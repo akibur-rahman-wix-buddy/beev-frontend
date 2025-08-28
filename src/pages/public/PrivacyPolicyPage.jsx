@@ -4,10 +4,15 @@ import { Link } from "react-router";
 
 const PrivacyPolicyPage = () => {
   return (
-    <Container as="section" className="pt-8 pb-20">
-      <h1 className="text-[40px] font-semibold mb-8">Privacy Policy</h1>
-      <div className="text-lg space-y-10">
-        <div className="space-y-6">
+    <Container
+      as="section"
+      className="pt-3 sm:pt-4 md:pt-5 lg:pt-6 xl:pt-8 pb-10 sm:pb-12 md:pb-14 lg:pb-16 xl:pb-20 space-y-4 sm:space-y-6 lg:space-y-8"
+    >
+      <h1 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-semibold">
+        Privacy Policy
+      </h1>
+      <div className="text-[15px] sm:text-base lg:text-lg space-y-6 sm:space-y-9 lg:space-y-12">
+        <div className="space-y-3 sm:space-y-4 lg:space-y-6">
           <p>Effective Date: May 1, 2025</p>
           <p>
             At One Heart Society, your privacy is sacred. We’re committed to
@@ -17,14 +22,14 @@ const PrivacyPolicyPage = () => {
             obtained proper consent.
           </p>
         </div>
-        <div className="space-y-6">
-          <p className="font-semibold text-2xl">1. Collection of Information</p>
-          <div className="space-y-2">
+        <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+          <p className="font-semibold text-lg sm:text-xl lg:text-2xl">1. Collection of Information</p>
+          <div className="space-y-3 sm:space-y-4">
             <p>
               We only collect the information necessary to support your
               experience on our platform, including:
             </p>
-            <ul className="list-disc list-inside space-y-0.5">
+            <ul className="list-disc pl-4.5 space-y-1 sm:space-y-1.5">
               <li>Your name and email address</li>
               <li>Optional details about emotional or financial needs</li>
               <li>
@@ -34,11 +39,11 @@ const PrivacyPolicyPage = () => {
             </ul>
           </div>
         </div>
-        <div className="space-y-6">
-          <p className="font-semibold text-2xl">2. Use of Information</p>
-          <div className="space-y-2">
+        <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+          <p className="font-semibold text-lg sm:text-xl lg:text-2xl">2. Use of Information</p>
+          <div className="space-y-3 sm:space-y-4">
             <p>We use your information only to:</p>
-            <ul className="list-disc list-inside space-y-0.5">
+            <ul className="list-disc pl-4.5 space-y-1 sm:space-y-1.5">
               <li>
                 Help coordinate compassionate community engagement within the
                 platform
@@ -58,9 +63,9 @@ const PrivacyPolicyPage = () => {
             outcomes.
           </p>
         </div>
-        <div className="space-y-6">
-          <p className="font-semibold text-2xl">3. Financial Transactions</p>
-          <div className="space-y-2">
+        <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+          <p className="font-semibold text-lg sm:text-xl lg:text-2xl">3. Financial Transactions</p>
+          <div className="space-y-3 sm:space-y-4">
             <p>
               We do not collect or store any credit or debit card details
               directly.
@@ -80,11 +85,11 @@ const PrivacyPolicyPage = () => {
             </p>
           </div>
         </div>
-        <div className="space-y-6">
-          <p className="font-semibold text-2xl">4. Content Moderation Rights</p>
-          <div className="space-y-2">
+        <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+          <p className="font-semibold text-lg sm:text-xl lg:text-2xl">4. Content Moderation Rights</p>
+          <div className="space-y-3 sm:space-y-4">
             <p>We reserve the right to remove or refuse submissions that:</p>
-            <ul className="list-disc list-inside space-y-0.5">
+            <ul className="list-disc pl-4.5 space-y-1 sm:space-y-1.5">
               <li>Violate our values of compassion and dignity</li>
               <li>Appear fraudulent, harmful, or misleading</li>
               <li>Misuse the platform in any way</li>
@@ -95,8 +100,8 @@ const PrivacyPolicyPage = () => {
             thoughtful, values-aligned moderation.
           </p>
         </div>
-        <div className="space-y-6">
-          <p className="font-semibold text-2xl">5. Cookies & Tracking</p>
+        <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+          <p className="font-semibold text-lg sm:text-xl lg:text-2xl">5. Cookies & Tracking</p>
           <p>
             We may use minimal cookies or analytics tools to help us improve
             your experience. These do not collect sensitive personal information
@@ -106,8 +111,8 @@ const PrivacyPolicyPage = () => {
             You may disable cookies through your browser settings at any time.
           </p>
         </div>
-        <div className="space-y-6">
-          <p className="font-semibold text-2xl">6. Your Rights</p>
+        <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+          <p className="font-semibold text-lg sm:text-xl lg:text-2xl">6. Your Rights</p>
           <p>
             You may request to review, update, or delete your information at any
             time by contacting us: <br />
@@ -119,8 +124,8 @@ const PrivacyPolicyPage = () => {
             </Link>
           </p>
         </div>
-        <div className="space-y-6">
-          <p className="font-semibold text-2xl">7. Policy Updates</p>
+        <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+          <p className="font-semibold text-lg sm:text-xl lg:text-2xl">7. Policy Updates</p>
           <p>
             We reserve the right to update or modify this Privacy Policy at any
             time. Continued use of the platform after changes have been made
