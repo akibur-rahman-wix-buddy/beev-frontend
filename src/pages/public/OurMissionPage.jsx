@@ -21,9 +21,9 @@ const OurMissionPage = () => {
         title="Our Mission"
         subTitle="We are here for those who don’t know how to ask. For those who have asked and were met with silence. For those who whisper their needs and hope someone hears. This is where someone does."
       />
-      {/* <WhyWeExistSec className="my-10 sm:my-12 md:my-14 lg:my-16 xl:my-20" /> */}
+      <WhyWeExistSec className="my-10 sm:my-12 md:my-14 lg:my-16 xl:my-20" />
       <WhatWeOfferSec className="my-10 sm:my-12 md:my-14 lg:my-16 xl:my-20" />
-      {/* <WhatMakesDifferentSec className="my-10 sm:my-12 md:my-14 lg:my-16 xl:my-20" /> */}
+      <WhatMakesDifferentSec className="my-10 sm:my-12 md:my-14 lg:my-16 xl:my-20" />
       <WeAreSec className="my-10 sm:my-12 md:my-14 lg:my-16 xl:my-20" />
       <OurVisionSec className="my-10 sm:my-12 md:my-14 lg:my-16 xl:my-20" />
     </section>

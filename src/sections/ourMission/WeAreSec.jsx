@@ -13,7 +13,7 @@ const WeAreSec = ({ className }) => {
         className
       )}
     >
-      <Container className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8 lg:gap-10 xl:gap-32 relative z-10">
+      <Container className="flex flex-col sm:flex-row items-start sm:items-center gap-6 md:gap-8 lg:gap-10 xl:gap-32 relative z-10">
         <figure className="md:flex-[50%] xl:flex-[40%] rounded-xl overflow-hidden max-w-[400px] md:max-w-full">
           <img
             src={weAreImg}

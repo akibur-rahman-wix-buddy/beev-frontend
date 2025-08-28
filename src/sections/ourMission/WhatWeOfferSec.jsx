@@ -13,7 +13,7 @@ const WhatWeOfferSec = ({ className }) => {
         className
       )}
     >
-      <Container className="flex flex-col lg:flex-row items-start lg:items-center gap-6 md:gap-8 lg:gap-10 xl:gap-32 relative z-10">
+      <Container className="flex flex-col lg:flex-row items-start sm:items-center gap-6 md:gap-8 lg:gap-10 xl:gap-32 relative z-10">
         <figure className="md:flex-[50%] xl:flex-[40%] rounded-xl overflow-hidden max-w-[400px] md:max-w-full">
           <img
             src={whatWeOfferImg}
@@ -21,15 +21,15 @@ const WhatWeOfferSec = ({ className }) => {
             className="h-full w-full object-cover object-center"
           />
         </figure>
-        <div className="md:flex-[50%] xl:flex-[60%] text-[15px] sm:text-base xl:text-lg">
-          <SectionTitle className="!mb-3 lg:!mb-6">What We Offer</SectionTitle>
+        <div className="md:flex-[50%] xl:flex-[60%] text-[15px] sm:text-base xl:text-lg sm:text-center lg:text-left">
+          <SectionTitle className="!mb-3 lg:!mb-6 sm:text-center sm:mx-auto lg:text-left lg:mx-0">What We Offer</SectionTitle>
           <div className="space-y-3 xl:space-y-4">
             <p>
               Through <span className="font-semibold">One Heart Sanctuary</span>
               , we offer quiet, around-the-clock support for those carrying
               invisible weight through
             </p>
-            <ul className="list-disc pl-4.5 space-y-2 sm:space-y-2.5 lg:space-y-3">
+            <ul className="list-disc sm:list-inside lg:list-outside pl-4.5 sm:pl-0 lg:pl-4.5 space-y-2 sm:space-y-2.5 lg:space-y-3">
               <li>Healing prompts, guided support, and forgiveness pathways</li>
               <li>
                 Live, heartfelt presence from the community, including gentle
