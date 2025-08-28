@@ -4,9 +4,14 @@ import { Link } from "react-router";
 
 const TermsConditionsPage = () => {
   return (
-    <Container as="section" className="pt-8 pb-20 space-y-8">
-      <h1 className="text-[40px] font-semibold">Terms & Conditions</h1>
-      <div className="text-lg space-y-12">
+    <Container
+      as="section"
+      className="pt-3 sm:pt-4 md:pt-5 lg:pt-6 xl:pt-8 pb-10 sm:pb-12 md:pb-14 lg:pb-16 xl:pb-20 space-y-4 sm:space-y-6 lg:space-y-8"
+    >
+      <h1 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-semibold">
+        Terms & Conditions
+      </h1>
+      <div className="text-[15px] sm:text-base lg:text-lg space-y-6 sm:space-y-9 lg:space-y-12">
         <div className="space-y-6">
           <p>Effective Date: May 1, 2025</p>
           <p>
@@ -15,24 +20,28 @@ const TermsConditionsPage = () => {
             Sanctuary - you agree to the following:
           </p>
         </div>
-        <div className="space-y-6">
-          <p className="font-semibold text-2xl">1. Voluntary Participation</p>
+        <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+          <p className="font-semibold text-lg sm:text-xl lg:text-2xl">
+            1. Voluntary Participation
+          </p>
           <p>
             All participation is voluntary. Whether you're sharing a need or
             offering support, or participating in One Heart Sanctuary you do so
             at your own discretion.
           </p>
         </div>
-        <div className="space-y-6">
-          <p className="font-semibold text-2xl">2. No Guaranteed Support</p>
-          <div className="space-y-2">
+        <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+          <p className="font-semibold text-lg sm:text-xl lg:text-2xl">
+            2. No Guaranteed Support
+          </p>
+          <div className="space-y-3 sm:space-y-4">
             <p>
               While we hold every request with deep care, we cannot promise
               support, responses, or outcomes. We are not able to guarantee help
               for every single request or any one request in particular. All
               submissions are reviewed as time, resources, and capacity allow.
             </p>
-            <ul className="list-disc pl-5 space-y-0.5">
+            <ul className="list-disc pl-4 sm:pl-5 lg:pl-6 space-y-1 sm:space-y-1.5">
               <li>
                 All submissions are treated with sensitivity and compassion.
               </li>
@@ -53,14 +62,19 @@ const TermsConditionsPage = () => {
           <p>
             You can review, update, or remove your request anytime by emailing:
             <br />
-            <Link to="mailto:info@oneheartsociety.org" className="text-primary font-medium">
+            <Link
+              to="mailto:info@oneheartsociety.org"
+              className="text-primary font-medium"
+            >
               info@oneheartsociety.org
             </Link>
           </p>
         </div>
-        <div className="space-y-6">
-          <p className="font-semibold text-2xl">3. Participation & AI Use</p>
-          <div className="space-y-2">
+        <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+          <p className="font-semibold text-lg sm:text-xl lg:text-2xl">
+            3. Participation & AI Use
+          </p>
+          <div className="space-y-3 sm:space-y-4">
             <p>
               Participation in the telegram space One Heart Sanctuary is always
               your choice.
@@ -88,9 +102,11 @@ const TermsConditionsPage = () => {
             </ul>
           </div>
         </div>
-        <div className="space-y-6">
-          <p className="font-semibold text-2xl">4. Platform Fees</p>
-          <ul className="list-disc pl-5 space-y-4">
+        <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+          <p className="font-semibold text-lg sm:text-xl lg:text-2xl">
+            4. Platform Fees
+          </p>
+          <ul className="list-disc pl-4 sm:pl-5 lg:pl-6 space-y-3 sm:space-y-4">
             <li>
               <b>30% of monthly support</b> keeps One Heart Society running and
               may also be used to meet urgent or sensitive needs of support
@@ -102,8 +118,8 @@ const TermsConditionsPage = () => {
             </li>
           </ul>
         </div>
-        <div className="space-y-6">
-          <p className="font-semibold text-2xl">
+        <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+          <p className="font-semibold text-lg sm:text-xl lg:text-2xl">
             5. Recurring Financial Support & Refunds
           </p>
           <p>
@@ -113,8 +129,10 @@ const TermsConditionsPage = () => {
             integrity to serve those in need.
           </p>
         </div>
-        <div className="space-y-6">
-          <p className="font-semibold text-2xl">6. No Professional Services</p>
+        <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+          <p className="font-semibold text-lg sm:text-xl lg:text-2xl">
+            6. No Professional Services
+          </p>
           <p>
             One Heart Society is not a substitute for licensed therapy, medical
             care, or emergency services.
@@ -123,22 +141,26 @@ const TermsConditionsPage = () => {
             hotline.
           </p>
         </div>
-        <div className="space-y-6">
-          <p className="font-semibold text-2xl">7. Intellectual Property</p>
+        <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+          <p className="font-semibold text-lg sm:text-xl lg:text-2xl">
+            7. Intellectual Property
+          </p>
           <p>
             All content, writing, logos, and visuals shared by One Heart Society
             are the property of the organization and may not be copied,
             modified, or redistributed without written consent.
           </p>
         </div>
-        <div className="space-y-6">
-          <p className="font-semibold text-2xl">8. Limitation of Liability</p>
+        <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+          <p className="font-semibold text-lg sm:text-xl lg:text-2xl">
+            8. Limitation of Liability
+          </p>
           <p>
             You agree not to hold One Heart Society, One Heart Sanctuary, its
             founder, team, or affiliates responsible for any personal,
             emotional, or financial outcomes resulting from use of our services.
           </p>
-          <ul className="list-disc pl-5 space-y-0.5">
+          <ul className="list-disc pl-4 sm:pl-5 lg:pl-6 space-y-1 sm:space-y-1.5">
             <li>
               You assume full responsibility for your decisions, participation,
               and experiences.
@@ -153,16 +175,18 @@ const TermsConditionsPage = () => {
             </li>
           </ul>
         </div>
-        <div className="space-y-6">
-          <p className="font-semibold text-2xl">9. Updates</p>
+        <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+          <p className="font-semibold text-lg sm:text-xl lg:text-2xl">
+            9. Updates
+          </p>
           <p>
             We reserve the right to update or modify these Terms & Conditions at
             any time. Continued use of the platform after changes constitutes
             acceptance of the updated terms.
           </p>
         </div>
-        <div className="space-y-6">
-          <p className="font-semibold text-2xl">
+        <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+          <p className="font-semibold text-lg sm:text-xl lg:text-2xl">
             10. Not a Nonprofit Organization or Charity
           </p>
           <p>
@@ -180,9 +204,19 @@ const TermsConditionsPage = () => {
           </p>
         </div>
       </div>
-      <div className="space-y-2 pt-8">
-        <p className="text-2xl font-semibold">Questions or concerns?</p>
-        <p className="text-xl font-semibold">Reach out anytime: <Link to="mailto:info@oneheartsociety.org" className="text-primary hover:underline cursor-pointer">info@oneheartsociety.org</Link></p>
+      <div className="space-y-3 sm:space-y-4 pt-6 sm:pt-8">
+        <p className="text-lg sm:text-xl lg:text-2xl font-semibold">
+          Questions or concerns?
+        </p>
+        <p className="text-base sm:text-lg lg:text-xl font-semibold">
+          Reach out anytime:{" "}
+          <Link
+            to="mailto:info@oneheartsociety.org"
+            className="text-primary hover:underline cursor-pointer"
+          >
+            info@oneheartsociety.org
+          </Link>
+        </p>
       </div>
     </Container>
   );
