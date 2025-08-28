@@ -21,7 +21,7 @@ const WeAreSec = ({ className }) => {
             className="h-full w-full object-cover object-center"
           />
         </figure>
-        <div className="md:flex-[50%] xl:flex-[60%] sm:text-[17px] lg:text-lg">
+        <div className="md:flex-[50%] xl:flex-[60%] text-[15px] sm:text-base xl:text-lg">
           <SectionTitle className="!mb-3 lg:!mb-6">We Are</SectionTitle>
           <ul className="list-disc pl-4.5 space-y-2 sm:space-y-3 lg:space-y-4">
             <li>Anonymous when needed</li>

@@ -21,7 +21,7 @@ const WhatWeOfferSec = ({ className }) => {
             className="h-full w-full object-cover object-center"
           />
         </figure>
-        <div className="md:flex-[50%] xl:flex-[60%] sm:text-[17px] xl:text-lg">
+        <div className="md:flex-[50%] xl:flex-[60%] text-[15px] sm:text-base xl:text-lg">
           <SectionTitle className="!mb-3 lg:!mb-6">What We Offer</SectionTitle>
           <div className="space-y-3 xl:space-y-4">
             <p>
