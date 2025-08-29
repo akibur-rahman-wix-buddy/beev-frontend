@@ -134,36 +134,25 @@ const ContactUsPage = () => {
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent className="border-0 bg-[#FBF7F0] rounded-lg md:rounded-[10px]">
-                          <SelectItem
-                            value="General Inquiry"
-                            className="border-b border-[#E9E4E0] rounded-none py-2 sm:py-3 px-2 text-sm sm:text-base text-[#6F7875]"
-                          >
-                            General Inquiry
-                          </SelectItem>
-                          <SelectItem
-                            value="Media/Press"
-                            className="border-b border-[#E9E4E0] rounded-none py-2 sm:py-3 px-2 text-sm sm:text-base text-[#6F7875]"
-                          >
-                            Media/Press
-                          </SelectItem>
-                          <SelectItem
-                            value="Technical Support"
-                            className="border-b border-[#E9E4E0] rounded-none py-2 sm:py-3 px-2 text-sm sm:text-base text-[#6F7875]"
-                          >
-                            Technical Support
-                          </SelectItem>
-                          <SelectItem
-                            value="Feedback"
-                            className="border-b border-[#E9E4E0] rounded-none py-2 sm:py-3 px-2 text-sm sm:text-base text-[#6F7875]"
-                          >
-                            Feedback
-                          </SelectItem>
-                          <SelectItem
-                            value="Other"
-                            className="rounded-none py-2 sm:py-3 px-2 text-sm sm:text-base text-[#6F7875]"
-                          >
-                            Other
-                          </SelectItem>
+                          {[
+                            "General Inquiry",
+                            "Media/Press",
+                            "Technical Support",
+                            "Feedback",
+                            "Other",
+                          ].map((item, i, arr) => (
+                            <SelectItem
+                              key={item}
+                              value={item}
+                              className={`${
+                                i !== arr.length - 1
+                                  ? "border-b border-[#E9E4E0]"
+                                  : ""
+                              } rounded-none py-2 sm:py-3 px-2 sm:px-3 text-sm sm:text-base text-[#6F7875]`}
+                            >
+                              {item}
+                            </SelectItem>
+                          ))}
                         </SelectContent>
                       </Select>
                       <FormMessage />
