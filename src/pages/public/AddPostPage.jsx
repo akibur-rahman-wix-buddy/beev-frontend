@@ -61,7 +61,7 @@ const AddPostPage = () => {
         onLeft={true}
         title="Share Your Thoughts With Us"
         subTitle="This space is for your voice. You can share reflections, gratitude, encouragement, or anything resting on your heart."
-        maxWWidth="max-w-[650px]"
+        maxWidth="max-w-[650px] text-center md:text-left"
       />
       <Container className="my-20">
         <SectionTitle center>

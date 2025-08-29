@@ -11,7 +11,7 @@ const PrimaryBanner = ({
   title,
   subTitle,
   onLeft,
-  maxWWidth = "",
+  maxWidth = "",
 }) => {
   return (
     <div className="text-white relative">
@@ -34,10 +34,10 @@ const PrimaryBanner = ({
                   "text-left": onLeft,
                   "text-center max-w-[950px] mx-auto": !onLeft,
                 },
-                maxWWidth
+                maxWidth
               )}
               description={subTitle}
-              center
+              center={!onLeft}
             >
               {title}
             </SectionTitle>

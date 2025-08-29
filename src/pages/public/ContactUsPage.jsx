@@ -67,6 +67,7 @@ const ContactUsPage = () => {
         onLeft={true}
         title="Contact Us"
         subTitle="We'd love to hear from you. For questions related to partnerships, press, tech issues, or feedback about the platform, please use the form below."
+        maxWidth="max-w-[650px] text-center md:text-left"
       />
       <Container className="my-20">
         <SectionTitle center>Send a Message to Our Team</SectionTitle>
