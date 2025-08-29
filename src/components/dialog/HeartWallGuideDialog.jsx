@@ -1,12 +1,9 @@
-import { HeartIcon } from "@/assets/icons/icons";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
 } from "@/components/ui/dialog";
-import { Button } from "../ui/button";
-import { Link } from "react-router";
 import SectionTitle from "../shared/SectionTitle";
 
 const HeartWallGuideDialog = ({ open, onOpenChange }) => {
@@ -14,18 +11,18 @@ const HeartWallGuideDialog = ({ open, onOpenChange }) => {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
         showCloseButton={false}
-        className="border-0 rounded-4xl w-full !max-w-[800px]"
+        className="border-0 rounded-xl sm:rounded-2xl xl:rounded-3xl w-full !max-w-[95vw] sm:!max-w-[90vw] lg:!max-w-[800px] bg-[#F9F5F0]"
       >
         <DialogHeader>
           <DialogDescription
             className={
-              "flex flex-col items-center gap-6 text-center p-12 text-lg font-medium"
+              "flex flex-col items-center gap-6 py-4 sm:p-8 md:p-12 text-sm sm:text-base md:text-lg font-medium"
             }
           >
-            <SectionTitle className="mb-0 text-textPrimary">
+            <SectionTitle className="!mb-0 text-textPrimary">
               Heart Wall Guidelines
             </SectionTitle>
-            <ul className="text-left list-disc text-primary space-y-5">
+            <ul className="text-left list-disc text-primary pl-4.5 space-y-5">
               <li>
                 Be kind -{" "}
                 <span className="text-textPrimary">
