@@ -6,11 +6,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "../ui/button";
 
-const DeleteAccountDialog = ({
-  open,
-  onOpenChange,
-  onConfirmDelete,
-}) => {
+const DeleteAccountDialog = ({ open, onOpenChange, onConfirmDelete }) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
@@ -49,7 +45,7 @@ const DeleteAccountDialog = ({
               <p className="text-gray-600">
                 This action will permanently remove all your data, including:
               </p>
-              <ul className=" text-gray-600 space-y-1 text-sm sm:text-base">
+              <ul className="text-gray-600 space-y-1 text-sm sm:text-base list-disc list-inside pl-0">
                 <li>Your profile information</li>
                 <li>Your transaction history</li>
                 <li>Stop your monthly contribution</li>
@@ -58,7 +54,7 @@ const DeleteAccountDialog = ({
                 This action cannot be undone.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:pt-4 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row gap-3 lg:pt-4 w-full sm:w-auto">
               <Button
                 variant="outline"
                 className="rounded-full px-6 sm:px-16 order-2 sm:order-1"
@@ -84,9 +80,7 @@ const DeleteAccountDialog = ({
                     d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
                   />
                 </svg>
-                <span className="whitespace-nowrap">
-                  Yes, Delete Account
-                </span>
+                <span className="whitespace-nowrap">Yes, Delete Account</span>
               </Button>
             </div>
           </DialogDescription>
