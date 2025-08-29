@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import HeartWallGuideDialog from "@/components/dialog/HeartWallGuideDialog";
+import AddPostCompleteDialog from "@/components/dialog/AddPostCompleteDialog";
 
 const formSchema = z.object({
   postTitle: z.string().min(1, "Headline is required"),
@@ -31,6 +32,8 @@ const formSchema = z.object({
 
 const AddPostPage = () => {
   const [isHeartWallGuideDialogOpen, setIsHeartWallGuideDialogOpen] =
+    useState(false);
+  const [isAddPostCompleteDialogOpen, setIsAddPostCompleteDialogOpen] =
     useState(false);
 
   const breadcrumbs = [
@@ -51,6 +54,7 @@ const AddPostPage = () => {
 
   function onSubmit(values) {
     console.log(values);
+    setIsAddPostCompleteDialogOpen(true);
   }
 
   return (
@@ -177,6 +181,10 @@ const AddPostPage = () => {
       <HeartWallGuideDialog
         open={isHeartWallGuideDialogOpen}
         onOpenChange={setIsHeartWallGuideDialogOpen}
+      />
+      <AddPostCompleteDialog
+        open={isAddPostCompleteDialogOpen}
+        onOpenChange={setIsAddPostCompleteDialogOpen}
       />
     </section>
   );
