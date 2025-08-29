@@ -11,9 +11,9 @@ const OneHeartSanctuaryPage = () => {
     <section className="pt-8">
       <OneHeartSanctuaryHeroSec className="mb-10 sm:mb-12 md:mb-14 lg:mb-16 xl:mb-20" />
       <RealDetailsSec className="my-10 sm:my-12 md:my-14 lg:my-16 xl:my-20" />
-      {/* <MeetOurAICompanionSec className="my-10 sm:my-12 md:my-14 lg:my-16 xl:my-20" /> */}
+      <MeetOurAICompanionSec className="my-10 sm:my-12 md:my-14 lg:my-16 xl:my-20" />
       <InsidetheSanctuarySec className="my-10 sm:my-12 md:my-14 lg:my-16 xl:my-20" />
-      {/* <JustPresenceSec className="my-10 sm:my-12 md:my-14 lg:my-16 xl:my-20" /> */}
+      <JustPresenceSec className="my-10 sm:my-12 md:my-14 lg:my-16 xl:my-20" />
       <CtaSec className="mt-10 sm:mt-12 md:mt-14 lg:mt-16 xl:mt-20" />
     </section>
   );

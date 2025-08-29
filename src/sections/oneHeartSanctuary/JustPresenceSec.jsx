@@ -7,33 +7,33 @@ import { CorrectIcon } from "@/assets/icons/icons";
 
 const JustPresenceSec = ({ className }) => {
   return (
-    <section className={cn("py-16 relative", className)}>
-      <Container className="flex items-center gap-60 relative z-10">
-        <div className="flex-[55%] text-[17px]">
-          <SectionTitle className="mb-6 pr-8">
-            No pressure, No performance, Just Presence.
+    <section className={cn("xl:py-16 relative", className)}>
+      <Container className="flex flex-col-reverse lg:flex-row items-start sm:items-center gap-6 md:gap-8 lg:gap-10 xl:gap-60 relative z-10">
+        <div className="lg:flex-[50%] xl:flex-[55%] text-[15px] sm:text-base xl:text-lg sm:text-center lg:text-left">
+          <SectionTitle className="!mb-3 lg:!mb-6 sm:text-center sm:mx-auto lg:text-left lg:mx-0 max-w-[90%]">
+            No pressure, No performance. Just Presence.
           </SectionTitle>
-          <div className=" text-lg space-y-6">
-            <p className="pr-14">
-              We've created this space with your emotional safety as our
-              highest priority. Every aspect is designed to give you control
-              over your experience.
+          <div className="space-y-3 lg:space-y-4 xl:space-y-6">
+            <p className="xl:pr-14">
+              We've created this space with your emotional safety as our highest
+              priority. Every aspect is designed to give you control over your
+              experience.
             </p>
-            <div className="space-y-4">
+            <div className="space-y-2 sm:space-y-2.5 lg:space-y-3 xl:space-y-4">
               {[
                 "Anonymous entry",
                 "Share only what you feel",
                 "Free entry, with extra support for members",
               ].map((item, idx) => (
-                <div className="flex items-center gap-3" key={idx}>
-                  <CorrectIcon />
+                <div className="flex items-center sm:justify-center lg:justify-start gap-3" key={idx}>
+                  <CorrectIcon className="sm:hidden lg:block" />
                   <p>{item}</p>
                 </div>
               ))}
             </div>
           </div>
         </div>
-        <figure className="flex-[45%] rounded-xl overflow-hidden">
+        <figure className="lg:flex-[50%] xl:flex-[45%] max-w-[400px] md:max-w-full rounded-xl overflow-hidden lg:py-10 xl:py-0">
           <img
             src={justPresenceImg}
             alt=""
@@ -41,9 +41,9 @@ const JustPresenceSec = ({ className }) => {
           />
         </figure>
       </Container>
-      <div className="absolute inset-0 flex">
-        <div className="left flex-[calc(50%+450px)]"></div>
-        <div className="right flex-[calc(50%-450px)] bg-[#F3EDE5] rounded-l-2xl"></div>
+      <div className="absolute inset-0 hidden lg:flex">
+        <div className="left flex-[calc(50%+250px)] xl:flex-[calc(50%+420px)]"></div>
+        <div className="right flex-[calc(50%-250px)] xl:flex-[calc(50%-420px)] bg-[#F3EDE5] rounded-l-2xl"></div>
       </div>
     </section>
   );
