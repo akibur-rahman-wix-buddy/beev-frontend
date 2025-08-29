@@ -26,7 +26,7 @@ const JustPresenceSec = ({ className }) => {
                 "Free entry, with extra support for members",
               ].map((item, idx) => (
                 <div className="flex items-center sm:justify-center lg:justify-start gap-3" key={idx}>
-                  <CorrectIcon className="sm:hidden lg:block" />
+                  <CorrectIcon className="size-4.5 lg:size-6  sm:hidden lg:block shrink-0" />
                   <p>{item}</p>
                 </div>
               ))}
