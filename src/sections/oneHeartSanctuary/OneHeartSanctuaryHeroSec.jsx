@@ -5,9 +5,9 @@ import SectionTitle from "@/components/shared/SectionTitle";
 import { Button } from "@/components/ui/button";
 import OneHeartSanctuaryDetailsSec from "./OneHeartSanctuaryDetailsSec";
 
-const OneHeartSanctuaryHeroSec = () => {
+const OneHeartSanctuaryHeroSec = ({className}) => {
   return (
-    <section className="overflow-hidden">
+    <section className={`overflow-hidden ${className}`}>
       <Container className="">
         <Breadcrumb
           breadcrumbs={[
@@ -15,7 +15,7 @@ const OneHeartSanctuaryHeroSec = () => {
             { label: "One Heart Sanctuary", url: "#" },
           ]}
         />
-        <div className="my-20">
+        <div className="mt-10 sm:mt-12 md:mt-14 lg:mt-16 xl:mt-20">
           <SectionTitle
             description="For the silent moments, midnight griefs, and unspoken pain - you are not alone."
             className="max-w-[1000px] mx-auto"
@@ -24,17 +24,23 @@ const OneHeartSanctuaryHeroSec = () => {
             A sacred space for emotional and spiritual care held by human
             hearts, supported by gentle technology.
           </SectionTitle>
-          <div className="flex justify-center gap-8">
-            <Button className="rounded-full gap-4">
-              <TelegramIcon className="!size-8 shrink-0" />
-              Join the Sanctuary on Telegram
+          <div className="flex flex-col md:flex-row justify-center gap-3 sm:gap-4 lg:gap-5 px-4 sm:px-16 md:px-0">
+            <Button className="lg:w-[400px] rounded-full gap-2 sm:gap-3 lg:gap-4 text-sm sm:text-base py-3 sm:py-4 px-4 sm:px-6">
+              <TelegramIcon className="!size-6 sm:!size-7 lg:!size-8 shrink-0" />
+              <span className="hidden sm:inline">
+                Join the Sanctuary on Telegram
+              </span>
+              <span className="sm:hidden">Join Sanctuary</span>
             </Button>
-            <Button className="rounded-full gap-4">
-              <RobotIcon className="!size-8 shrink-0" />
-              Meet your AI companion on Telegram
+            <Button className="rounded-full gap-2 sm:gap-3 lg:gap-4 text-sm sm:text-base py-3 sm:py-4 px-4 sm:px-6">
+              <RobotIcon className="!size-6 sm:!size-7 lg:!size-8 shrink-0" />
+              <span className="hidden sm:inline">
+                Meet your AI companion on Telegram
+              </span>
+              <span className="sm:hidden">Meet AI Companion</span>
             </Button>
           </div>
-          <OneHeartSanctuaryDetailsSec className="my-20" />
+          <OneHeartSanctuaryDetailsSec className="mt-10 sm:mt-12 md:mt-14 lg:mt-16 xl:mt-20" />
         </div>
       </Container>
     </section>
