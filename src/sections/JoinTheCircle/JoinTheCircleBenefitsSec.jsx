@@ -5,7 +5,7 @@ import { DocumentsIcon, LoveIcon2, MsgLifterIcon } from "@/assets/icons/icons";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router";
 import { ArrowRight } from "lucide-react";
-import parse from 'html-react-parser';
+import parse from "html-react-parser";
 
 const JoinTheCircleBenefitsSec = ({ className }) => {
   const cardsData = [
@@ -45,8 +45,8 @@ const JoinTheCircleBenefitsSec = ({ className }) => {
 
   return (
     <section className={cn("bg-[#F3EDE5]", className)}>
-      <Container className="py-20">
-        <div className="grid grid-cols-3 gap-24">
+      <Container className="py-10 sm:py-12 md:py-14 lg:py-16 xl:py-20">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 xl:gap-24">
           {cardsData.map((card, index) => (
             <Card
               key={index}
@@ -73,18 +73,18 @@ const Card = ({
   shareStory = false,
 }) => {
   return (
-    <div className="space-y-4 w-full ">
+    <div className="space-y-4 w-full text-sm sm:text-base xl:text-lg">
       <div className="flex items-center gap-2.5">
-        <div className="size-12 rounded-full bg-primary flex items-center justify-center">
-          <Icon />
+        <div className="size-10 sm:size-11 xl:size-12 rounded-full bg-primary flex items-center justify-center shrink-0">
+          <Icon className="size-4.5 sm:size-5 xl:size-6" />
         </div>
-        <h3 className="text-xl font-medium text-primary">{title}</h3>
+        <h3 className="text-lg xl:text-xl font-medium text-primary">{title}</h3>
       </div>
-      <p className="text-lg">{description}</p>
+      <p className="">{description}</p>
       {points && points.length > 0 && (
-        <ul className="list-disc pl-5 space-y-3">
+        <ul className="list-disc pl-4.5 space-y-2 sm:space-y-3">
           {points.map((point, index) => (
-            <li key={index} className="text-[18px]">
+            <li key={index} className="">
               {parse(point)}
             </li>
           ))}
@@ -93,9 +93,9 @@ const Card = ({
       {shareStory && (
         <Link
           to="/the-heart-wall"
-          className="text-primary flex items-center gap-1 hover:[&>svg]:-rotate-45 [&>svg]:transition-all [&>svg]:duration-300"
+          className="text-primary flex items-center gap-1.5 hover:[&>svg]:-rotate-45 [&>svg]:transition-all [&>svg]:duration-300"
         >
-          Share your Story <ArrowRight className="size-5" />
+          Share your Story <ArrowRight className="size-4 sm:size-5" />
         </Link>
       )}
     </div>
