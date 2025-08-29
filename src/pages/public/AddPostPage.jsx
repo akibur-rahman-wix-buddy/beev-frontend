@@ -63,30 +63,29 @@ const AddPostPage = () => {
         subTitle="This space is for your voice. You can share reflections, gratitude, encouragement, or anything resting on your heart."
         maxWidth="max-w-[650px] text-center md:text-left"
       />
-      <Container className="my-20">
+      <Container className="my-10 sm:my-12 md:my-14 lg:my-16 xl:my-20">
         <SectionTitle center>
           Share a Thought, Reflection, or a Thank You
         </SectionTitle>
-        <div className="bg-[#F3EDE5] rounded-2xl max-w-[950px] mx-auto pt-20 pb-16 px-16 border border-[#EDD9C5]">
+        <div className="bg-[#F3EDE5] rounded-xl sm:rounded-2xl max-w-[950px] mx-auto pt-8 sm:pt-12 lg:pt-16 xl:pt-20 pb-8 sm:pb-12 lg:pb-14 xl:pb-16 px-4 sm:px-8 lg:px-12 xl:px-16 border border-[#EDD9C5]">
           <div className="">
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-7"
+                className="space-y-5 sm:space-y-6 lg:space-y-7"
               >
                 <FormField
                   control={form.control}
                   name="postTitle"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-lg font-medium">
-                        Give your post a short headline{" "}
-                        <span className="">*</span>
+                      <FormLabel className="text-[17px] sm:text-lg font-medium">
+                        Give your post a short headline
                       </FormLabel>
                       <FormControl>
                         <Input
-                          placeholder="Add a short headline (i.e. “A small act that meant so much”)"
-                          className="bg-[#FBF7F0] px-6 py-4 h-[60px] rounded-[10px] !text-base"
+                          placeholder="Add a short headline (i.e. 'A small act that meant so much')"
+                          className="bg-[#FBF7F0] px-4 sm:px-6 py-3 sm:py-4 h-12 sm:h-[60px] rounded-lg md:rounded-[10px] !text-sm sm:!text-base"
                           {...field}
                         />
                       </FormControl>
@@ -99,14 +98,13 @@ const AddPostPage = () => {
                   name="postDetails"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-lg font-medium">
-                        What would you like to share?{" "}
-                        <span className="">*</span>
+                      <FormLabel className="text-[17px] sm:text-lg font-medium">
+                        What would you like to share?
                       </FormLabel>
                       <FormControl>
                         <Textarea
                           placeholder="Write from the heart. Share a moment of kindness or support that mattered to you..."
-                          className="bg-[#FBF7F0] px-6 py-4 rounded-[10px] h-[300px] !text-base"
+                          className="bg-[#FBF7F0] px-4 sm:px-6 py-3 sm:py-4 rounded-lg md:rounded-[10px] h-[200px] sm:h-[250px] lg:h-[300px] !text-sm sm:!text-base"
                           {...field}
                         />
                       </FormControl>
@@ -114,7 +112,7 @@ const AddPostPage = () => {
                     </FormItem>
                   )}
                 />
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-3 sm:gap-4">
                   <FormField
                     control={form.control}
                     name="anonymously"
@@ -124,10 +122,10 @@ const AddPostPage = () => {
                           <Checkbox
                             checked={field.value}
                             onCheckedChange={field.onChange}
-                            className="cursor-pointer border-[#707070] border-2 rounded size-[18px]"
+                            className="cursor-pointer border-[#707070] border-2 rounded size-4 sm:size-[18px]"
                           />
                         </FormControl>
-                        <FormLabel className="text-[#707070] cursor-pointer text-[17px]">
+                        <FormLabel className="text-[#707070] cursor-pointer text-[15px] sm:text-[17px]">
                           Send Anonymously
                         </FormLabel>
                         <FormMessage />
@@ -138,23 +136,25 @@ const AddPostPage = () => {
                     control={form.control}
                     name="acceptedTerms"
                     render={({ field }) => (
-                      <FormItem className="flex items-center gap-2 space-y-0">
+                      <FormItem className="flex items-start sm:items-center gap-2 space-y-0">
                         <FormControl>
                           <Checkbox
                             checked={field.value}
                             onCheckedChange={field.onChange}
-                            className="cursor-pointer border-[#707070] border-2 rounded size-[18px]"
+                            className="cursor-pointer border-[#707070] border-2 rounded size-4 sm:size-[18px] mt-1 sm:mt-0 flex-shrink-0"
                           />
                         </FormControl>
-                        <FormLabel className="text-[#707070] cursor-pointer text-[17px]">
-                          I’ve read and agree to the{" "}
-                        </FormLabel>
-                        <span
-                          className="text-primary text-[17px] hover:underline cursor-pointer"
-                          onClick={() => setIsHeartWallGuideDialogOpen(true)}
-                        >
-                          The Heart Wall Guidelines
-                        </span>
+                        <div className="flex flex-wrap items-center gap-1">
+                          <FormLabel className="text-[#707070] cursor-pointer text-[15px] sm:text-[17px]">
+                            I've read and agree to the{" "}
+                          </FormLabel>
+                          <span
+                            className="text-primary text-[15px] sm:text-[17px] hover:underline cursor-pointer"
+                            onClick={() => setIsHeartWallGuideDialogOpen(true)}
+                          >
+                            The Heart Wall Guidelines
+                          </span>
+                        </div>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -165,7 +165,7 @@ const AddPostPage = () => {
                   Share on The Heart Wall
                 </Button>
 
-                <p className="max-w-[70%] mx-auto text-center leading-[160%] text-[17px] text-[#8F8D8D]">
+                <p className="max-w-[95%] sm:max-w-[85%] lg:max-w-[70%] mx-auto text-center text-[13px] sm:text-[15px] lg:text-[17px] leading-[160%] text-[#8F8D8D]">
                   Your post will be reviewed before it goes live to help keep
                   this a safe and supportive space
                 </p>
