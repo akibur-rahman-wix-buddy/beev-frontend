@@ -1,13 +1,7 @@
 import Container from "@/components/shared/Container";
 import SectionTitle from "@/components/shared/SectionTitle";
 import React from "react";
-import {
-  CorrectIcon,
-  FeatherIcon,
-  HeartIcon2,
-  HeartIcon3,
-  MoonIcon,
-} from "@/assets/icons/icons";
+import { CorrectIcon, HeartIcon2 } from "@/assets/icons/icons";
 import { cn } from "@/lib/utils";
 
 const InsidetheSanctuarySec = ({ className }) => {
@@ -56,20 +50,19 @@ const InsidetheSanctuarySec = ({ className }) => {
 
   return (
     <section className={cn("bg-[#F3EDE5] overflow-hidden", className)}>
-      <Container className="py-20 relative">
+      <Container className="py-10 sm:py-12 md:py-14 lg:py-16 xl:py-20 relative">
         <SectionTitle center>Inside the Sanctuary</SectionTitle>
-        <div className="grid grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 xl:gap-7">
           {cardsData.map((card, index) => (
             <Card
               key={index}
-              icon={card.icon}
               title={card.title}
               description={card.description}
             />
           ))}
         </div>
-        <HeartIcon2 className="absolute top-10 right-[-300px]" />
-        <HeartIcon2 className="absolute bottom-5 left-[-300px]" />
+        <HeartIcon2 className="absolute top-10 right-[-150px] sm:right-[-200px] lg:right-[-300px] w-32 sm:w-40 lg:w-auto" />
+        <HeartIcon2 className="absolute bottom-5 left-[-150px] sm:left-[-200px] lg:left-[-300px] w-32 sm:w-40 lg:w-auto" />
       </Container>
     </section>
   );
@@ -79,11 +72,13 @@ export default InsidetheSanctuarySec;
 
 const Card = ({ title, description }) => {
   return (
-    <div className="card rounded-2xl bg-[#FBF7F0] space-y-5 flex flex-col p-8">
-      <CorrectIcon />
-      <div className="space-y-3.5">
-        <h3 className="text-lg font-medium">{title}</h3>
-        <p className="text-primaryDescription ">{description}</p>
+    <div className="card rounded-2xl bg-[#FBF7F0] space-y-4 flex flex-col p-6 sm:p-8">
+      <CorrectIcon className="w-6 h-6 sm:w-8 sm:h-8" />
+      <div className="space-y-3">
+        <h3 className="text-base sm:text-lg md:text-xl font-medium">{title}</h3>
+        <p className="text-sm sm:text-base md:text-lg text-primaryDescription">
+          {description}
+        </p>
       </div>
     </div>
   );
