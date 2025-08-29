@@ -73,7 +73,7 @@ export default InsidetheSanctuarySec;
 const Card = ({ title, description }) => {
   return (
     <div className="card rounded-2xl bg-[#FBF7F0] space-y-4 flex flex-col p-6 sm:p-8">
-      <CorrectIcon className="w-6 h-6 sm:w-8 sm:h-8" />
+      <CorrectIcon className="size-6 sm:size-8" />
       <div className="space-y-3">
         <h3 className="text-base sm:text-lg md:text-xl font-medium">{title}</h3>
         <p className="text-sm sm:text-base md:text-lg text-primaryDescription">
