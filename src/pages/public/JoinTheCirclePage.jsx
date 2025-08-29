@@ -23,8 +23,8 @@ const JoinTheCirclePage = () => {
       />
       <JoinTheCircleDetailsSec className="my-10 sm:my-12 md:my-14 lg:my-16 xl:my-20" />
       <JoinTheCircleBenefitsSec className="my-10 sm:my-12 md:my-14 lg:my-16 xl:my-20" />
-      {/* <HelpingHandSec className="my-10 sm:my-12 md:my-14 lg:my-16 xl:my-20" />
-      <JoinTheCirclePaymentSec className="mt-10 sm:mt-12 md:mt-14 lg:mt-16 xl:mt-20" /> */}
+      <HelpingHandSec className="my-10 sm:my-12 md:my-14 lg:my-16 xl:my-20" />
+      <JoinTheCirclePaymentSec className="mt-10 sm:mt-12 md:mt-14 lg:mt-16 xl:mt-20" />
     </section>
   );
 };

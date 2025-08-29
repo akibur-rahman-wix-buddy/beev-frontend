@@ -12,7 +12,9 @@ const JoinTheCircleDetailsSec = ({ className }) => {
     <section className={cn("xl:py-16 relative", className)}>
       <Container className="flex flex-col-reverse lg:flex-row items-start sm:items-center gap-6 md:gap-8 lg:gap-10 xl:gap-60 relative z-10">
         <div className="lg:flex-[50%] xl:flex-[55%] text-[15px] sm:text-base xl:text-lg sm:text-center lg:text-left">
-          <SectionTitle className="!mb-3 lg:!mb-6 xl:!mb-9 sm:text-center sm:mx-auto lg:text-left lg:mx-0">Join The Circle</SectionTitle>
+          <SectionTitle className="!mb-3 lg:!mb-6 xl:!mb-9 sm:text-center sm:mx-auto lg:text-left lg:mx-0">
+            Join The Circle
+          </SectionTitle>
           <div className="space-y-3 lg:space-y-4 xl:space-y-7 xl:max-w-[620px]">
             <p>
               Every day, someone arrives here carrying something heavy - grief,
